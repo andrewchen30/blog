@@ -1,2 +1,1 @@
-# blog
-My blog
+#Andrew Chen's blog

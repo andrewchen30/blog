@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>淺談前端框架未來，Angular, React, 還是...？ | AndrewChen Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+
+
+前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
+淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, embe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="淺談前端框架未來，Angular, React, 還是...？">
+<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/index.html">
+<meta property="og:site_name" content="AndrewChen Blog">
+<meta property="og:description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+
+
+前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
+淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, embe">
+<meta property="og:image" content="http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png">
+<meta property="og:updated_time" content="2015-08-03T11:29:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="淺談前端框架未來，Angular, React, 還是...？">
+<meta name="twitter:description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+
+
+前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
+淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, embe">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="http://polarbearandrew.github.io/blog/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="http://polarbearandrew.github.io/blog/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="http://polarbearandrew.github.io/blog/scrollLoading/style.css" type="text/css">
+  
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65872031-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+            <h2 class="subtitle-wrap">
+              <p class="subtitle">fullstack JavaScript. Node.js and React.js</p>
+            </h2>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/">首頁</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">關於</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><input type="hidden" name="sitesearch" value="http://polarbearandrew.github.io/blog"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+              
+              <h1 class="header"><a class="page-title-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-002_AngularReactOrOther" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      淺談前端框架未來，Angular, React, 還是...？
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" class="article-date">
+  <time datetime="2015-08-02T01:13:44.000Z" itemprop="datePublished">2015-08-02</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <blockquote>
+<p>本篇文上是本人Andrew Chen為<a href="http://jsdc.tw" target="_blank" rel="external">JSDC 2015</a>撰寫<br>感謝<a href="https://www.facebook.com/clonncd?fref=ts" target="_blank" rel="external">Caeser Chi</a>給予指導</p>
+</blockquote>
+<p><img src="http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png" alt="前端框架未來？React, Angular or ..?"></p>
+<p>前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。</p>
+<h2 id="淺談前端框架">淺談前端框架</h2><p>隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 <a href="http://batmanjs.org" target="_blank" rel="external">batman.js</a>, <a href="http://backbonejs.org" target="_blank" rel="external">backbone.js</a>, <a href="http://emberjs.com" target="_blank" rel="external">emberjs</a> 在中期也開始出現了許多不同框架，其中到了 Google 踏進 Angular.js 之後前端框架正式熱門起來，也掀起另外一波大戰。</p>
+<p>隨著世代的轉移，JavaScript 漸漸語法轉移到 ES6，語法不同，開始有了不同應用，也因此又出現了令人亮眼的新秀：<a href="http://aurelia.io" target="_blank" rel="external">Aurelia</a>。</p>
+<p>由於前端框架的世界更新相當迅速，不斷有新的Framwork出現，各家開發者對自己熟悉的框架各執其詞，其實相當難定義何者叫好。</p>
+<h2 id="前端框架未來？React,_Angular_?">前端框架未來？React, Angular ?</h2><p><a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a> 和 <a href="http://aurelia.io" target="_blank" rel="external">Angular</a> 目前為前端兩大流行的框架，兩者的風格迥異。</p>
+<p>React 主打 Single Source of True 和 Flux 的單項資料流，重新以元件的思維角度去設計 WebApp，最後又採用相同思維可以進行開發 iOS, Android native 程式框架 - React Native 讓大家眼睛為之一亮。</p>
+<p>而在Angular目前的情況較為不明朗，相當多的開發者正在使用能穩定運作的 1.x 版本，但是 Angular 2.x 的版本卻面臨了相當大的改版，而且並沒有支援 1.x 的部分。 Angular 最大亮點在雙向資料綁定，簡潔的資料綁定和監控配上快節奏的開發技巧時，產生令人驚豔的開發速度。</p>
+<p>React 跟 Angular 整體的核心思維是相當不同的，React 特色在於簡化的開發邏輯與資料流，單純的單項資料流讓開發流程和除錯都容易了許多，React 的結構設計也讓抽取元件變得直觀與單純，React 傾向於將開發簡化，在設計好架構與資料結構後就減少犯錯的機會。</p>
+<p>但從另一個角度來說，React針對單一的操作，要撰寫的程式碼多出了許多，整個架構也變得龐大。而 Angular 則相反，Angular 在處理資料時相當快速且方便，雙向的資料綁定讓開者並不需要思考太多元件對應的關係，但也因此最終可能會讓整個專案陷入混亂，Angular 在抽取元件時比 React 需要更多的開發技巧，對整體團隊的開發素質要求也相對的更高。</p>
+<h2 id="新的選擇_-_Aurelia">新的選擇 - Aurelia</h2><p>Aurelia 或許可以說介於 React 和 Angular 兩者之間，Aurelia 目前為相當新秀的開發框架，他本身與 Angular 的資料綁定方式相當類似，不僅僅對 Angular 的開發者相當容易上手，安插在 HTML5 中的屬性也更加語意化。</p>
+<p>Aurelia 的核心圍繞在模板上，因此他似乎同時擁有了 React 類似元件的觀念，又同時有 Angular 綁定資料的手法，算是相當多元，除此之外 Aurelia 對 ES6, ES7 擁有更高的支援度。</p>
+<p>當然目前 Aurelia 還在持續開發中，雖然版本尚未穩定，但是已經是個值得注目的前端框架，可以開始試著去執行，了解 Aurelia ，或許在現今 Single Page App 爆炸性成長的階段，Aurelia 能在未來佔有一席之地。</p>
+<p>也許未來 JavaScript 真的能夠做到前後端統一程式碼進行開發，也有可能踏入 hardware 開發領域，這都需要時間來證明，當然也需要各位的投入，就讓我們持續關注這個世代的變化吧。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" data-id="ciczhgt7g000blju01ej3ulox" class="article-share-link">分享至</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>關注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/?lang=zh-tw" target="_blank"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100001317746154" target="_blank"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/PolarBearAndrew" target="_blank"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          Node.js 從零開始 Part 1
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="http://polarbearandrew.github.io/blog/2015/08/02/001_JSDevilDay/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">JS Devil Day 參與心得</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" class="title">Node.js 從零開始 Part 1</a></p>
+              <p class="item-date"><time datetime="2015-08-09T10:41:42.000Z" itemprop="datePublished">2015-08-09</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" class="thumbnail">
+  
+    <span style="background-image:url(http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png
+)" alt="淺談前端框架未來，Angular, React, 還是...？" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" class="title">淺談前端框架未來，Angular, React, 還是...？</a></p>
+              <p class="item-date"><time datetime="2015-08-02T01:13:44.000Z" itemprop="datePublished">2015-08-02</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/02/001_JSDevilDay/" class="thumbnail">
+  
+    <span style="background-image:url(https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg
+)" alt="JS Devil Day 參與心得" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/02/001_JSDevilDay/" class="title">JS Devil Day 參與心得</a></p>
+              <p class="item-date"><time datetime="2015-08-02T01:05:42.000Z" itemprop="datePublished">2015-08-02</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">分類</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">歸檔</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="http://polarbearandrew.github.io/blog/archives/2015/08/">八月 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="http://polarbearandrew.github.io/blog/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="http://polarbearandrew.github.io/blog/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="http://polarbearandrew.github.io/blog/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="http://polarbearandrew.github.io/blog/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="http://polarbearandrew.github.io/blog/tags/社群活動/" style="font-size: 15px;">社群活動</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">鏈結</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://jsdc.tw">JSDC</a>
+          </li>
+        
+          <li>
+            <a href="https://hackathon.tw">Hackathon Taiwan</a>
+          </li>
+        
+          <li>
+            <a href="http://hexo.io">hexo</a>
+          </li>
+        
+          <li>
+            <a href="https://github.com/ppoffice/hexo-theme-hueman">theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Andrew Chen</p>
+        <!-- <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p> -->
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="http://polarbearandrew.github.io/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="http://polarbearandrew.github.io/blog/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="http://polarbearandrew.github.io/blog/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="http://polarbearandrew.github.io/blog/js/html-patch.js" type="text/javascript"></script>
+<script src="http://polarbearandrew.github.io/blog/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
