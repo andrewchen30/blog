@@ -1,13 +1,18 @@
-title: Node.js 從零開始 Part 1
+title: Part 1 - 簡介與安裝
 date: 2015-08-09 18:41:42
 tags:
 - Node.js
+- Node.js 從零開始
 - JavaScript
-categories: Node.js
+categories: Node.js 從零開始
 comments: false
 ---
 
-### Node.js 簡介
+### Node.js 從零開始
+
+![Node.js](http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png)
+
+## Node.js 簡介
 
 * [Node.js 官方](https://nodejs.org/)
 * [Node.js 台灣社群](http://nodejs.tw)
@@ -25,7 +30,7 @@ Node.js 透過非阻塞式、非同步的 I/O 應付大量的請求，在以往�
 
 我們可以在
 
-### Node.js 快速安裝 (on MAC)
+## Node.js 快速安裝 (on MAC)
 
 別急著下載Node.js官方的安裝檔，我們用更聰明的方式處理。
 
@@ -45,7 +50,6 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 ``` bat
 $ which brew          <--查詢路徑
 /usr/local/bin/brew   <--路徑
-
 $ brew -v             <--查詢版本
 Homebrew 0.9.5        <--當前版本
 ```
@@ -153,14 +157,23 @@ Note:
 	stable -> 0.12 (-> v0.12.2) (default)
 	iojs -> iojs- (-> N/A) (default)
 	```
+	
+5. 測試 node.js 安裝完成
 
-### 結語
+	```bat
+	$ node -v 
+	v0.10.24
+	$ which 
+	/usr/local/opt/nvm/v0.10.24/bin/node
+	```
+
+## 結語
 
 以個人的經驗而已，在 Node.js 的版本之間切換並沒有非常頻繁，社群通常都通用 v0.12.2 或是 v0.10.24 左右的版本，這幾的版本本身並沒有相當大的排斥性，但總偶爾會遇到其他版本的使用情況，如果沒有 nvm ，屆時就只能乖乖的移除並重新安裝。
 
 在第一次安裝時把這個 NVM 安裝完成，能省解決掉不少問題，如果直接安裝 Node.js 事後又再補上 NVM ，在許多設定細節上也相當困擾。總之，一開始就裝好就對了！
 
-###### 參考文章
+## 參考文章
 * [Homebrew](http://brew.sh)
 * [stackflow-nvm](http://stackoverflow.com/questions/tagged/nvm)
 * [stackflow-nvm command not found](http://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found)
