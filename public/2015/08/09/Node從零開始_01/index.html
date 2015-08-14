@@ -15,7 +15,7 @@ Node.js Facabook 台灣社群
 Node.js在 I/O 這方面表現相當優，主要歸功於非同步事件驅動的核心。Node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Part 1 - 簡介與安裝">
-<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/index.html">
+<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/index.html">
 <meta property="og:site_name" content="AndrewChen Blog">
 <meta property="og:description" content="Node.js 從零開始
 Node.js 簡介
@@ -26,7 +26,7 @@ Node.js Facabook 台灣社群
 隨著Google V8 引擎優秀的效能，JavaScript在近幾年迅速地竄紅，並透過Node.js的作者Ryan Dahl，讓JavaScript正式地能運作於伺服器端。
 Node.js在 I/O 這方面表現相當優，主要歸功於非同步事件驅動的核心。Node">
 <meta property="og:image" content="http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png">
-<meta property="og:updated_time" content="2015-08-10T02:08:50.000Z">
+<meta property="og:updated_time" content="2015-08-14T00:41:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Part 1 - 簡介與安裝">
 <meta name="twitter:description" content="Node.js 從零開始
@@ -125,7 +125,7 @@ ga('send', 'pageview');
             </div>
             <div class="main-body-content">
               
-  <article id="post-Node_01_從零開始" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Node從零開始_01" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -140,7 +140,7 @@ ga('send', 'pageview');
         </header>
       
       <p class="article-byline">
-        <a href="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" class="article-date">
+        <a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" class="article-date">
   <time datetime="2015-08-09T10:41:42.000Z" itemprop="datePublished">2015-08-09</time>
 </a>
       </p>
@@ -156,17 +156,16 @@ ga('send', 'pageview');
 <p>Node.js 透過非阻塞式、非同步的 I/O 應付大量的請求，在以往阻塞式的伺服器語言設計中，後續資料需要等待前方 I/O 完成後才能繼續，或是需要開啟新的執行緒，在流量相當大的伺服器相對會造成一定時間的延遲。</p>
 <p>一般來說會仰賴提升伺服器或是增加伺服器數量來分擔流量，但現今網路世界蓬勃發展，高流量已經相當常見，開發者不得不正視效能問題。</p>
 <p>舉例來說新聞網站、部落格等，伺服器要能大量的回應資料，不需要牽涉到複雜的演算。使用 Node.js 伺服器能大大的解決 I/O 的需求。Node.js也相當適合配上 Single Page App 和 API，大量的 I/O 和少量的運算，Node.js 符合這一類型的需求。</p>
-<p>我們可以在</p>
 <h2 id="Node-js_快速安裝_(on_MAC)">Node.js 快速安裝 (on MAC)</h2><p>別急著下載Node.js官方的安裝檔，我們用更聰明的方式處理。</p>
 <p>Node.js 近來版本更新快速，現階段又即將跟 Node.js 的分支 io.js 進行整合，Node.js 將版本大躍進到4.0版。以 PHP 來說，開發時往往有版號的問題，Node.js 亦有相同的情形，因此我們透過 Node Version Managerer (NVM) 來進行各個版本的：安裝、刪除、切換，讓我們在各個版本之間輕鬆自在的遊走！</p>
-<p>那 NVM 又要怎麼安裝呢？MAC 使用者請使用<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>進行安裝，安裝Homebrew相當簡單，開啟終端及(Terminal)，然後複製<a href="http://brew.sh" target="_blank" rel="external">官網</a>上的安裝指令，即是以下指令，貼上直行即可。</p>
-<p>備註：$ xxx 代表著要在終端機輸入 xxx 指令</p>
+<p>那 NVM 又要怎麼安裝呢？MAC 使用者請使用 <a href="http://brew.sh" target="_blank" rel="external">Homebrew</a> 進行安裝，安裝Homebrew相當簡單，開啟終端及(Terminal)，然後複製<a href="http://brew.sh" target="_blank" rel="external">官網</a>上的安裝指令，即是以下指令，貼上直行即可。</p>
+<p>備註：<code>$ xxx</code> 代表著要在終端機輸入 <code>xxx</code> 指令</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span><br></pre></td></tr></table></figure>
 <p>因為 MAC 原生就有安裝 Ruby，因此可以直接使用 Ruby 指令，基本上沒有大問題。接著再次確認 Homebrew 有正確安裝，查看Homebrew在本機的位址或是版本皆可。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ which brew          &lt;--查詢路徑</span><br><span class="line">/usr/local/bin/brew   &lt;--路徑</span><br><span class="line"></span><br><span class="line">$ brew -v             &lt;--查詢版本</span><br><span class="line">Homebrew <span class="number">0</span>.<span class="number">9</span>.<span class="number">5</span>        &lt;--當前版本</span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ which brew          &lt;--查詢路徑</span><br><span class="line">/usr/local/bin/brew   &lt;--路徑</span><br><span class="line">$ brew -v             &lt;--查詢版本</span><br><span class="line">Homebrew <span class="number">0</span>.<span class="number">9</span>.<span class="number">5</span>        &lt;--當前版本</span><br></pre></td></tr></table></figure>
 <p>接著就可以使用 Homebrew 安裝 NVM 囉：</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install nvm</span><br></pre></td></tr></table></figure>
-<p>接著請等終端機運行完畢即可。<br>接著要在終端機的指令集裡面補上 NVM 的指令，如果不熟悉Linux或vim的話，操作稍微比較麻煩一點，可依照以下說明一步步操作。</p>
+<p>接著請等終端機運行完畢即可。<br>接著要在終端機的指令集裡面補上 NVM 的指令，如果不熟悉 Linux 或 vim 的話，操作稍微比較麻煩一點，可依照以下說明一步步操作。</p>
 <ol>
 <li><p>使用 vim 打開 .bash_profile</p>
  <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
@@ -176,8 +175,6 @@ ga('send', 'pageview');
 <p> vim 也是仰賴指令來操作，將游標移動到想要的位置後按下鍵盤 <code>a</code> 可以開始編輯，接著使用一般的複製貼上 <code>cmd⌘+c</code>  <code>cmd⌘+v</code> 將以下兩串字貼進去：</p>
  <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export NVM_DIR=~/.nvm</span><br><span class="line">source $(brew --prefix nvm)/nvm.sh</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
 <li><p>用 vim 儲存並離開</p>
 <p> (1) 按下 <code>esc</code>先離開編輯環境</p>
 <p> (2) 按下 <code>shift+:</code></p>
@@ -186,11 +183,11 @@ ga('send', 'pageview');
 <p> 就會儲存並離開拉！</p>
 </li>
 </ol>
-<p>測試有沒有安裝成功，直接輸入 <code>$ nvm</code> 這個指令，終端機回應如下：</p>
+<h2 id="確定_NVM_安裝完成">確定 NVM 安裝完成</h2><p>藉著測試有沒有安裝成功。測試在開發過程中是最重要，紀律性的測試可以避免掉很多不必要的錯誤，這邊測試 Node.js 正卻安裝只是一個小小步驟，以後會有更重要的程式碼品質檢測出現。只要直接輸入 <code>$ nvm</code> 這個指令，終端機回應如下：</p>
 <p>基本上就是 NVM 有哪些指令的目錄。</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Node Version Manager</span><br><span class="line"><span class="function"></span><br><span class="line">Usage:</span><br><span class="line">  <span class="title">nvm</span> <span class="title">help</span>                              <span class="title">Show</span> <span class="title">this</span> <span class="title">message</span></span><br><span class="line">  <span class="title">nvm</span> --<span class="title">version</span>                         <span class="title">Print</span> <span class="title">out</span> <span class="title">the</span> <span class="title">latest</span> <span class="title">released</span> <span class="title">version</span> <span class="title">of</span> <span class="title">nvm</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">install</span> [-<span class="title">s</span>] &lt;<span class="title">version</span>&gt;            <span class="title">Download</span> <span class="title">and</span> <span class="title">install</span> <span class="title">a</span> &lt;<span class="title">version</span>&gt;, [-<span class="title">s</span>] <span class="title">from</span> <span class="title">source</span>. <span class="title">Uses</span> .<span class="title">nvmrc</span> <span class="title">if</span> <span class="title">available</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">uninstall</span> &lt;<span class="title">version</span>&gt;               <span class="title">Uninstall</span> <span class="title">a</span> <span class="title">version</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">use</span> &lt;<span class="title">version</span>&gt;                     <span class="title">Modify</span> <span class="title">PATH</span> <span class="title">to</span> <span class="title">use</span> &lt;<span class="title">version</span>&gt;. <span class="title">Uses</span> .<span class="title">nvmrc</span> <span class="title">if</span> <span class="title">available</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">run</span> &lt;<span class="title">version</span>&gt; [&lt;<span class="title">args</span>&gt;]            <span class="title">Run</span> &lt;<span class="title">version</span>&gt; <span class="title">with</span> &lt;<span class="title">args</span>&gt; <span class="title">as</span> <span class="title">arguments</span>. <span class="title">Uses</span> .<span class="title">nvmrc</span> <span class="title">if</span> <span class="title">available</span> <span class="title">for</span> &lt;<span class="title">version</span>&gt;</span><br><span class="line">  <span class="title">nvm</span> <span class="title">current</span>                           <span class="title">Display</span> <span class="title">currently</span> <span class="title">activated</span> <span class="title">version</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">ls</span>                                <span class="title">List</span> <span class="title">installed</span> <span class="title">versions</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">ls</span> &lt;<span class="title">version</span>&gt;                      <span class="title">List</span> <span class="title">versions</span> <span class="title">matching</span> <span class="title">a</span> <span class="title">given</span> <span class="title">description</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">ls</span>-<span class="title">remote</span>                         <span class="title">List</span> <span class="title">remote</span> <span class="title">versions</span> <span class="title">available</span> <span class="title">for</span> <span class="title">install</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">deactivate</span>                        <span class="title">Undo</span> <span class="title">effects</span> <span class="title">of</span> `<span class="title">nvm</span>` <span class="title">on</span> <span class="title">current</span> <span class="title">shell</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">alias</span> [&lt;<span class="title">pattern</span>&gt;]                 <span class="title">Show</span> <span class="title">all</span> <span class="title">aliases</span> <span class="title">beginning</span> <span class="title">with</span> &lt;<span class="title">pattern</span>&gt;</span><br><span class="line">  <span class="title">nvm</span> <span class="title">alias</span> &lt;<span class="title">name</span>&gt; &lt;<span class="title">version</span>&gt;            <span class="title">Set</span> <span class="title">an</span> <span class="title">alias</span> <span class="title">named</span> &lt;<span class="title">name</span>&gt; <span class="title">pointing</span> <span class="title">to</span> &lt;<span class="title">version</span>&gt;</span><br><span class="line">  <span class="title">nvm</span> <span class="title">unalias</span> &lt;<span class="title">name</span>&gt;                    <span class="title">Deletes</span> <span class="title">the</span> <span class="title">alias</span> <span class="title">named</span> &lt;<span class="title">name</span>&gt;</span><br><span class="line">  <span class="title">nvm</span> <span class="title">reinstall</span>-<span class="title">packages</span> &lt;<span class="title">version</span>&gt;      <span class="title">Reinstall</span> <span class="title">global</span> `<span class="title">npm</span>` <span class="title">packages</span> <span class="title">contained</span> <span class="title">in</span> &lt;<span class="title">version</span>&gt; <span class="title">to</span> <span class="title">current</span> <span class="title">version</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">unload</span>                            <span class="title">Unload</span> `<span class="title">nvm</span>` <span class="title">from</span> <span class="title">shell</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">which</span> [&lt;<span class="title">version</span>&gt;]                 <span class="title">Display</span> <span class="title">path</span> <span class="title">to</span> <span class="title">installed</span> <span class="title">node</span> <span class="title">version</span>. <span class="title">Uses</span> .<span class="title">nvmrc</span> <span class="title">if</span> <span class="title">available</span></span><br><span class="line"></span><br><span class="line"><span class="title">Example</span>:</span><br><span class="line">  <span class="title">nvm</span> <span class="title">install</span> <span class="title">v0</span>.10.32                  <span class="title">Install</span> <span class="title">a</span> <span class="title">specific</span> <span class="title">version</span> <span class="title">number</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">use</span> 0.10                          <span class="title">Use</span> <span class="title">the</span> <span class="title">latest</span> <span class="title">available</span> 0.10.<span class="title">x</span> <span class="title">release</span></span><br><span class="line">  <span class="title">nvm</span> <span class="title">run</span> 0.10.32 <span class="title">app.js</span>                <span class="title">Run</span> <span class="title">app.js</span> <span class="title">using</span> <span class="title">node</span> <span class="title">v0</span>.10.32</span><br><span class="line">  <span class="title">nvm</span> <span class="title">exec</span> 0.10.32 <span class="title">node</span> <span class="title">app.js</span>          <span class="title">Run</span> `<span class="title">node</span> <span class="title">app.js</span>` <span class="title">with</span> <span class="title">the</span> <span class="title">PATH</span> <span class="title">pointing</span> <span class="title">to</span> <span class="title">node</span> <span class="title">v0</span>.10.32</span><br><span class="line">  <span class="title">nvm</span> <span class="title">alias</span> <span class="title">default</span> 0.10.32             <span class="title">Set</span> <span class="title">default</span> <span class="title">node</span> <span class="title">version</span> <span class="title">on</span> <span class="title">a</span> <span class="title">shell</span></span><br><span class="line"></span><br><span class="line"><span class="title">Note</span>:</span><br><span class="line">  <span class="title">to</span> <span class="title">remove</span>, <span class="title">delete</span>, <span class="title">or</span> <span class="title">uninstall</span> <span class="title">nvm</span> - <span class="title">just</span> <span class="title">remove</span> ~/.<span class="title">nvm</span>, ~/.<span class="title">npm</span>, <span class="title">and</span> ~/.<span class="title">bower</span> <span class="title">folders</span></span></span><br></pre></td></tr></table></figure>
 <p>如果測試成功的話，那就可以開始安裝 Node.js 了！上面辛苦的安裝 NVM 可以為未來 Node.js 的版本切換省下許多功夫。</p>
-<ol>
+<h2 id="用_NVM_安裝_Node-js">用 NVM 安裝 Node.js</h2><ol>
 <li><p>讓 NVM 找出目前所有能安裝的版本，使用這個指令需要等待一下，然後會跑出一堆 Node.js 和 io.js 的版本。</p>
  <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls-remote</span><br></pre></td></tr></table></figure>
 </li>
@@ -200,10 +197,11 @@ ga('send', 'pageview');
 <li><p>切換指定使用的版本</p>
  <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm use <span class="number">0</span>.<span class="number">12</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
 <li><p>查詢 nvm 的現狀，以下即是列印出來的狀況，可以查看當前使用的版本、預設使用的版本、穩定版本等等資訊…，方便日後切換版本時查看。</p>
  <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls</span><br><span class="line">       v0.<span class="number">12</span>.<span class="number">2</span></span><br><span class="line">default -&gt; v0.<span class="number">10</span>.<span class="number">24</span></span><br><span class="line">node -&gt; stable (-&gt; v0.<span class="number">12</span>.<span class="number">2</span>) (default)</span><br><span class="line">stable -&gt; <span class="number">0</span>.<span class="number">12</span> (-&gt; v0.<span class="number">12</span>.<span class="number">2</span>) (default)</span><br><span class="line">iojs -&gt; iojs- (-&gt; N/A) (default)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>測試 node.js 安裝完成</p>
+ <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node -v </span><br><span class="line">v0.<span class="number">10</span>.<span class="number">24</span></span><br><span class="line">$ which </span><br><span class="line">/usr/local/opt/nvm/v0.<span class="number">10</span>.<span class="number">24</span>/bin/node</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="結語">結語</h2><p>以個人的經驗而已，在 Node.js 的版本之間切換並沒有非常頻繁，社群通常都通用 v0.12.2 或是 v0.10.24 左右的版本，這幾的版本本身並沒有相當大的排斥性，但總偶爾會遇到其他版本的使用情況，如果沒有 nvm ，屆時就只能乖乖的移除並重新安裝。</p>
@@ -219,7 +217,7 @@ ga('send', 'pageview');
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" data-id="cid55qknf0000ysu01errh2sb" class="article-share-link">分享至</a>
+        <a data-url="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" data-id="cidah5tlz0000rfu0xv5l29v0" class="article-share-link">分享至</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a></li></ul>
@@ -250,6 +248,16 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
+    <a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          Part 2 - 快速建立網頁伺服器
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
   
     <a href="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
@@ -272,7 +280,27 @@ ga('send', 'pageview');
             
             <div class="item-thumbnail">
               
-<a href="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" class="thumbnail">
+<a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="thumbnail">
+  
+    <span style="background-image:url(http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png
+)" alt="Part 2 - 快速建立網頁伺服器" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="title">Part 2 - 快速建立網頁伺服器</a></p>
+              <p class="item-date"><time datetime="2015-08-12T13:04:24.000Z" itemprop="datePublished">2015-08-12</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" class="thumbnail">
   
     <span style="background-image:url(http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png
 )" alt="Part 1 - 簡介與安裝" class="thumbnail-image"></span>
@@ -283,7 +311,7 @@ ga('send', 'pageview');
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
-              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/09/Node_01_從零開始/" class="title">Part 1 - 簡介與安裝</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" class="title">Part 1 - 簡介與安裝</a></p>
               <p class="item-date"><time datetime="2015-08-09T10:41:42.000Z" itemprop="datePublished">2015-08-09</time></p>
             </div>
           </li>
@@ -337,7 +365,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">分類</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -347,7 +375,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">歸檔</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="http://polarbearandrew.github.io/blog/archives/2015/08/">八月 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="http://polarbearandrew.github.io/blog/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -357,7 +385,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">標籤</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -367,7 +395,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">標籤雲</h3>
     <div class="widget tagcloud">
-      <a href="http://polarbearandrew.github.io/blog/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="http://polarbearandrew.github.io/blog/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="http://polarbearandrew.github.io/blog/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/" style="font-size: 10px;">Node.js 從零開始</a> <a href="http://polarbearandrew.github.io/blog/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="http://polarbearandrew.github.io/blog/tags/社群活動/" style="font-size: 15px;">社群活動</a>
+      <a href="http://polarbearandrew.github.io/blog/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="http://polarbearandrew.github.io/blog/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="http://polarbearandrew.github.io/blog/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/" style="font-size: 15px;">Node.js 從零開始</a> <a href="http://polarbearandrew.github.io/blog/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="http://polarbearandrew.github.io/blog/tags/社群活動/" style="font-size: 15px;">社群活動</a>
     </div>
   </div>
 

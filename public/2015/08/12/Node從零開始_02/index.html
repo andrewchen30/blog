@@ -3,31 +3,45 @@
 <head>
   <meta charset="utf-8">
   
-  <title>淺談前端框架未來，Angular, React, 還是...？ | AndrewChen Blog</title>
+  <title>Part 2 - 快速建立網頁伺服器 | AndrewChen Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+  <meta name="description" content="Node.js 從零開始
+Node.js 簡介用簡單一點的解釋方式來說， Node.js 就是寫在伺服器端的 JavaScript。單純以網頁伺服器而言，其實並沒有相當複雜。仔細想想只要處理幾件事情：
 
+解析 Client 提出的請求
+跟資料庫要求資料
+對資料做一些處理：檢查、篩選等等商業邏輯
+回應對應的資料給 Client
 
-前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
-淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, embe">
+初次學習 Node.js，我們先用最簡單的方式建立 Node.js h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="淺談前端框架未來，Angular, React, 還是...？">
-<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/index.html">
+<meta property="og:title" content="Part 2 - 快速建立網頁伺服器">
+<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/index.html">
 <meta property="og:site_name" content="AndrewChen Blog">
-<meta property="og:description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+<meta property="og:description" content="Node.js 從零開始
+Node.js 簡介用簡單一點的解釋方式來說， Node.js 就是寫在伺服器端的 JavaScript。單純以網頁伺服器而言，其實並沒有相當複雜。仔細想想只要處理幾件事情：
 
+解析 Client 提出的請求
+跟資料庫要求資料
+對資料做一些處理：檢查、篩選等等商業邏輯
+回應對應的資料給 Client
 
-前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
-淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, embe">
-<meta property="og:image" content="http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png">
-<meta property="og:updated_time" content="2015-08-03T11:29:32.000Z">
+初次學習 Node.js，我們先用最簡單的方式建立 Node.js h">
+<meta property="og:image" content="http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png">
+<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/node_1.png">
+<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/node_2.png">
+<meta property="og:updated_time" content="2015-08-13T17:55:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="淺談前端框架未來，Angular, React, 還是...？">
-<meta name="twitter:description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+<meta name="twitter:title" content="Part 2 - 快速建立網頁伺服器">
+<meta name="twitter:description" content="Node.js 從零開始
+Node.js 簡介用簡單一點的解釋方式來說， Node.js 就是寫在伺服器端的 JavaScript。單純以網頁伺服器而言，其實並沒有相當複雜。仔細想想只要處理幾件事情：
 
+解析 Client 提出的請求
+跟資料庫要求資料
+對資料做一些處理：檢查、篩選等等商業邏輯
+回應對應的資料給 Client
 
-前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
-淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, embe">
+初次學習 Node.js，我們先用最簡單的方式建立 Node.js h">
   
   
     <link rel="icon" href="/favicon.png">
@@ -112,11 +126,11 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
               
-              <h1 class="header"><a class="page-title-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></h1>
+              <h1 class="header"><a class="page-title-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></h1>
             </div>
             <div class="main-body-content">
               
-  <article id="post-002_AngularReactOrOther" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Node從零開始_02" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -124,42 +138,61 @@ ga('send', 'pageview');
           
   
     <h1 class="article-title" itemprop="name">
-      淺談前端框架未來，Angular, React, 還是...？
+      Part 2 - 快速建立網頁伺服器
     </h1>
   
 
         </header>
       
       <p class="article-byline">
-        <a href="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" class="article-date">
-  <time datetime="2015-08-02T01:13:44.000Z" itemprop="datePublished">2015-08-02</time>
+        <a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="article-date">
+  <time datetime="2015-08-12T13:04:24.000Z" itemprop="datePublished">2015-08-12</time>
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <blockquote>
-<p>本篇文上是本人Andrew Chen為<a href="http://jsdc.tw" target="_blank" rel="external">JSDC 2015</a>撰寫<br>感謝<a href="https://www.facebook.com/clonncd?fref=ts" target="_blank" rel="external">Caeser Chi</a>給予指導</p>
-</blockquote>
-<p><img src="http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png" alt="前端框架未來？React, Angular or ..?"></p>
-<p>前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。</p>
-<h2 id="淺談前端框架">淺談前端框架</h2><p>隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 <a href="http://batmanjs.org" target="_blank" rel="external">batman.js</a>, <a href="http://backbonejs.org" target="_blank" rel="external">backbone.js</a>, <a href="http://emberjs.com" target="_blank" rel="external">emberjs</a> 在中期也開始出現了許多不同框架，其中到了 Google 踏進 Angular.js 之後前端框架正式熱門起來，也掀起另外一波大戰。</p>
-<p>隨著世代的轉移，JavaScript 漸漸語法轉移到 ES6，語法不同，開始有了不同應用，也因此又出現了令人亮眼的新秀：<a href="http://aurelia.io" target="_blank" rel="external">Aurelia</a>。</p>
-<p>由於前端框架的世界更新相當迅速，不斷有新的Framwork出現，各家開發者對自己熟悉的框架各執其詞，其實相當難定義何者叫好。</p>
-<h2 id="前端框架未來？React,_Angular_?">前端框架未來？React, Angular ?</h2><p><a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a> 和 <a href="http://aurelia.io" target="_blank" rel="external">Angular</a> 目前為前端兩大流行的框架，兩者的風格迥異。</p>
-<p>React 主打 Single Source of True 和 Flux 的單項資料流，重新以元件的思維角度去設計 WebApp，最後又採用相同思維可以進行開發 iOS, Android native 程式框架 - React Native 讓大家眼睛為之一亮。</p>
-<p>而在Angular目前的情況較為不明朗，相當多的開發者正在使用能穩定運作的 1.x 版本，但是 Angular 2.x 的版本卻面臨了相當大的改版，而且並沒有支援 1.x 的部分。 Angular 最大亮點在雙向資料綁定，簡潔的資料綁定和監控配上快節奏的開發技巧時，產生令人驚豔的開發速度。</p>
-<p>React 跟 Angular 整體的核心思維是相當不同的，React 特色在於簡化的開發邏輯與資料流，單純的單項資料流讓開發流程和除錯都容易了許多，React 的結構設計也讓抽取元件變得直觀與單純，React 傾向於將開發簡化，在設計好架構與資料結構後就減少犯錯的機會。</p>
-<p>但從另一個角度來說，React針對單一的操作，要撰寫的程式碼多出了許多，整個架構也變得龐大。而 Angular 則相反，Angular 在處理資料時相當快速且方便，雙向的資料綁定讓開者並不需要思考太多元件對應的關係，但也因此最終可能會讓整個專案陷入混亂，Angular 在抽取元件時比 React 需要更多的開發技巧，對整體團隊的開發素質要求也相對的更高。</p>
-<h2 id="新的選擇_-_Aurelia">新的選擇 - Aurelia</h2><p>Aurelia 或許可以說介於 React 和 Angular 兩者之間，Aurelia 目前為相當新秀的開發框架，他本身與 Angular 的資料綁定方式相當類似，不僅僅對 Angular 的開發者相當容易上手，安插在 HTML5 中的屬性也更加語意化。</p>
-<p>Aurelia 的核心圍繞在模板上，因此他似乎同時擁有了 React 類似元件的觀念，又同時有 Angular 綁定資料的手法，算是相當多元，除此之外 Aurelia 對 ES6, ES7 擁有更高的支援度。</p>
-<p>當然目前 Aurelia 還在持續開發中，雖然版本尚未穩定，但是已經是個值得注目的前端框架，可以開始試著去執行，了解 Aurelia ，或許在現今 Single Page App 爆炸性成長的階段，Aurelia 能在未來佔有一席之地。</p>
-<p>也許未來 JavaScript 真的能夠做到前後端統一程式碼進行開發，也有可能踏入 hardware 開發領域，這都需要時間來證明，當然也需要各位的投入，就讓我們持續關注這個世代的變化吧。</p>
-
+        <h3 id="Node-js_從零開始">Node.js 從零開始</h3><p><img src="http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png" alt="Node.js"></p>
+<h2 id="Node-js_簡介">Node.js 簡介</h2><p>用簡單一點的解釋方式來說， Node.js 就是寫在伺服器端的 JavaScript。單純以網頁伺服器而言，其實並沒有相當複雜。仔細想想只要處理幾件事情：</p>
+<ul>
+<li>解析 Client 提出的請求</li>
+<li>跟資料庫要求資料</li>
+<li>對資料做一些處理：檢查、篩選等等商業邏輯</li>
+<li>回應對應的資料給 Client</li>
+</ul>
+<p>初次學習 Node.js，我們先用最簡單的方式建立 Node.js http server，先看到效果，細節在日後在逐一去解釋、了解。首要目標是利用框架快速建立一個網頁伺服器，我們透過 Node.js 框架 <a href="http://expressjs.com" target="_blank" rel="external">Express</a> 來建立網站伺服器。Express 是相當容易學習的框架之一。</p>
+<p>安裝 Node.js 的框架與套件需要使用 NPM (Node Package Manager) 來，NVM 跟 NPM 是相當不同的輔助管理工具，稍微釐清一下兩者：</p>
+<ul>
+<li>NVM：安裝/管理不同版本的 Node.js</li>
+<li>NPM：安裝/管理各種 Node.js 的套件</li>
+</ul>
+<p>往後 NPM 會比 NVM 還頻繁的出現，NPM的細節與運作方式會在下一章節進行介紹，在此依照著操作即可完成。</p>
+<p><strong>1. 安裝第一個必要套件：express-generator</strong></p>
+<p>首先在電腦中找個習慣的地方建置一個資料夾，在資料夾下透過 NPM 指令安裝 express-generator 簡易的架構產生器：<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g express-generator</span><br><span class="line">$ sudo npm install -g express-generator</span><br></pre></td></tr></table></figure></p>
+<p>某些情況下需要系統管理員的權限才能 <code>npm install</code>，單純只是因為建立資料夾的地方權限不足而已，如果權限不足會噴出很明顯的錯誤訊息(error message)告訴我們無法建立資料夾。</p>
+<p><strong>2. 透過express-generator建立網站基本結構</strong></p>
+<p>接著透過產生器提供的指令，產生出整個專案的基礎架構，日後也可以使用產生器產生伺服器基礎的架構，再去修改或補足想要的其它套件。<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express myApp</span><br></pre></td></tr></table></figure></p>
+<p>馬上馬出基本結構建立的結果的訊息<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ express myApp</span><br><span class="line"></span><br><span class="line">   create : myApp</span><br><span class="line">   create : myApp/package.json</span><br><span class="line">   create : myApp/app.js</span><br><span class="line">   create : myApp/public</span><br><span class="line">   create : myApp/public/javascripts</span><br><span class="line">   create : myApp/public/images</span><br><span class="line">   create : myApp/public/stylesheets</span><br><span class="line">   create : myApp/public/stylesheets/style.css</span><br><span class="line">   create : myApp/routes</span><br><span class="line">   create : myApp/routes/index.js</span><br><span class="line">   create : myApp/routes/users.js</span><br><span class="line">   create : myApp/views</span><br><span class="line">   create : myApp/views/index.jade</span><br><span class="line">   create : myApp/views/layout.jade</span><br><span class="line">   create : myApp/views/error.jade</span><br><span class="line">   create : myApp/bin</span><br><span class="line">   create : myApp/bin/www</span><br><span class="line"></span><br><span class="line">   install dependencies:</span><br><span class="line">     $ <span class="built_in">cd</span> myApp &amp;&amp; npm install</span><br><span class="line"></span><br><span class="line">   run the app:</span><br><span class="line">     $ DEBUG=myApp:* ./bin/www</span><br></pre></td></tr></table></figure></p>
+<p>此操作是建立基本的 Node.js http server 的框架，接著是進入到伺服器的資料夾內，將相依性的套件安裝起來。可以理解成汽車的結構幾乎都完成了，現在只要打開引擎蓋把引擎放進去。</p>
+<p><strong>3.安裝網站所需要的一切核心套件</strong></p>
+<p>上方所說的”所需要的一切核心套件”，專業來說就是”相依性套件”或是在 npm 中專頁名詞為 “dependencies”。進入伺服器的資料夾，myApp 是剛剛自動產生時所使用的名稱，可以隨專案需求更換。進入後直接用 NPM 指令安裝整個套件。<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myApp</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<p><code>npm install</code> 這個指令是安裝此專案目錄下需要的相依性套件，NPM 會很聰明地把需要安裝的套件通通下載下來自動安裝，包括對應的版本也會正確地抓取，甚至是相依性套件的相依性套件。初始化的 <code>npm install</code> 需要一些時間，與需要安裝的套件數量成正比，稍作等帶後即可看到長長一串的安裝清單，沒有錯誤訊息的話即可繼續往下。</p>
+<p>註：<code>npm install</code> 的細節會再下一篇教學中解說。</p>
+<p><strong>4.撰寫啟動伺服器的程式碼</strong></p>
+<p>用任何習慣的編輯器打開 <code>myApp</code> 資料夾之下的 <code>app.js</code>。 <code>app.js</code> 是整個 server 的啟動檔案，express-generator相當完整將我們基本需要的程式碼 99% 都寫完了，只需要在最後方補上 server 監聽 port 的動作。在檔案尾端找到 <code>module.exports = app;</code> 將以下程式補在該行之前：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server started -&gt; http://localhost:3000'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app; <span class="comment">//&lt;-- 原先就有這行</span></span><br></pre></td></tr></table></figure></p>
+<p>或是我個人認為比較漂亮的寫法，port的值可以是從其他設定檔中抓取。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> port = <span class="number">3000</span>; <span class="comment">//值可能是從其他設定檔中抓取</span></span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listening -&gt; http://localhost:'</span> + port);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app; <span class="comment">//原先就有這行</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>5.使用 Node.js 啟動伺服器</strong></p>
+<p>嚴格來說沒什麼太大的差異，單純抽取 port 這個參數而已。確認補上上方這段程式碼後，接著回到終端幾啟動伺服器。在 <code>myApp</code> 的資料夾內輸入啟動指令：( 使用 Node.js 讀取 app.js ，啟動這個伺服器)<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node app.js</span><br></pre></td></tr></table></figure></p>
+<p>啟動後再終端幾內會看到類似的畫面：</p>
+<p><img src="http://polarbearandrew.github.io/blog/img/node_1.png" alt="node app.js"></p>
+<p>然後在瀏覽器的網址列輸入<a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>即可看到 express-generator 自動產生的歡迎頁面！</p>
+<p><img src="http://polarbearandrew.github.io/blog/img/node_2.png" alt="Express welcome page"></p>
+<h2 id="結語">結語</h2><p>express-generator 使用名為 express 的框架建置最基本的網站伺服器架構，建置完架構後可以再手動進行修改以符合個人習慣或專案需求。 express 是目前 Node.js 套件中優秀好用的框架之一，之後的 <strong>Node.js 從零開始</strong> 的教程會使用 express 做為主軸，完成之後會進一步撰寫有關 Koa.js 的文章。</p>
+<h2 id="參考資料">參考資料</h2>
       </div>
       <footer class="article-footer">
-        <a data-url="http://polarbearandrew.github.io/blog/2015/08/02/002_AngularReactOrOther/" data-id="ciczhgt7g000blju01ej3ulox" class="article-share-link">分享至</a>
+        <a data-url="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" data-id="cidah5tmf0005rfu0gg8284xf" class="article-share-link">分享至</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a></li></ul>
 
       </footer>
     </div>
@@ -187,20 +220,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <p class="article-nav-title">
-        
-          Part 1 - 簡介與安裝
-        
-      </p>
-      <i class="icon" id="icon-chevron-right"></i>
-    </a>
   
-  
-    <a href="http://polarbearandrew.github.io/blog/2015/08/02/001_JSDevilDay/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <p class="article-nav-title">JS Devil Day 參與心得</p>
+      <p class="article-nav-title">Part 1 - 簡介與安裝</p>
       <i class="icon" id="icon-chevron-left"></i>
     </a>
   
