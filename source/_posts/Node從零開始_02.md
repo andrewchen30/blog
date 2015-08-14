@@ -38,12 +38,14 @@ comments: false
 	$ npm install -g express-generator
 	$ sudo npm install -g express-generator
 	```
-	
+
+	正確情況：
 	![安裝成功](http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_1.png)
-	
+
+	錯誤情況：
 	![安裝失敗 需要權限才能建立資料夾](http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_2.png)
 
-某些情況下需要系統管理員的權限才能 `npm install`，單純只是因為建立資料夾的地方權限不足而已，如果權限不足會噴出很明顯的錯誤訊息(error message)告訴我們無法建立資料夾。
+	某些情況下需要系統管理員的權限才能 `npm install`，單純只是因為建立資料夾的地方權限不足而已，如果權限不足會噴出很明顯的錯誤訊息(error message)告訴我們無法建立資料夾。
 
 2. 透過express-generator建立網站基本結構
 
@@ -82,9 +84,9 @@ comments: false
 	   run the app:
 	     $ DEBUG=myApp:* ./bin/www
 	```
-	
+
 	輸入指令 `ls -l` 可以看到目前的資料夾下的狀況， `node_modules` 的資料夾要完成後面的安裝後才會出現。
-	
+
 	![myApp 資料夾內的狀況](http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_4.png)
 
 	此操作是建立基本的 Node.js http server 的框架，接著是進入到伺服器的資料夾內，將相依性的套件安裝起來。可以理解成汽車的結構幾乎都完成了，現在只要打開引擎蓋把引擎放進去。
@@ -125,7 +127,7 @@ comments: false
 
 	module.exports = app; //原先就有這行
 	```
-	
+
 	![ app.js ](http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_5.png)
 
 ## 使用 Node.js 啟動伺服器
@@ -150,3 +152,6 @@ express-generator 使用名為 express 的框架建置最基本的網站伺服�
 
 
 ## 參考資料
+
+* [express](http://expressjs.com/starter/generator.html)
+* [express-generator(npm)](https://www.npmjs.com/package/express-generator)
