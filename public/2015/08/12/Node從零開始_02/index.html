@@ -28,9 +28,9 @@ Node.js 簡介用簡單一點的解釋方式來說， Node.js 就是寫在伺服
 
 初次學習 Node.js，我們先用最簡單的方式建立 Node.js h">
 <meta property="og:image" content="http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png">
-<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/node_1.png">
-<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/node_2.png">
-<meta property="og:updated_time" content="2015-08-13T17:55:38.000Z">
+<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_6.png">
+<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_7.png">
+<meta property="og:updated_time" content="2015-08-14T01:12:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Part 2 - 快速建立網頁伺服器">
 <meta name="twitter:description" content="Node.js 從零開始
@@ -165,27 +165,51 @@ ga('send', 'pageview');
 <li>NPM：安裝/管理各種 Node.js 的套件</li>
 </ul>
 <p>往後 NPM 會比 NVM 還頻繁的出現，NPM的細節與運作方式會在下一章節進行介紹，在此依照著操作即可完成。</p>
-<p><strong>1. 安裝第一個必要套件：express-generator</strong></p>
-<p>首先在電腦中找個習慣的地方建置一個資料夾，在資料夾下透過 NPM 指令安裝 express-generator 簡易的架構產生器：<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g express-generator</span><br><span class="line">$ sudo npm install -g express-generator</span><br></pre></td></tr></table></figure></p>
-<p>某些情況下需要系統管理員的權限才能 <code>npm install</code>，單純只是因為建立資料夾的地方權限不足而已，如果權限不足會噴出很明顯的錯誤訊息(error message)告訴我們無法建立資料夾。</p>
-<p><strong>2. 透過express-generator建立網站基本結構</strong></p>
-<p>接著透過產生器提供的指令，產生出整個專案的基礎架構，日後也可以使用產生器產生伺服器基礎的架構，再去修改或補足想要的其它套件。<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express myApp</span><br></pre></td></tr></table></figure></p>
-<p>馬上馬出基本結構建立的結果的訊息<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ express myApp</span><br><span class="line"></span><br><span class="line">   create : myApp</span><br><span class="line">   create : myApp/package.json</span><br><span class="line">   create : myApp/app.js</span><br><span class="line">   create : myApp/public</span><br><span class="line">   create : myApp/public/javascripts</span><br><span class="line">   create : myApp/public/images</span><br><span class="line">   create : myApp/public/stylesheets</span><br><span class="line">   create : myApp/public/stylesheets/style.css</span><br><span class="line">   create : myApp/routes</span><br><span class="line">   create : myApp/routes/index.js</span><br><span class="line">   create : myApp/routes/users.js</span><br><span class="line">   create : myApp/views</span><br><span class="line">   create : myApp/views/index.jade</span><br><span class="line">   create : myApp/views/layout.jade</span><br><span class="line">   create : myApp/views/error.jade</span><br><span class="line">   create : myApp/bin</span><br><span class="line">   create : myApp/bin/www</span><br><span class="line"></span><br><span class="line">   install dependencies:</span><br><span class="line">     $ <span class="built_in">cd</span> myApp &amp;&amp; npm install</span><br><span class="line"></span><br><span class="line">   run the app:</span><br><span class="line">     $ DEBUG=myApp:* ./bin/www</span><br></pre></td></tr></table></figure></p>
-<p>此操作是建立基本的 Node.js http server 的框架，接著是進入到伺服器的資料夾內，將相依性的套件安裝起來。可以理解成汽車的結構幾乎都完成了，現在只要打開引擎蓋把引擎放進去。</p>
-<p><strong>3.安裝網站所需要的一切核心套件</strong></p>
-<p>上方所說的”所需要的一切核心套件”，專業來說就是”相依性套件”或是在 npm 中專頁名詞為 “dependencies”。進入伺服器的資料夾，myApp 是剛剛自動產生時所使用的名稱，可以隨專案需求更換。進入後直接用 NPM 指令安裝整個套件。<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myApp</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p><code>npm install</code> 這個指令是安裝此專案目錄下需要的相依性套件，NPM 會很聰明地把需要安裝的套件通通下載下來自動安裝，包括對應的版本也會正確地抓取，甚至是相依性套件的相依性套件。初始化的 <code>npm install</code> 需要一些時間，與需要安裝的套件數量成正比，稍作等帶後即可看到長長一串的安裝清單，沒有錯誤訊息的話即可繼續往下。</p>
-<p>註：<code>npm install</code> 的細節會再下一篇教學中解說。</p>
-<p><strong>4.撰寫啟動伺服器的程式碼</strong></p>
-<p>用任何習慣的編輯器打開 <code>myApp</code> 資料夾之下的 <code>app.js</code>。 <code>app.js</code> 是整個 server 的啟動檔案，express-generator相當完整將我們基本需要的程式碼 99% 都寫完了，只需要在最後方補上 server 監聽 port 的動作。在檔案尾端找到 <code>module.exports = app;</code> 將以下程式補在該行之前：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server started -&gt; http://localhost:3000'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app; <span class="comment">//&lt;-- 原先就有這行</span></span><br></pre></td></tr></table></figure></p>
-<p>或是我個人認為比較漂亮的寫法，port的值可以是從其他設定檔中抓取。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> port = <span class="number">3000</span>; <span class="comment">//值可能是從其他設定檔中抓取</span></span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listening -&gt; http://localhost:'</span> + port);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app; <span class="comment">//原先就有這行</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>5.使用 Node.js 啟動伺服器</strong></p>
-<p>嚴格來說沒什麼太大的差異，單純抽取 port 這個參數而已。確認補上上方這段程式碼後，接著回到終端幾啟動伺服器。在 <code>myApp</code> 的資料夾內輸入啟動指令：( 使用 Node.js 讀取 app.js ，啟動這個伺服器)<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node app.js</span><br></pre></td></tr></table></figure></p>
-<p>啟動後再終端幾內會看到類似的畫面：</p>
-<p><img src="http://polarbearandrew.github.io/blog/img/node_1.png" alt="node app.js"></p>
+<ol>
+<li><p>安裝第一個必要套件：express-generator</p>
+<p> 首先在電腦中找個習慣的地方建置一個資料夾，在資料夾下透過 NPM 指令安裝 express-generator 簡易的架構產生器：</p>
+ <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g express-generator</span><br><span class="line">$ sudo npm install -g express-generator</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>![<span class="link_label">安裝成功</span>](<span class="link_url">http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_1.png</span>)
+
+![<span class="link_label">安裝失敗 需要權限才能建立資料夾</span>](<span class="link_url">http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_2.png</span>)
+</code></pre><p>某些情況下需要系統管理員的權限才能 <code>npm install</code>，單純只是因為建立資料夾的地方權限不足而已，如果權限不足會噴出很明顯的錯誤訊息(error message)告訴我們無法建立資料夾。</p>
+<ol>
+<li><p>透過express-generator建立網站基本結構</p>
+<p> 接著透過產生器提供的指令，產生出整個專案的基礎架構，日後也可以使用產生器產生伺服器基礎的架構，再去修改或補足想要的其它套件。</p>
+ <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express myApp</span><br></pre></td></tr></table></figure>
+<p> 馬上跳出基本結構建立的結果的訊息</p>
+ <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ express myApp</span><br><span class="line"></span><br><span class="line">   create : myApp</span><br><span class="line">   create : myApp/package.json</span><br><span class="line">   create : myApp/app.js</span><br><span class="line">   create : myApp/public</span><br><span class="line">   create : myApp/public/javascripts</span><br><span class="line">   create : myApp/public/images</span><br><span class="line">   create : myApp/public/stylesheets</span><br><span class="line">   create : myApp/public/stylesheets/style.css</span><br><span class="line">   create : myApp/routes</span><br><span class="line">   create : myApp/routes/index.js</span><br><span class="line">   create : myApp/routes/users.js</span><br><span class="line">   create : myApp/views</span><br><span class="line">   create : myApp/views/index.jade</span><br><span class="line">   create : myApp/views/layout.jade</span><br><span class="line">   create : myApp/views/error.jade</span><br><span class="line">   create : myApp/bin</span><br><span class="line">   create : myApp/bin/www</span><br><span class="line"></span><br><span class="line">   install dependencies:</span><br><span class="line">     $ <span class="built_in">cd</span> myApp &amp;&amp; npm install</span><br><span class="line"></span><br><span class="line">   run the app:</span><br><span class="line">     $ DEBUG=myApp:* ./bin/www</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>輸入指令 <span class="code">`ls -l`</span> 可以看到目前的資料夾下的狀況， <span class="code">`node_modules`</span> 的資料夾要完成後面的安裝後才會出現。
+
+![<span class="link_label">myApp 資料夾內的狀況</span>](<span class="link_url">http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_4.png</span>)
+
+此操作是建立基本的 Node.js http server 的框架，接著是進入到伺服器的資料夾內，將相依性的套件安裝起來。可以理解成汽車的結構幾乎都完成了，現在只要打開引擎蓋把引擎放進去。
+</code></pre><ol>
+<li><p>安裝網站所需要的一切核心套件</p>
+<p> 上方所說的”所需要的一切核心套件”，專業來說就是”相依性套件”或是在 npm 中專頁名詞為 “dependencies”。進入伺服器的資料夾，myApp 是剛剛自動產生時所使用的名稱，可以隨專案需求更換。進入後直接用 NPM 指令安裝整個套件。</p>
+ <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myApp</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p> <code>npm install</code> 這個指令是安裝此專案目錄下需要的相依性套件，NPM 會很聰明地把需要安裝的套件通通下載下來自動安裝，包括對應的版本也會正確地抓取，甚至是相依性套件的相依性套件。初始化的 <code>npm install</code> 需要一些時間，與需要安裝的套件數量成正比，稍作等帶後即可看到長長一串的安裝清單，沒有錯誤訊息的話即可繼續往下。</p>
+<p> 註：<code>npm install</code> 的細節會再下一篇教學中解說。</p>
+</li>
+<li><p>撰寫啟動伺服器的程式碼</p>
+<p> 用任何習慣的編輯器打開 <code>myApp</code> 資料夾之下的 <code>app.js</code>。 <code>app.js</code> 是整個 server 的啟動檔案，express-generator相當完整將我們基本需要的程式碼 99% 都寫完了，只需要在最後方補上 server 監聽 port 的動作。在檔案尾端找到 <code>module.exports = app;</code> 將以下程式補在該行之前：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server started -&gt; http://localhost:3000'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app; <span class="comment">//&lt;-- 原先就有這行</span></span><br></pre></td></tr></table></figure>
+<p> 或是我個人認為比較漂亮的寫法，port的值可以是從其他設定檔中抓取。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> port = <span class="number">3000</span>; <span class="comment">//值可能是從其他設定檔中抓取</span></span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listening -&gt; http://localhost:'</span> + port);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app; <span class="comment">//原先就有這行</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>![<span class="link_label"> app.js </span>](<span class="link_url">http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_5.png</span>)
+</code></pre><h2 id="使用_Node-js_啟動伺服器">使用 Node.js 啟動伺服器</h2><p>嚴格來說沒什麼太大的差異，單純抽取 port 這個參數而已。確認補上上方這段程式碼後，接著回到終端幾啟動伺服器。在 <code>myApp</code> 的資料夾內輸入啟動指令：( 使用 Node.js 讀取 app.js ，啟動這個伺服器)</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node app.js</span><br></pre></td></tr></table></figure>
+<p>啟動後再終端幾內會看到游標卡在那邊，並沒有跳出下一行。這樣就是正確的情況，代表伺服器啟動了，正在監聽我們所正定的 port 3000 ：</p>
+<p><img src="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_6.png" alt="node app.js"></p>
 <p>然後在瀏覽器的網址列輸入<a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>即可看到 express-generator 自動產生的歡迎頁面！</p>
-<p><img src="http://polarbearandrew.github.io/blog/img/node_2.png" alt="Express welcome page"></p>
-<h2 id="結語">結語</h2><p>express-generator 使用名為 express 的框架建置最基本的網站伺服器架構，建置完架構後可以再手動進行修改以符合個人習慣或專案需求。 express 是目前 Node.js 套件中優秀好用的框架之一，之後的 <strong>Node.js 從零開始</strong> 的教程會使用 express 做為主軸，完成之後會進一步撰寫有關 Koa.js 的文章。</p>
+<p><img src="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_7.png" alt="Express welcome page"></p>
+<h2 id="結語">結語</h2><p>express-generator 使用名為 express 的框架建置最基本的網站伺服器架構，建置完架構後可以再手動進行修改以符合個人習慣或專案需求。 express 是目前 Node.js 套件中優秀好用的框架之一，之後的 <strong>Node.js 從零開始</strong> 的教程會使用 express 做為主軸，更之後會進一步撰寫有關 Koa.js 的文章。</p>
 <h2 id="參考資料">參考資料</h2>
       </div>
       <footer class="article-footer">
