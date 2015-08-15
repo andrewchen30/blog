@@ -1,5 +1,5 @@
-title: Part 3 - 淺談 NPM
-date: 2015-08-12 21:04:24
+title: Part 3 - NPM 基礎
+date: 2015-08-15 21:55:00
 tags:
 - Node.js
 - Node.js 從零開始
@@ -88,9 +88,9 @@ package.json 是 npm 最重要的核心，每個專案都會擁有一個 package
 	* 以後會頻繁使用的套件
 	* 與專案本身無關的套件
 
-	就已 express-generator 來說， generator 其實是與專案無關的，僅僅進行專案初始化的動作，初始化完成後其實並不需要 express-generator 才能運轉，所以在 "相依性套件" 的思考上，建置完成的專案並不依賴 express-generator，也就是沒有 express-generator 專案也能啟動。此時我會選擇將 express-generator 安裝在全域，全域安裝其實是安裝在  `node/bin` 的資料夾下。全域安裝的模組可以在許多專案間可以共用、重複使用，例如某些 babel 的套件也是此情況。而會重複使用的套件，同樣是 express-generator 可以協助我初始化不同的專案，基於方便，一次安裝為全域套件即可，不需要在每次初始化專案時就重新安裝 express-generator。
+	就以 express-generator 來說， generator 其實是與專案無關的，僅僅進行專案初始化的動作，初始化完成後其實並不需要 express-generator 才能運轉，所以在 "相依性套件" 的思考上，建置完成的專案並不依賴 express-generator，也就是沒有 express-generator 專案也能啟動。此時我會選擇將 express-generator 安裝在全域，全域安裝其實是安裝在  `node/bin` 的資料夾下。全域安裝的模組可以在許多專案間可以共用、重複使用，例如某些 babel 的套件也是此情況。而會重複使用的套件，同樣是 express-generator 可以協助我初始化不同的專案，基於方便，一次安裝為全域套件即可，不需要在每次初始化專案時就重新安裝 express-generator。
 	
-	備註：某些套件本身就會要求使用全域安裝，如：nodemon
+	備註：某些套件本身就會要求使用全域安裝，如：[nodemon](https://www.npmjs.com/package/nodemon)
 
 	安裝全域套件相當簡單：`npm install <套件名稱> -g`，在尾端接上 `-g` 代表 global 的參數即可。
 
