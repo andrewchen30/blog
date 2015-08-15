@@ -116,12 +116,64 @@ package.json 是 npm 最重要的核心，每個專案都會擁有一個 package
 	$ npm install gulp --save-dev // Devdependencies
 	```
 
-5. 自動安裝 package.jso 中所有的相依性套件
-
-	```
-	$ npm install
-	``` 
+5. 自動安裝 package.json 中所有的相依性套件
 
 	相當直接的指令。npm 會自行尋找目錄下的 package.json 檔案，並且進行安裝。
-	
-	
+
+	``` bat
+	$ npm install
+	```
+
+	這邊大家應該會多少有點納悶，如果擁有使用 Git 的經驗，那請在專案的最頂層的資料夾(root),新增 `.gitignore` 這個檔案，的確直接新增即可，整個檔案名稱及是 `.gitignore` ，接著在裡面打上 `node_modules` 排除 Git 追蹤 node_modules 的資料夾，這樣在同步時就可上去 node_modules 的內容了。
+
+## 什麼是模組、套件
+
+在 NPM 裡面非常明顯的大量使用了別人撰寫的套件與模組，那這些東西又是什麼？聽起來相當困難？
+
+其實模組只是其他高手已經寫好的 JavaScript 檔案而已，經過正規的包裝，大家可以透過 NPM 的系統下載。使用 Node.js 架設伺服器需要寫很多程式碼，就有高手們推出了 Express 的模組，包裝好網頁伺服器的程式碼，讓一般開發者能順手順心的使用。這邊淺談 Node.js 的模組運作機制。
+
+首先我們找個新的資料夾，開一個新的 `demo.js` 的檔案，在裡面寫下：
+
+``` js
+//demo.js
+console.log('Demo start');
+```
+
+我們先使用 `$ node demo.js` 測試一下，如果有看到 Demo start 的訊息，就可以繼續往下。再開另一個新的檔案，`message.js` 的檔案，寫下：
+
+``` js
+//message.js
+var message = {
+  show : function(){
+    console.log('hello world !');
+  }
+}
+
+module.exports = message;
+```
+
+建立一個 message 的物件，並且包裝了 show 的 function 在內，特別的地方是最後 `module.exports = message` 的動作，他將 message 的物件輸出成 Node.js 能理解的模組，僅僅多這行，就能將過往我們熟悉的 Javascript 模組化。接著我們回頭去修改 demo.js 讓它引入並且使用這個我們自己製作的模組。
+
+``` js
+//demo.js
+console.log('Demo start');
+
+//引入模組
+var msg = require('./message.js'); 
+msg.show();
+```
+
+接著去操作 `$ node demo.js` 的指令，這次就會多看到 hello world ! 的訊息了！模組其實挺直觀的，當然 NPM 上大家時常使用的模組，裡面都包裝了相當複雜的邏輯或是功能，幫助大家解決各種問題。
+
+備註：引入模組時的路徑是撰寫 './message.js' 而不是 'message.js'，差異相當大：
+
+* 'message.js' 代表 Node.js 會去 node_modules 裡面尋找名為 message.js 的模組，想當然爾找不到。
+* './message.js' 代表 Node.js 會在相對路徑下尋找模組，也就會尋找到 message.js 這個檔案。
+
+請注意這兩者的差別，這是容易犯的小差錯。
+
+## 結語
+
+NPM 是撐起整個 Node.js 世界的大引擎，有優良的套件協助大家工作，才會吸引更多開發者加入 Node.js 的行列，最明顯的例子就是 Ruby，Ruby 在 Ruby on Rail 出現後瞬間人氣高漲，良好的社群或是模組支援，會對其造成一定程度的影響。
+
+對以上的 NPM 指令只要稍作熟悉，以後在專案流程中不時會需要增補一功能，當然有朝一日，也能參與 Node.js 的模組開法，推出屬於自己的模組。
