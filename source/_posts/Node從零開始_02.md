@@ -146,6 +146,18 @@ $ node app.js
 
 ![Express welcome page](http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_7.png)
 
+## 小小的做個修改
+
+看到預設的 Express welcome 頁面就代表成功囉，我們小小的修改一個參數，來讓網頁看起來像自己的。開啟 `route` 資料夾內的 `index.js` 然後將修改裡面的 Express 字串為自己的英文名字或是任何想要顯示的字串，刷新瀏覽器即可看到結果。
+
+``` js
+//修改前
+res.render('index', { title: 'Express' });
+
+//修改後 
+res.render('index', { title: 'Andrew Chen' });
+```
+
 ## 結語
 
 express-generator 使用名為 express 的框架建置最基本的網站伺服器架構，建置完架構後可以再手動進行修改以符合個人習慣或專案需求。 express 是目前 Node.js 套件中優秀好用的框架之一，之後的 **Node.js 從零開始** 的教程會使用 express 做為主軸，更之後會進一步撰寫有關 Koa.js 的文章。

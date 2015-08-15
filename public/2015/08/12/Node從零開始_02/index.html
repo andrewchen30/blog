@@ -34,7 +34,7 @@ Node.js 簡介用簡單一點的解釋方式來說， Node.js 就是寫在伺服
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_5.png">
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_6.png">
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_7.png">
-<meta property="og:updated_time" content="2015-08-14T01:46:05.000Z">
+<meta property="og:updated_time" content="2015-08-14T02:01:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Part 2 - 快速建立網頁伺服器">
 <meta name="twitter:description" content="Node.js 從零開始
@@ -206,6 +206,8 @@ ga('send', 'pageview');
 <p><img src="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_6.png" alt="node app.js"></p>
 <p>然後在瀏覽器的網址列輸入<a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>即可看到 express-generator 自動產生的歡迎頁面！</p>
 <p><img src="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_2_7.png" alt="Express welcome page"></p>
+<h2 id="小小的做個修改">小小的做個修改</h2><p>看到預設的 Express welcome 頁面就代表成功囉，我們小小的修改一個參數，來讓網頁看起來像自己的。開啟 <code>route</code> 資料夾內的 <code>index.js</code> 然後將修改裡面的 Express 字串為自己的英文名字或是任何想要顯示的字串，刷新瀏覽器即可看到結果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改前</span></span><br><span class="line">res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Express'</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改後 </span></span><br><span class="line">res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Andrew Chen'</span> &#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="結語">結語</h2><p>express-generator 使用名為 express 的框架建置最基本的網站伺服器架構，建置完架構後可以再手動進行修改以符合個人習慣或專案需求。 express 是目前 Node.js 套件中優秀好用的框架之一，之後的 <strong>Node.js 從零開始</strong> 的教程會使用 express 做為主軸，更之後會進一步撰寫有關 Koa.js 的文章。</p>
 <h2 id="參考資料">參考資料</h2><ul>
 <li><a href="http://expressjs.com/starter/generator.html" target="_blank" rel="external">express</a></li>
