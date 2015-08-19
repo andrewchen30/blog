@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Part 4 - Express 基礎操作 | AndrewChen Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+新增回應頁面以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：
+
+新增一個 express route 回應新頁面
+用的 jade 模板製作新頁面
+加入 nodemon 開發工具，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Part 4 - Express 基礎操作">
+<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/index.html">
+<meta property="og:site_name" content="AndrewChen Blog">
+<meta property="og:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+新增回應頁面以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：
+
+新增一個 express route 回應新頁面
+用的 jade 模板製作新頁面
+加入 nodemon 開發工具，">
+<meta property="og:image" content="https://stormpath.com/images/blog/express-and-node-opengraph.png">
+<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_3_1.png">
+<meta property="og:updated_time" content="2015-08-19T02:00:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Part 4 - Express 基礎操作">
+<meta name="twitter:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+新增回應頁面以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：
+
+新增一個 express route 回應新頁面
+用的 jade 模板製作新頁面
+加入 nodemon 開發工具，">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="http://polarbearandrew.github.io/blog/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="http://polarbearandrew.github.io/blog/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="http://polarbearandrew.github.io/blog/scrollLoading/style.css" type="text/css">
+  
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65872031-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="http://polarbearandrew.github.io/blog/" class="logo"></a>
+            <!-- <a href="/" class="logo"></a> -->
+          </h1>
+          
+            <h2 class="subtitle-wrap">
+              <p class="subtitle">fullstack JavaScript. Node.js and React.js 從零開始</p>
+            </h2>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/">首頁</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">關於</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><input type="hidden" name="sitesearch" value="http://polarbearandrew.github.io/blog"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+              
+              <h1 class="header"><a class="page-title-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-Node從零開始_04" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Part 4 - Express 基礎操作
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" class="article-date">
+  <time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="https://stormpath.com/images/blog/express-and-node-opengraph.png" alt="Express"></p>
+<h2 id="簡介">簡介</h2><p>Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。</p>
+<h2 id="新增回應頁面">新增回應頁面</h2><p>以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：</p>
+<ul>
+<li>新增一個 express route 回應新頁面</li>
+<li>用的 jade 模板製作新頁面</li>
+<li>加入 nodemon 開發工具，加速開發</li>
+<li>在頁面中放入動態的資訊</li>
+<li>讓使用者可以只用 query string 動態修改頁面的變數</li>
+</ul>
+<p>首先我們打開 <code>myApp/routes/index.js</code> ，檔案內容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET home page. */</span></span><br><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Express'</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+<p>檔案中，前兩行引入了 express 的模組，並且使用了模組裡面 router 的功能。router 顧名思義就是為這個網頁伺服器建立一個路由器，解析使用者的請求，並執行所對應到的工作或是回應正確的頁面。顯而易見的註解 <code>/* GET home page. */</code> 直接說明了些下來這段程式碼是用來回應使用者網站首頁。路由器中只有一個功能 <code>router.get( url, callback)</code>，即是當使用者輸入了路徑 <code>url</code> 的話，開始執行 <code>callback</code>。而 callback 中的 <code>res.render(&#39;index&#39;, { title: &#39;Express&#39; });</code> 是用來回應正確的頁面，我在後面再做解釋。這邊先解釋 router 本身運作的原理。接著我們看到最後一行，<code>module.exports = router;</code> 將路由器輸出成模組，模組在 app.js 中被載入。</p>
+<p>接下來就是 express 整個路由器運作的重點。</p>
+<p>打開 app.js 中找到第 8 行和第 25 行，因為 express-generator 有可能有不同的更新版本，行號有可能不同，因此找到以下兩行為：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> routes = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line">app.use(<span class="string">'/'</span>, routes);</span><br></pre></td></tr></table></figure>
+<p>因為這邊 <code>routes</code> 的命名會導致後續的解釋相當饒舌，先將它改成 <code>pages</code>，用 <code>pages</code> 來逐一理解狀況。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pages = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line">app.use(<span class="string">'/'</span>, pages);</span><br></pre></td></tr></table></figure>
+<p>前面是引入了檔案 index.js 將其儲存在 pages 的變數中，而其實 index.js 中的最後一行是 <code>module.exports = router;</code> 輸出了 <code>router</code> 作為模組，所以這邊 <code>pages</code> 是拿到了一個 <code>express.Router();</code> 的模組。換個角度說，在 index.js 中，從 express 的模組中取用了 <code>express.Router();</code> 的路由器模組，加入取得首頁的功能後並輸出成模組。在 app.js 中透過引入這麼模組拿到這個路由器的功能。</p>
+<p>為什麼要搞得這麼複雜？如果網站較為複雜，有 50 個頁面時，如果將 50 種不同的路由行為通通寫在同一個檔案中，會相當混亂，拆分路由是 express 中很重要的事情，有助於整個伺服器的結構更清晰。</p>
+<p>接著是 <code>app.use(&#39;/&#39;, pages);</code> 使用了 <code>pages</code> 剛剛載入的路由模組，而前面的 <code>/</code> 的意思是，在 pages 檔案中的路由，前面通通要接上 <code>/</code>。看看另一行更容易了解 express 的做法：<code>app.use(&#39;/users&#39;, users);</code>，載入了 <code>users</code> 這個模組，並且在前面通通接上 <code>/users</code>，即是區別 <code>users</code> 和 <code>pages</code> 這兩種操作。在設計時我們可以將針對不同對象的操作，分別放在不同的檔案中，並且在 app.js 載入時，給他們一個統一的路徑。並大幅簡化在該模組檔案中的路徑長度。</p>
+<p>以目前的狀況來說，在 index.js 中回應 home page 的這個操作，<code>/</code> 代表的是root，即是沒有接任何其他路徑的意思。透過這個路徑我們就能進行對應的操作，而此路徑對應的操作就是返回一個 express-generator 預設的歡迎頁面，使用的路徑就是：</p>
+<p>伺服器的位址 + app.js 賦予該模組的位址 + 該路由其需求的位址 = 實際發出請求的 url</p>
+<p><code>http://localhost</code> + <code>/</code> + <code>/</code>  =&gt; <code>http://localhost/</code></p>
+<p>舉例來說，我們可能有一個使用者登入/登出/個人檔案的頁面，那我們就可以寫成這樣，相當方便的歸類方式：</p>
+<p><code>http://localhost</code> + <code>/users</code> + <code>/login</code>  =&gt; <code>http://localhost/users/login</code></p>
+<p><code>http://localhost</code> + <code>/users</code> + <code>/logout</code>  =&gt; <code>http://localhost/users/logout</code></p>
+<p><code>http://localhost</code> + <code>/users</code> + <code>/profile</code>  =&gt; <code>http://localhost/users/profile</code></p>
+<p>接著我們複製並修改程式碼，讓我們能過過另一個路徑也能取得預設的首頁，在這之前可嘗試使用 <code>http://localhost/home</code> 送出請求，伺服器會回應 404 page not found。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET home page. */</span></span><br><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Express'</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET home page 2. */</span></span><br><span class="line">router.get(<span class="string">'/home'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Express'</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+<p>在終端機按下 <code>ctrl + c</code> 中斷 Node.js server，並重新啟動 <code>node app.js</code>。接著就能透過 <code>http://localhost/home</code> 拿到預設頁面。</p>
+<p>在開發 Node.js 實需要重新啟動才能讓新的程式碼重新載入生成伺服器，但是在開發時不斷的重啟伺服器相當麻煩。Node.js 中有相當多的輔助工具可以協助開發，依照目前的需求，推薦使用一套名為 nodemon 套件， <code>$ npm install nodemon -g</code> 即可使用 <code>$ nodemon app.js</code> 啟動伺服器，而 nodemon 會在伺服器的 Javascript 檔案儲存修改時，自動重新啟動伺服器，讓我們免去手動重啟。</p>
+<p>除了 nodemon 之外，仍然有幾個相似的套件可以參考。以下兩者適用於產品發佈，個人覺得並不太適合開發時期。</p>
+<ul>
+<li><a href="https://github.com/foreverjs/forever" target="_blank" rel="external">Forever</a></li>
+<li><a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a></li>
+</ul>
+<p>接著我們新增一個屬於自己的頁面，express 並不是直接回應 html 的頁面，而是編譯模板後產生 html 頁面返還給使用者。預設使用模板是 <a href="http://jade-lang.com" target="_blank" rel="external">jade</a>，jade 寫起來真的非常漂亮簡潔，帶入參數時更是方便，唯一的缺點就是在編譯的過程並不如其他模板來得快，不過在目前的需求上差異並不大。另外知名的模板有 <a href="http://www.embeddedjs.com" target="_blank" rel="external">ejs</a> ，此教學先以 jade 作為範例。請在 <code>myApp/views/</code> 下面新增一個屬於自己的 <code>andrew.jade</code> 頁面。並在裡面寫上以下內容，如果要複製以下這段程式碼，請注意排版，排版是 jade 要命脈：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="function"><span class="title">html</span><span class="params">(lang=<span class="string">"en"</span>)</span></span></span><br><span class="line">head</span><br><span class="line">  <span class="function"><span class="title">meta</span><span class="params">(charset=<span class="string">"UTF-8"</span>)</span></span></span><br><span class="line">  title Document</span><br><span class="line"><span class="tag">body</span></span><br><span class="line">  <span class="tag">h1</span> Hello world</span><br><span class="line">  <span class="tag">p</span> express demo</span><br></pre></td></tr></table></figure>
+<p>學習 jade 直接看官方的 Github 文件即可，相當易懂且又是中文的。<a href="https://github.com/jadejs/jade/blob/master/Readme_zh-cn.md" target="_blank" rel="external">Jade-Github</a>，jade並沒有非常難，每次縮排就是代表 html 標籤的內部子元素，往下建立新的一層子元素的意思。這邊有幾個重點需要注意，屬於常犯的 jade 錯誤：</p>
+<ul>
+<li>jade 仰賴縮排編譯程式碼，因要完全正確的縮排與空白</li>
+<li>前面的縮排需要統一，使用 <code>tab</code> 或 <code>2個空白</code> 或 <code>4個空白</code>，任一種，但一定要統一</li>
+<li>h1, p 內容之前，都有一個小空白，注意不要漏掉了</li>
+</ul>
+<p>接著我們修改 <code>&#39;/home&#39;</code> 這個路由，讓我們能拿到我們自己新增的頁面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET home page. */</span></span><br><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Express'</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET my page 2. */</span></span><br><span class="line">router.get(<span class="string">'/home'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'andrew'</span>); <span class="comment">//andrew 為檔案名稱</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+<p><code>res.render(&#39;andrew&#39;);</code> 的功能及時回傳 <code>andrew</code> 這個頁面。express 會在 views 的資料夾中找到 <code>andrew.jade</code> 的頁面。接著就瀏覽器會顯示 h1 大小的 Hello World 和一般的 express demo，正確顯示的話就能進行到下一步。</p>
+<p>接著我們要對這個頁面傳入參數，傳入的方式其實在取得 home page 的方式中已經多少有點提示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* GET my page 2. */</span></span><br><span class="line">router.get(<span class="string">'/home'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'andrew'</span>, &#123; name: <span class="string">'Andrew Chen'</span>&#125; );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="function"><span class="title">html</span><span class="params">(lang=<span class="string">"en"</span>)</span></span></span><br><span class="line">head</span><br><span class="line">  <span class="function"><span class="title">meta</span><span class="params">(charset=<span class="string">"UTF-8"</span>)</span></span></span><br><span class="line">  title Document</span><br><span class="line"><span class="tag">body</span></span><br><span class="line">  h1= name</span><br><span class="line">  <span class="tag">p</span> express demo</span><br></pre></td></tr></table></figure>
+<p>以 JOSN 的格式包裝資料，丟在第二個參數傳進去後可以直接使用對應變數名稱在 .jade 中打開，修改後的效果會顯示 h1 大小的 Andrew Chen 和一般的 express demo。當然 express demo 也可換成自己想要的字串。到目前為止的技術已經足夠創造一個基礎的靜態網頁伺服器了。</p>
+<p>接著我們來說明如何從使用者端訊息到伺服器端，最簡易的傳送方式就是 <code>GET</code>，使用 query string 要傳送方式，將 url 改成 <code>http://localhost:3000/home?name=Andrew</code> 可以透過 query string 將 <code>Andrew</code> 這個字串傳送到伺服器端。在伺服器端承接 query string 的參數的方式為：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* GET my page 2. */</span></span><br><span class="line">router.get(<span class="string">'/home'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = req.query.name; <span class="comment">//取得queryString的資料</span></span><br><span class="line">  res.render(<span class="string">'andrew'</span>, &#123; name: name&#125;); <span class="comment">// 再將 name 當成資料傳給 .jade</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="function"><span class="title">html</span><span class="params">(lang=<span class="string">"en"</span>)</span></span></span><br><span class="line">head</span><br><span class="line">  <span class="function"><span class="title">meta</span><span class="params">(charset=<span class="string">"UTF-8"</span>)</span></span></span><br><span class="line">  title Document</span><br><span class="line"><span class="tag">body</span></span><br><span class="line">  h1= <span class="string">'Hi! '</span> + name</span><br><span class="line">  <span class="tag">p</span> express demo</span><br></pre></td></tr></table></figure>
+<p><code>req</code> 在這邊代表 request，請求的意思。代表客戶端的請求，請求中的 <code>query</code> 所夾帶的 <code>name</code> 的參數。目前的畫面如下，除了字體很醜之外，沒什麼大問題了。</p>
+<p><img src="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_3_1.png" alt="目前成果"></p>
+<p>常用的資料傳遞操作的方式還有幾種，將會在下一章節撰寫 API 時逐一介紹。</p>
+<h2 id="Express_middleware">Express middleware</h2><p>Express middleware 是用來撰寫每個網頁的請求都需要執行的功能，可以想像成 “中間人”，所有的 router 檢查時都會路過這個 function，而在執行這個 function 後會繼續檢查並尋找原先請求的路徑。直接看範例相當清楚：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="comment">// I am middleware !</span></span><br><span class="line">router.use( <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'middleware in index.js'</span>);</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET home page. */</span></span><br><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'Express'</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* GET my page 2. */</span></span><br><span class="line">router.get(<span class="string">'/home'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">'andrew'</span>, &#123; name: <span class="string">'Andrew Chen'</span> &#125; ); <span class="comment">//andrew 為檔案名稱</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+<p>接著去看終端機中的 log，會發現 ‘middleware in index.js’ 先被顯示出來，伺服器才回應這個頁面。Middleware 可以用來做實作登入檢查機制或是身任認證。例如使用到某些特定的功能，那在整個 router 下的操作都需要檢查，那可以先透過 middleware 先檢查後在執行。</p>
+<p>那如果是一般的路由請求中使用 <code>next()</code> 這個操作，把自己當作中間人，下一個人會是誰？下一個是用來承接錯誤的 function，通常用來承接找尋不到指定頁面或是伺服器運算錯誤的狀況，就出現在 app.js 中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// production error handler</span></span><br><span class="line"><span class="comment">// no stacktraces leaked to user</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123;</span><br><span class="line">    res.status(err.status || <span class="number">500</span>);</span><br><span class="line">    res.render(<span class="string">'error'</span>, &#123;</span><br><span class="line">        message: err.message,</span><br><span class="line">        error: &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>這段程式碼就是在最終，如果上方所有的路由都找尋不到指定頁面，就會進入到這個 function，他會回覆使用者 404 not found 的訊息。</p>
+<h2 id="header_設定問題">header 設定問題</h2><p>如果需要 Node.js 中設定 http header 的話，在 <code>app.use</code> 各種 router 之前補上這段，讓非本機的連線能獲得請求的許可。這種問題在日後較容易出現，因為連線的權限不足需要許可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set haeder</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">"*"</span>);</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'Content-Type'</span>);</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET,PUT,POST,DELETE'</span>);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="結語">結語</h2><p>express 擁有對絕大多數網頁伺服器所需要的操作，大幅了簡化開發的難度，上述的 query string 和 router 完全不需要擔心操作請求字串的解析，輕鬆的就能取得參數和回傳頁面，透過這些基礎的功能，就能建立起一個簡易的網頁伺服器。善用 express 模組能撰寫自己的 API 與資料庫連線，就學會一套相當完整的網頁伺服器。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" data-id="cidi4qf4m00002qu05165gr6z" class="article-share-link">分享至</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>關注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/?lang=zh-tw" target="_blank"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100001317746154" target="_blank"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/PolarBearAndrew" target="_blank"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="http://polarbearandrew.github.io/blog/2015/08/16/Node_Redis記憶體快取/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Redis - Node.js 記憶體快取</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" class="thumbnail">
+  
+    <span style="background-image:url(https://stormpath.com/images/blog/express-and-node-opengraph.png
+)" alt="Part 4 - Express 基礎操作" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" class="title">Part 4 - Express 基礎操作</a></p>
+              <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/16/Node_Redis記憶體快取/" class="thumbnail">
+  
+    <span style="background-image:url(http://acom.azurecomcdn.net/80C57D/cdn/images/cvt-13f9af988a3bce151b5f3666660fb76825069825048a47e2c3f78ca61c38c685/page/services/cache/redis.png?t=popn
+)" alt="Redis - Node.js 記憶體快取" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/16/Node_Redis記憶體快取/" class="title">Redis - Node.js 記憶體快取</a></p>
+              <p class="item-date"><time datetime="2015-08-16T03:01:07.000Z" itemprop="datePublished">2015-08-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/15/Node從零開始_03/" class="thumbnail">
+  
+    <span style="background-image:url(https://www.npmjs.com/static/images/wombat-by-night.svg
+)" alt="Part 3 - NPM 基礎" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/15/Node從零開始_03/" class="title">Part 3 - NPM 基礎</a></p>
+              <p class="item-date"><time datetime="2015-08-15T13:55:00.000Z" itemprop="datePublished">2015-08-15</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="thumbnail">
+  
+    <span style="background-image:url(http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png
+)" alt="Part 2 - 快速建立網頁伺服器" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="title">Part 2 - 快速建立網頁伺服器</a></p>
+              <p class="item-date"><time datetime="2015-08-12T13:04:24.000Z" itemprop="datePublished">2015-08-12</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" class="thumbnail">
+  
+    <span style="background-image:url(http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png
+)" alt="Part 1 - 簡介與安裝" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/09/Node從零開始_01/" class="title">Part 1 - 簡介與安裝</a></p>
+              <p class="item-date"><time datetime="2015-08-09T10:41:42.000Z" itemprop="datePublished">2015-08-09</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">分類</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">歸檔</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="http://polarbearandrew.github.io/blog/archives/2015/08/">八月 2015</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="http://polarbearandrew.github.io/blog/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="http://polarbearandrew.github.io/blog/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="http://polarbearandrew.github.io/blog/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js/" style="font-size: 17.5px;">Node.js</a> <a href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/" style="font-size: 15px;">Node.js 從零開始</a> <a href="http://polarbearandrew.github.io/blog/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="http://polarbearandrew.github.io/blog/tags/社群活動/" style="font-size: 12.5px;">社群活動</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">鏈結</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://jsdc.tw">JSDC</a>
+          </li>
+        
+          <li>
+            <a href="https://hackathon.tw">Hackathon Taiwan</a>
+          </li>
+        
+          <li>
+            <a href="http://hexo.io">hexo</a>
+          </li>
+        
+          <li>
+            <a href="https://github.com/ppoffice/hexo-theme-hueman">theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Andrew Chen</p>
+        <!-- <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p> -->
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="http://polarbearandrew.github.io/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="http://polarbearandrew.github.io/blog/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="http://polarbearandrew.github.io/blog/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="http://polarbearandrew.github.io/blog/js/html-patch.js" type="text/javascript"></script>
+<script src="http://polarbearandrew.github.io/blog/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
