@@ -238,7 +238,11 @@ app.use(function(err, req, res, next) {
 
 ## header 設定問題
 
-如果需要 Node.js 中設定 http header 的話，在 `app.use` 各種 router 之前補上這段，讓非本機的連線能獲得請求的許可。這種問題在日後較容易出現，因為連線的權限不足需要許可。
+如果需要 Node.js 中設定 http header 的話，在 `app.use` 各種 router 之前補上這段，讓非本機的連線能獲得請求的許可。這種問題在日後較容易出現，因為連線的權限不足需要許可。這種設定方式也是利用 Middleware 的特性，讓每個請求都能擁有這些 header 的設定。
+
+![XMLHttpRequest 錯誤訊息](http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_4_2.png)
+
+解決的設定方式如下，記得是在 `app.use` 各種 router 之前補上這段。
 
 ``` js
 //set haeder

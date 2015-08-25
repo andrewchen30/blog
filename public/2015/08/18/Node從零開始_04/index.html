@@ -23,7 +23,8 @@
 加入 nodemon 開發工具，">
 <meta property="og:image" content="https://stormpath.com/images/blog/express-and-node-opengraph.png">
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_3_1.png">
-<meta property="og:updated_time" content="2015-08-19T02:00:18.000Z">
+<meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_4_2.png">
+<meta property="og:updated_time" content="2015-08-25T00:57:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Part 4 - Express 基礎操作">
 <meta name="twitter:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
@@ -94,7 +95,7 @@ ga('send', 'pageview');
               
                 <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/">首頁</a></li>
               
-                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/作品集/">作品集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></li></ul>
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/作品集/">作品集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a></li></ul>
                   
                 <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">關於</a></li>
               
@@ -204,7 +205,9 @@ ga('send', 'pageview');
 <p>那如果是一般的路由請求中使用 <code>next()</code> 這個操作，把自己當作中間人，下一個人會是誰？下一個是用來承接錯誤的 function，通常用來承接找尋不到指定頁面或是伺服器運算錯誤的狀況，就出現在 app.js 中。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// production error handler</span></span><br><span class="line"><span class="comment">// no stacktraces leaked to user</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123;</span><br><span class="line">    res.status(err.status || <span class="number">500</span>);</span><br><span class="line">    res.render(<span class="string">'error'</span>, &#123;</span><br><span class="line">        message: err.message,</span><br><span class="line">        error: &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>這段程式碼就是在最終，如果上方所有的路由都找尋不到指定頁面，就會進入到這個 function，他會回覆使用者 404 not found 的訊息。</p>
-<h2 id="header_設定問題">header 設定問題</h2><p>如果需要 Node.js 中設定 http header 的話，在 <code>app.use</code> 各種 router 之前補上這段，讓非本機的連線能獲得請求的許可。這種問題在日後較容易出現，因為連線的權限不足需要許可。</p>
+<h2 id="header_設定問題">header 設定問題</h2><p>如果需要 Node.js 中設定 http header 的話，在 <code>app.use</code> 各種 router 之前補上這段，讓非本機的連線能獲得請求的許可。這種問題在日後較容易出現，因為連線的權限不足需要許可。這種設定方式也是利用 Middleware 的特性，讓每個請求都能擁有這些 header 的設定。</p>
+<p><img src="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_4_2.png" alt="XMLHttpRequest 錯誤訊息"></p>
+<p>解決的設定方式如下，記得是在 <code>app.use</code> 各種 router 之前補上這段。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set haeder</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">"*"</span>);</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'Content-Type'</span>);</span><br><span class="line">    res.header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET,PUT,POST,DELETE'</span>);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="結語">結語</h2><p>express 擁有對絕大多數網頁伺服器所需要的操作，大幅了簡化開發的難度，上述的 query string 和 router 完全不需要擔心操作請求字串的解析，輕鬆的就能取得參數和回傳頁面，透過這些基礎的功能，就能建立起一個簡易的網頁伺服器。善用 express 模組能撰寫自己的 API 與資料庫連線，就學會一套相當完整的網頁伺服器。</p>
 
@@ -241,11 +244,11 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="http://polarbearandrew.github.io/blog/2015/08/19/003_TTtimerForOIT/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <p class="article-nav-title">
         
-          Android App - TTtimer
+          JavaScript - .Bind() .Apply() .Call()
         
       </p>
       <i class="icon" id="icon-chevron-right"></i>
@@ -273,6 +276,46 @@ ga('send', 'pageview');
             
             <div class="item-thumbnail">
               
+<a href="http://polarbearandrew.github.io/blog/2015/08/25/Node從零開始_06/" class="thumbnail">
+  
+    <span style="background-image:url(https://stormpath.com/images/blog/express-and-node-opengraph.png
+)" alt="Part 6 - Express 進階運用 (2)" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/25/Node從零開始_06/" class="title">Part 6 - Express 進階運用 (2)</a></p>
+              <p class="item-date"><time datetime="2015-08-25T02:40:36.000Z" itemprop="datePublished">2015-08-25</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/25/Node從零開始_05/" class="thumbnail">
+  
+    <span style="background-image:url(https://stormpath.com/images/blog/express-and-node-opengraph.png
+)" alt="Part 5 - Express 進階運用" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/25/Node從零開始_05/" class="title">Part 5 - Express 進階運用</a></p>
+              <p class="item-date"><time datetime="2015-08-25T01:21:00.000Z" itemprop="datePublished">2015-08-25</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
 <a href="http://polarbearandrew.github.io/blog/2015/08/19/003_TTtimerForOIT/" class="thumbnail">
   
     <span style="background-image:url(http://polarbearandrew.github.io/blog/img/TTtimer/ic_launcher.png
@@ -286,6 +329,25 @@ ga('send', 'pageview');
               <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/作品集/">作品集</a></p>
               <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/19/003_TTtimerForOIT/" class="title">Android App - TTtimer</a></p>
               <p class="item-date"><time datetime="2015-08-19T07:46:12.000Z" itemprop="datePublished">2015-08-19</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/JavaScript/">JavaScript</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" class="title">JavaScript - .Bind() .Apply() .Call()</a></p>
+              <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
             </div>
           </li>
         
@@ -309,66 +371,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="http://polarbearandrew.github.io/blog/2015/08/16/Node_Redis記憶體快取/" class="thumbnail">
-  
-    <span style="background-image:url(http://acom.azurecomcdn.net/80C57D/cdn/images/cvt-13f9af988a3bce151b5f3666660fb76825069825048a47e2c3f78ca61c38c685/page/services/cache/redis.png?t=popn
-)" alt="Redis - Node.js 記憶體快取" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a></p>
-              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/16/Node_Redis記憶體快取/" class="title">Redis - Node.js 記憶體快取</a></p>
-              <p class="item-date"><time datetime="2015-08-16T03:01:07.000Z" itemprop="datePublished">2015-08-16</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="http://polarbearandrew.github.io/blog/2015/08/15/Node從零開始_03/" class="thumbnail">
-  
-    <span style="background-image:url(https://www.npmjs.com/static/images/wombat-by-night.svg
-)" alt="Part 3 - NPM 基礎" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
-              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/15/Node從零開始_03/" class="title">Part 3 - NPM 基礎</a></p>
-              <p class="item-date"><time datetime="2015-08-15T13:55:00.000Z" itemprop="datePublished">2015-08-15</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="thumbnail">
-  
-    <span style="background-image:url(http://lamb-mei.com/wp-content/uploads/2014/09/nodejs-1024x768-1.png
-)" alt="Part 2 - 快速建立網頁伺服器" class="thumbnail-image"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
-              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/12/Node從零開始_02/" class="title">Part 2 - 快速建立網頁伺服器</a></p>
-              <p class="item-date"><time datetime="2015-08-12T13:04:24.000Z" itemprop="datePublished">2015-08-12</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -378,7 +380,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">分類</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/作品集/">作品集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/作品集/">作品集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="http://polarbearandrew.github.io/blog/categories/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -388,7 +390,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">歸檔</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="http://polarbearandrew.github.io/blog/archives/2015/08/">八月 2015</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="http://polarbearandrew.github.io/blog/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -398,7 +400,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">標籤</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/作品集/">作品集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/作品集/">作品集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="http://polarbearandrew.github.io/blog/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
