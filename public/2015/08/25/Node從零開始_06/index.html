@@ -17,7 +17,7 @@
 如果是用">
 <meta property="og:image" content="https://stormpath.com/images/blog/express-and-node-opengraph.png">
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_4_4.png">
-<meta property="og:updated_time" content="2015-08-25T02:40:18.000Z">
+<meta property="og:updated_time" content="2015-08-25T03:14:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Part 6 - Express 進階運用 (2)">
 <meta name="twitter:description" content="前言API 有各種需求，為了因應這些需求，API 能使用的操作也不是回應資料這麼簡單，接著介紹常用的 Express API 操作，透過這些操作基本上能應付絕大多數的需求。包含規劃 RESTful API，回應各種使用者操作，回應各種 bug，或是一些簡單的安全技巧。
@@ -161,6 +161,14 @@ ga('send', 'pageview');
 <p>不過在 Express 中有另外更美的解決手段，透過 Middleware 去讀取 Express 預設的 404 page，只要啟用 Middleware 的 <code>next()</code> 即可。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> err = &#123; msg: <span class="string">'登入錯誤'</span> &#125;</span><br><span class="line">  <span class="keyword">return</span> next(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>這邊的 err 僅僅是個範例，有可能是我們從其他模組承接過來的 err，我們只要直接塞到下一個操作中，將自己想像成 Middleware 即可。加上return 同樣是確保結束。</p>
+<h2 id="RESTful_API">RESTful API</h2><p>那怎麼使用 RESTful API 所提到的各種操作種，原先我們都是使用 <code>router.get(...)</code> ，因此只要</p>
+<ul>
+<li><code>router.post(...)</code></li>
+<li><code>router.get(...)</code></li>
+<li><code>router.put(...)</code></li>
+<li><code>router.delete(...)</code></li>
+</ul>
+<p>分別對應到 RESTful API 的操作！ </p>
 <h2 id="結語">結語</h2><p>綜合以上的操作，可以開始規劃 Express Router，以下是我在其中一個專案中規劃的，僅供參考，大致上是後台管理系統對使用者資料的操作：</p>
 <p>新增使用者資料        <code>[POST] /user/</code><br>取得所有使用者資料     <code>[GET] /user/</code><br>取得幾筆使用者資料     <code>[GET] /user/:count</code><br>刪除使用者            <code>[DELETE] /user/</code><br>修改使用者            <code>[PUT] /user</code></p>
 <p>但在規劃上並沒有絕對強制的用法，主要是看團隊習慣或是主流文化。在不同的情況下嘗試使用 RESTful API 下去規劃，我個人就在規畫初期撞到好幾次錯誤，起出認為的功能和前端街口會產生誤會，例如 “取得幾筆使用者資料     <code>[GET] /user/:count</code>“ 這種操作就引人遐想，<code>:count</code> 是指第幾比到第幾比，或是一次抓幾筆，甚至是使用者編號？因此 params 的正確命名並且和前端良好的溝通是維持整機制運作的重點。如果是全端開發，也要注意正確的語意，別在後期開發自己雷到自己。</p>

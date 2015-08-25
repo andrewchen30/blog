@@ -166,6 +166,16 @@ router.get('/login', function(req, res, next) {
 
 這邊的 err 僅僅是個範例，有可能是我們從其他模組承接過來的 err，我們只要直接塞到下一個操作中，將自己想像成 Middleware 即可。加上return 同樣是確保結束。
 
+## RESTful API
+
+那怎麼使用 RESTful API 所提到的各種操作種，原先我們都是使用 `router.get(...)` ，因此只要
+
+* `router.post(...)`
+* `router.get(...)`
+* `router.put(...)`
+* `router.delete(...)`
+
+分別對應到 RESTful API 的操作！ 
 
 ## 結語
 
