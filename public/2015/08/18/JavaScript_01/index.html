@@ -5,22 +5,22 @@
   
   <title>JavaScript - .Bind() .Apply() .Call() | AndrewChen Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
-func.apply( null, [ 1, 2, 3 ] );  // 傳入 array (立即執行)
-func.call( null, 1, 2, 3 ); // 逐一傳入 (立即執行)">
+  <meta name="description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript - .Bind() .Apply() .Call()">
 <meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/index.html">
 <meta property="og:site_name" content="AndrewChen Blog">
-<meta property="og:description" content="func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
-func.apply( null, [ 1, 2, 3 ] );  // 傳入 array (立即執行)
-func.call( null, 1, 2, 3 ); // 逐一傳入 (立即執行)">
-<meta property="og:updated_time" content="2015-08-20T00:43:22.000Z">
+<meta property="og:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
+<meta property="og:updated_time" content="2015-09-11T07:49:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript - .Bind() .Apply() .Call()">
-<meta name="twitter:description" content="func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
-func.apply( null, [ 1, 2, 3 ] );  // 傳入 array (立即執行)
-func.call( null, 1, 2, 3 ); // 逐一傳入 (立即執行)">
+<meta name="twitter:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
   
   
     <link rel="icon" href="/favicon.png">
@@ -129,10 +129,12 @@ ga('send', 'pageview');
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行</p>
-<p>func.apply( null, [ 1, 2, 3 ] );  // 傳入 array (立即執行)</p>
-<p>func.call( null, 1, 2, 3 ); // 逐一傳入 (立即執行)</p>
-
+        <h4 id="function_-bind()">function .bind()</h4><p>.bind() 不會立即執行 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func.bind( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 不會立即執行</span></span><br></pre></td></tr></table></figure>
+<h4 id="function_-call()">function .call()</h4><p>.call() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func.call( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 逐一傳入參數 (立即執行)</span></span><br></pre></td></tr></table></figure>
+<h4 id="function_-apply()">function .apply()</h4><p>.apply() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。而參數是統一用一個陣列包起來，apply 會自行拆開傳入。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func.apply( <span class="literal">null</span>, [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ] );  <span class="comment">// 參數統一用 array 傳入 (立即執行)</span></span><br></pre></td></tr></table></figure>
       </div>
       <footer class="article-footer">
         <a data-url="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" data-id="cidqo0t5e000093wawuol3xlp" class="article-share-link">分享至</a>
