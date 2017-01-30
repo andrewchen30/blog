@@ -8,7 +8,7 @@ comments: false
 ---
 
 <center>
-![Redis](http://acom.azurecomcdn.net/80C57D/cdn/images/cvt-13f9af988a3bce151b5f3666660fb76825069825048a47e2c3f78ca61c38c685/page/services/cache/redis.png?t=popn)
+![Redis](https://redislabs.com/wp-content/images/redis-logo.png)
 </center>
 
 * [Redis](http://redis.io)
@@ -34,7 +34,7 @@ Redis 本身會瓜分伺服器的記憶體來使用，Node.js 連線所使用的
 先從官方網站下載 Redis，解開壓縮檔之後，在資料夾下執行以下指令
 
 ``` bat
-$ make 
+$ make
 ```
 
 輸入指令後，Redis 會自行安裝，需要一段時間
