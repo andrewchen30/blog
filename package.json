@@ -6,6 +6,8 @@
     "version": "3.2.2"
   },
   "dependencies": {
+    "fs-extra": "^2.0.0",
+    "ftp": "^0.3.10",
     "hexo": "^3.2.2",
     "hexo-cli": "^1.0.2",
     "hexo-deployer-git": "0.0.4",

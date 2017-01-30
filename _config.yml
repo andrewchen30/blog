@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: AndrewChen Blog
-subtitle: fullstack JavaScript. Node.js and React.js 從零開始
-description: AndrewChen React.js Node.js 從零開始
-author: Andrew Chen
+title: 邊吃邊看書
+subtitle: Node.js、JavaScript、讀書心得、吃吃喝喝
+description: Node.js、JavaScript、讀書心得、吃吃喝喝
+author: AndrewChen
 language: zh-TW
 email: chenpoanandrew@gmail.com
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://polarbearandrew.github.io/blog/
+url: http://www.andrewchen.tw/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -79,7 +79,7 @@ sitemap:
 # themes ------
 # Header
 menu:
-  Home: http://polarbearandrew.github.io/blog/
+  Home: http://www.andrewchen.tw/
   Categories:
   About: /about/index.html
 
