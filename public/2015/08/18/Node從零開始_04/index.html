@@ -5,34 +5,34 @@
   
   <title>Part 4 - Express 基礎操作 | AndrewChen Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+  <meta name="description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發者只需要專心資料處理的問題即可。
 新增回應頁面以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：
 
 新增一個 express route 回應新頁面
 用的 jade 模板製作新頁面
-加入 nodemon 開發工具，">
+加入 nodemon 開發工具，加">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Part 4 - Express 基礎操作">
 <meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/index.html">
 <meta property="og:site_name" content="AndrewChen Blog">
-<meta property="og:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+<meta property="og:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發者只需要專心資料處理的問題即可。
 新增回應頁面以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：
 
 新增一個 express route 回應新頁面
 用的 jade 模板製作新頁面
-加入 nodemon 開發工具，">
+加入 nodemon 開發工具，加">
 <meta property="og:image" content="https://stormpath.com/images/blog/express-and-node-opengraph.png">
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_3_1.png">
 <meta property="og:image" content="http://polarbearandrew.github.io/blog/img/nodeFormZero_2/node_4_2.png">
-<meta property="og:updated_time" content="2015-08-25T00:57:09.000Z">
+<meta property="og:updated_time" content="2015-09-25T10:10:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Part 4 - Express 基礎操作">
-<meta name="twitter:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+<meta name="twitter:description" content="簡介Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發者只需要專心資料處理的問題即可。
 新增回應頁面以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：
 
 新增一個 express route 回應新頁面
 用的 jade 模板製作新頁面
-加入 nodemon 開發工具，">
+加入 nodemon 開發工具，加">
   
   
     <link rel="icon" href="/favicon.png">
@@ -142,7 +142,7 @@ ga('send', 'pageview');
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p><img src="https://stormpath.com/images/blog/express-and-node-opengraph.png" alt="Express"></p>
-<h2 id="簡介">簡介</h2><p>Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。</p>
+<h2 id="簡介">簡介</h2><p>Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發者只需要專心資料處理的問題即可。</p>
 <h2 id="新增回應頁面">新增回應頁面</h2><p>以下我們需要做幾件事情，由上而下是從最簡單的頁面，到可以放入自己想要的資料的頁面：</p>
 <ul>
 <li>新增一個 express route 回應新頁面</li>
@@ -159,7 +159,7 @@ ga('send', 'pageview');
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> routes = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line">app.use(<span class="string">'/'</span>, routes);</span><br></pre></td></tr></table></figure>
 <p>因為這邊 <code>routes</code> 的命名會導致後續的解釋相當饒舌，先將它改成 <code>pages</code>，用 <code>pages</code> 來逐一理解狀況。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pages = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line">app.use(<span class="string">'/'</span>, pages);</span><br></pre></td></tr></table></figure>
-<p>前面是引入了檔案 index.js 將其儲存在 pages 的變數中，而其實 index.js 中的最後一行是 <code>module.exports = router;</code> 輸出了 <code>router</code> 作為模組，所以這邊 <code>pages</code> 是拿到了一個 <code>express.Router();</code> 的模組。換個角度說，在 index.js 中，從 express 的模組中取用了 <code>express.Router();</code> 的路由器模組，加入取得首頁的功能後並輸出成模組。在 app.js 中透過引入這麼模組拿到這個路由器的功能。</p>
+<p>前面是引入了檔案 index.js 將其儲存在 pages 的變數中，而其實 index.js 中的最後一行是 <code>module.exports = router;</code> 輸出了 <code>router</code> 作為模組，所以這邊 <code>pages</code> 是拿到了一個 <code>express.Router();</code> 的模組。換個角度說，在 index.js 中，從 express 的模組中取用了 <code>express.Router();</code> 的路由器模組，加入取得首頁的功能後並輸出成模組。在 app.js 中透過引入這個模組拿到這個路由器的功能。</p>
 <p>為什麼要搞得這麼複雜？如果網站較為複雜，有 50 個頁面時，如果將 50 種不同的路由行為通通寫在同一個檔案中，會相當混亂，拆分路由是 express 中很重要的事情，有助於整個伺服器的結構更清晰。</p>
 <p>接著是 <code>app.use(&#39;/&#39;, pages);</code> 使用了 <code>pages</code> 剛剛載入的路由模組，而前面的 <code>/</code> 的意思是，在 pages 檔案中的路由，前面通通要接上 <code>/</code>。看看另一行更容易了解 express 的做法：<code>app.use(&#39;/users&#39;, users);</code>，載入了 <code>users</code> 這個模組，並且在前面通通接上 <code>/users</code>，即是區別 <code>users</code> 和 <code>pages</code> 這兩種操作。在設計時我們可以將針對不同對象的操作，分別放在不同的檔案中，並且在 app.js 載入時，給他們一個統一的路徑。並大幅簡化在該模組檔案中的路徑長度。</p>
 <p>以目前的狀況來說，在 index.js 中回應 home page 的這個操作，<code>/</code> 代表的是root，即是沒有接任何其他路徑的意思。透過這個路徑我們就能進行對應的操作，而此路徑對應的操作就是返回一個 express-generator 預設的歡迎頁面，使用的路徑就是：</p>
@@ -213,7 +213,7 @@ ga('send', 'pageview');
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" data-id="cidi4qf4m00002qu05165gr6z" class="article-share-link">分享至</a>
+        <a data-url="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" data-id="ciyk03v3p000o0bu0udhfp3xb" class="article-share-link">分享至</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="http://polarbearandrew.github.io/blog/tags/Node-js-從零開始/">Node.js 從零開始</a></li></ul>
@@ -244,20 +244,20 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="http://polarbearandrew.github.io/blog/2015/08/19/003_TTtimerForOIT/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <p class="article-nav-title">
         
-          JavaScript - .Bind() .Apply() .Call()
+          Android App - TTtimer
         
       </p>
       <i class="icon" id="icon-chevron-right"></i>
     </a>
   
   
-    <a href="http://polarbearandrew.github.io/blog/2015/08/16/Node_Redis記憶體快取/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <p class="article-nav-title">Redis - Node.js 記憶體快取</p>
+      <p class="article-nav-title">JavaScript - .Bind() .Apply() .Call()</p>
       <i class="icon" id="icon-chevron-left"></i>
     </a>
   
@@ -336,25 +336,6 @@ ga('send', 'pageview');
             
             <div class="item-thumbnail">
               
-<a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/JavaScript/">JavaScript</a></p>
-              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" class="title">JavaScript - .Bind() .Apply() .Call()</a></p>
-              <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
 <a href="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" class="thumbnail">
   
     <span style="background-image:url(https://stormpath.com/images/blog/express-and-node-opengraph.png
@@ -367,6 +348,25 @@ ga('send', 'pageview');
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/Node-js-從零開始/">Node.js 從零開始</a></p>
               <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/18/Node從零開始_04/" class="title">Part 4 - Express 基礎操作</a></p>
+              <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="http://polarbearandrew.github.io/blog/categories/JavaScript/">JavaScript</a></p>
+              <p class="item-title"><a href="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01/" class="title">JavaScript - .Bind() .Apply() .Call()</a></p>
               <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
             </div>
           </li>
@@ -458,7 +458,7 @@ ga('send', 'pageview');
         <h1 class="logo-wrap">
           <a href="/" class="logo"></a>
         </h1>
-        <p>&copy; 2015 Andrew Chen</p>
+        <p>&copy; 2017 Andrew Chen</p>
         <!-- <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p> -->
       </div>
     </div>
