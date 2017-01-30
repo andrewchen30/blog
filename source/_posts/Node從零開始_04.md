@@ -12,7 +12,7 @@ comments: false
 
 ## 簡介
 
-Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發只需要專心資料處理的問題即可。
+Express 是目前 Node.js 相當流行的框架之一，使用 Express 建立網頁伺服器節省掉了建置伺服器、解析請求資訊等等，相當方便，開發者只需要專心資料處理的問題即可。
 
 ## 新增回應頁面
 
@@ -56,7 +56,7 @@ var pages = require('./routes/index');
 app.use('/', pages);
 ```
 
-前面是引入了檔案 index.js 將其儲存在 pages 的變數中，而其實 index.js 中的最後一行是 `module.exports = router;` 輸出了 `router` 作為模組，所以這邊 `pages` 是拿到了一個 `express.Router();` 的模組。換個角度說，在 index.js 中，從 express 的模組中取用了 `express.Router();` 的路由器模組，加入取得首頁的功能後並輸出成模組。在 app.js 中透過引入這麼模組拿到這個路由器的功能。
+前面是引入了檔案 index.js 將其儲存在 pages 的變數中，而其實 index.js 中的最後一行是 `module.exports = router;` 輸出了 `router` 作為模組，所以這邊 `pages` 是拿到了一個 `express.Router();` 的模組。換個角度說，在 index.js 中，從 express 的模組中取用了 `express.Router();` 的路由器模組，加入取得首頁的功能後並輸出成模組。在 app.js 中透過引入這個模組拿到這個路由器的功能。
 
 為什麼要搞得這麼複雜？如果網站較為複雜，有 50 個頁面時，如果將 50 種不同的路由行為通通寫在同一個檔案中，會相當混亂，拆分路由是 express 中很重要的事情，有助於整個伺服器的結構更清晰。
 
