@@ -2,12 +2,18 @@
   "name": "AndrewChenBlog",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "deploy": "node deploy2ftp.js",
+    "build": "sh buildAndDemo.sh"
+  },
   "hexo": {
     "version": "3.2.2"
   },
   "dependencies": {
+    "bluebird": "^3.4.7",
     "fs-extra": "^2.0.0",
     "ftp": "^0.3.10",
+    "ftp-deploy": "^1.1.0",
     "hexo": "^3.2.2",
     "hexo-cli": "^1.0.2",
     "hexo-deployer-git": "0.0.4",
