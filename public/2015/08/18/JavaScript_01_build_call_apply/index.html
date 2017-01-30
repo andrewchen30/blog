@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | AndrewChen Blog</title>
+  <title>JavaScript - .Bind() .Apply() .Call() | AndrewChen Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AndrewChen React.js Node.js 從零開始">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AndrewChen Blog">
-<meta property="og:url" content="http://polarbearandrew.github.io/blog/archives/2015/index.html">
+  <meta name="description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript - .Bind() .Apply() .Call()">
+<meta property="og:url" content="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01_build_call_apply/index.html">
 <meta property="og:site_name" content="AndrewChen Blog">
-<meta property="og:description" content="AndrewChen React.js Node.js 從零開始">
+<meta property="og:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
+<meta property="og:updated_time" content="2015-09-11T07:49:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AndrewChen Blog">
-<meta name="twitter:description" content="AndrewChen React.js Node.js 從零開始">
+<meta name="twitter:title" content="JavaScript - .Bind() .Apply() .Call()">
+<meta name="twitter:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
   
   
     <link rel="icon" href="/favicon.png">
@@ -98,149 +105,48 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
               
-              <h1 class="header"><i class="icon" id="icon-archive"></i>歸檔: 2015</h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/JavaScript/">JavaScript</a></h1>
             </div>
             <div class="main-body-content">
               
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
+  <article id="post-JavaScript_01_build_call_apply" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-<a href="/2015/08/18/JavaScript_01_build_call_apply/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <h1 class="article-title" itemprop="name">
+      JavaScript - .Bind() .Apply() .Call()
+    </h1>
   
-</a>
 
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a></p>
-        <p class="date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/08/18/JavaScript_01_build_call_apply/" class="title">JavaScript - .Bind() .Apply() .Call()</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
-1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
-function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/08/18/JavaScript_01_build_call_apply/" class="article-date">
+  <time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h4 id="function_-bind()">function .bind()</h4><p>.bind() 不會立即執行 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.bind( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 不會立即執行</span></div></pre></td></tr></table></figure>
+<h4 id="function_-call()">function .call()</h4><p>.call() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.call( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 逐一傳入參數 (立即執行)</span></div></pre></td></tr></table></figure>
+<h4 id="function_-apply()">function .apply()</h4><p>.apply() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。而參數是統一用一個陣列包起來，apply 會自行拆開傳入。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.apply( <span class="literal">null</span>, [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ] );  <span class="comment">// 參數統一用 array 傳入 (立即執行)</span></div></pre></td></tr></table></figure>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://polarbearandrew.github.io/blog/2015/08/18/JavaScript_01_build_call_apply/" data-id="ciyk1586e00057qu0aex2t61j" class="article-share-link">分享至</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-<a href="/2015/08/16/Node_Redis記憶體快取/" class="thumbnail">
-  
-    <span style="background-image:url(https://redislabs.com/wp-content/images/redis-logo.png
-)" alt="Redis - Node.js 記憶體快取" class="thumbnail-image"></span>
-  
-</a>
-
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Node-js/">Node.js</a></p>
-        <p class="date"><time datetime="2015-08-16T03:01:07.000Z" itemprop="datePublished">2015-08-16</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/08/16/Node_Redis記憶體快取/" class="title">Redis - Node.js 記憶體快取</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-
-
-Redis
-Redis - 官方文件
-Redis - npm
-Redis - GUI
-
-簡介Redis 是以 key-value 的形式在伺服器的記憶體中儲存資訊的方式，為伺服器命名做快取(cache)。有別於其他 noSQL 或是 RDB，key-value 即是使用一個 key 的值對應到一筆資料。而 Redis 的特色就是將這筆資料，寫在記憶體裡面。
-大概有幾種狀況會將資料寫入到快取中
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-<a href="/2015/08/02/002_AngularReactOrOther/" class="thumbnail">
-  
-    <span style="background-image:url(http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png
-)" alt="淺談前端框架未來，Angular, React, 還是...？" class="thumbnail-image"></span>
-  
-</a>
-
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/社群活動/">社群活動</a></p>
-        <p class="date"><time datetime="2015-08-02T01:13:44.000Z" itemprop="datePublished">2015-08-02</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/08/02/002_AngularReactOrOther/" class="title">淺談前端框架未來，Angular, React, 還是...？</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
-
-
-前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
-淺談前端框架隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 batman.js, backbone.js, emb
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-<a href="/2015/08/02/001_JSDevilDay/" class="thumbnail">
-  
-    <span style="background-image:url(https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg
-)" alt="JS Devil Day 參與心得" class="thumbnail-image"></span>
-  
-</a>
-
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/社群活動/">社群活動</a></p>
-        <p class="date"><time datetime="2015-08-02T01:05:42.000Z" itemprop="datePublished">2015-08-02</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/08/02/001_JSDevilDay/" class="title">JS Devil Day 參與心得</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
-
-
-JS Devil Day 是本次 JSDC 2015 所舉辦第一場對外 Meetup，也是首次透過北中南三方連線方式進行，本次以參與者角色，記錄此次活動。
-JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對談與交流。
-專家分享儘管對 Angular.j
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
   
   
-
 
             </div>
           </section>
@@ -258,6 +164,19 @@ JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對�
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/16/Node_Redis記憶體快取/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Redis - Node.js 記憶體快取</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
