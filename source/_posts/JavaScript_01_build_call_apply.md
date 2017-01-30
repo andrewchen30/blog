@@ -6,7 +6,7 @@ categories: JavaScript
 comments: false
 ---
 
-![javascript](/images/javascript.png)
+![javascript](/images/javascript.jpg)
 
 #### function .bind()
 
