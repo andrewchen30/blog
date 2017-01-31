@@ -22,7 +22,7 @@ source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
-category_dir: categories
+category_dir: categoriesl
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -94,7 +94,7 @@ scrollLoading: true
 
 # Sidebar
 social_links:
-  twitter: https://twitter.com/?lang=zh-tw
+  # twitter: https://twitter.com/?lang=zh-tw
   facebook: https://www.facebook.com/profile.php?id=100001317746154
   github: https://github.com/PolarBearAndrew
   #weibo:

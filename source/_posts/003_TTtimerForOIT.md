@@ -9,7 +9,7 @@ comments: false
 ---
 
 <center>
-![TTtimer](http://polarbearandrew.github.io/blog/img/TTtimer/ic_launcher.png)
+![TTtimer](/images/TTtimer/ic_launcher.jpg)
 </center>
 
 名稱：TTtimer
@@ -23,7 +23,7 @@ License：MIT
 Android APP - TTtime 是我在大三上學期修 Amy 老師 Java 課程的期末作品。這隻 APP 大概是我個人最喜歡期末作品之一，包括結構和設計是我個人最喜歡的，當時我有不少的時間與不曉得發揮空間。TTtimer 的設計概念出自於 10,000 小時，意指在某一個專業區域中努力 10,000 小時才能成為該專業領域中的佼佼者。而 TTtimer 即是此類型的計時器，選擇目標的專業項目後，持續累計時間來達成最初設定的目標，並透過累計時間的百分比、累計總數來給予獎勵或是頭銜的稱號。
 
 <center>
-<img src="http://polarbearandrew.github.io/blog/img/TTtimer/working_finish.png" alt="TTtimer Working" style="width: 200px;"/>
+<img src="/images/TTtimer/working_finish.jpg" alt="TTtimer Working" style="width: 200px;"/>
 </center>
 
 以下為 APP 使用到的技術重點，有需要的同學可以在裡面尋找相關自訓。有機會的話相我想把這個 APP 上架，最為一次學習經驗。
@@ -87,7 +87,7 @@ MyTimer 和 MicroTimer 類別主要功能就是計時器，在每個計畫中都
 
 #### Android Lifecycle 生命週期
 
-![Andriod 生命週期 ](http://ext.pimg.tw/style77125tech/1369341764-3430810860.png)
+![Andriod 生命週期 ](http://pic.pimg.tw/style77125tech/1369341764-3430810860.png)
 
 撰寫 Andriod APP 最重要的就是生命週期。簡而言之，生命週期就是我們在手機各種操作時，切換到 APP 畫面時對程式運行的影響，例如執行中的 APP 在按下 Home 鍵後會進入到 `onPause()` 的狀態，不同的狀態不可能讓 APP 一直處於運轉中，因此 APP 作業流程設計會圍繞著 Android Lifecycle 在運轉，也是設計的核心。但記得在 Lifecycle 中，我個人認為最不能仰賴 `onDestroy()`，仰賴關閉 APP 時才去執行，無法預測 APP 是在什麼情況下被關閉的，可能執行緒被中斷、手機沒電等等狀況。重要的資料同步，盡可能不要放在 `onDestroy` 的部分。
 
@@ -103,7 +103,7 @@ TTtiemr 支援雙語系，支援 `zh-Tw` 和 `en` 語系，根據手機設定的
 
 在 `WorkingActivity` 可以大量使用到動畫，Android 的動畫使用大致上是：宣告 > 設定參數 > 啟動。需要注意的是 Animation 的狀態，需要將正確的資料流操作掛載載正確的 Animation 事件上面，避免掉發生動畫時件不同步或是執行順序有問題的情況。Animation 玩起來相當有趣且有成就看，相當推薦大家玩玩。
 
-![screen shot](http://polarbearandrew.github.io/blog/img/TTtimer/demo.png)
+![screen shot](/images/TTtimer/demo.jpg)
 
 ## 檔案簡介
 
@@ -169,7 +169,7 @@ path: src/main/java/tw/com/oit/andrew/
 
 這兩個類別都包裝了動態新增物件的功能，新增動態物件其實相當麻煩，要考慮物件本身、事件、資料，因此我會盡可能將資訊都封裝在類別內，屆時只需要傳入必要參數即可，如任務有用物件包裝好，那理所當然直接傳遞物件即可。
 
-![screen shot](http://polarbearandrew.github.io/blog/img/TTtimer/demo2.png)
+![screen shot](/images/TTtimer/demo2.jpg)
 
 ## 結語
 
