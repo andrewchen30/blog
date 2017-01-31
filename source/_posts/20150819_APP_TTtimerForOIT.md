@@ -9,21 +9,20 @@ comments: false
 ---
 
 <center>
-![TTtimer](/images/TTtimer/ic_launcher.jpg)
+![TTtimer](/images/TTtimer/ic_launcher.png)
 </center>
 
 名稱：TTtimer
 類型：Andriod App / Java, 未上架
 時間：2015/1 (大三上學期)
 用途：期末作業
-License：MIT
 
 ## 簡介
 
-Android APP - TTtime 是我在大三上學期修 Amy 老師 Java 課程的期末作品。這隻 APP 大概是我個人最喜歡期末作品之一，包括結構和設計是我個人最喜歡的，當時我有不少的時間與不曉得發揮空間。TTtimer 的設計概念出自於 10,000 小時，意指在某一個專業區域中努力 10,000 小時才能成為該專業領域中的佼佼者。而 TTtimer 即是此類型的計時器，選擇目標的專業項目後，持續累計時間來達成最初設定的目標，並透過累計時間的百分比、累計總數來給予獎勵或是頭銜的稱號。
+Android APP - TTtime 是我在大三上學期修 Amy 老師 Java 課程的期末作品。這隻 APP 大概是我個人最喜歡期末作品之一，包括結構和設計是我個人最喜歡的，當時我有不少的時間與不曉得發揮空間。TTtimer 的設計概念出自於 10,000 小時，意指在某一個專業區域中努力 10,000 小時才能成為該專業領域中的佼佼者(這個理念最後被我個人推翻了)。而 TTtimer 即是此類型的計時器，選擇目標的專業項目後，持續累計時間來達成最初設定的目標，並透過累計時間的百分比、累計總數來給予獎勵或是頭銜的稱號。
 
 <center>
-<img src="/images/TTtimer/working_finish.jpg" alt="TTtimer Working" style="width: 200px;"/>
+	<img src="/images/TTtimer/working_finish.jpg" alt="TTtimer Working" style="width: 200px;"/>
 </center>
 
 以下為 APP 使用到的技術重點，有需要的同學可以在裡面尋找相關自訓。有機會的話相我想把這個 APP 上架，最為一次學習經驗。
