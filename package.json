@@ -14,6 +14,7 @@
     "fs-extra": "^2.0.0",
     "ftp": "^0.3.10",
     "ftp-deploy": "^1.1.0",
+    "get-folder-size": "^1.0.0",
     "hexo": "^3.2.2",
     "hexo-cli": "^1.0.2",
     "hexo-deployer-git": "0.0.4",
