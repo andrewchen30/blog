@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.andrewchen.tw/2015/08/19/003_TTtimerForOIT/</loc>
-    <lastmod>2017-01-31T01:27:23.000Z</lastmod>
+    <loc>http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_%E8%A2%AB%E8%A8%8E%E5%8E%AD%E7%9A%84%E5%8B%87%E6%B0%A3/</loc>
+    <lastmod>2017-01-31T03:20:28.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.andrewchen.tw/2015/08/18/20150818_JS_build_call_apply/</loc>
+    <loc>http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/</loc>
+    <lastmod>2017-01-31T01:46:15.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.andrewchen.tw/about/index.html</loc>
+    <lastmod>2017-01-31T01:40:49.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/</loc>
     <lastmod>2017-01-30T11:57:14.000Z</lastmod>
   </url>
   
@@ -17,12 +27,12 @@
   </url>
   
   <url>
-    <loc>http://www.andrewchen.tw/2015/08/02/001_JSDevilDay/</loc>
+    <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/</loc>
     <lastmod>2015-08-03T11:42:51.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.andrewchen.tw/2015/08/02/002_AngularReactOrOther/</loc>
+    <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/</loc>
     <lastmod>2015-08-03T11:29:32.000Z</lastmod>
   </url>
   

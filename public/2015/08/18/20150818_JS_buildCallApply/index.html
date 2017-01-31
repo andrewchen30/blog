@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Java | 邊吃邊看書 - AndrewChen Blog</title>
+  <title>JavaScript - .Bind() .Apply() .Call() | 邊吃邊看書 - AndrewChen Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Node.js、JavaScript、讀書心得、吃吃喝喝">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邊吃邊看書 - AndrewChen Blog">
-<meta property="og:url" content="http://www.andrewchen.tw/tags/Java/index.html">
+  <meta name="description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript - .Bind() .Apply() .Call()">
+<meta property="og:url" content="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/index.html">
 <meta property="og:site_name" content="邊吃邊看書 - AndrewChen Blog">
-<meta property="og:description" content="Node.js、JavaScript、讀書心得、吃吃喝喝">
+<meta property="og:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
+<meta property="og:image" content="http://www.andrewchen.tw/images/javascript.jpg">
+<meta property="og:updated_time" content="2017-01-30T11:57:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邊吃邊看書 - AndrewChen Blog">
-<meta name="twitter:description" content="Node.js、JavaScript、讀書心得、吃吃喝喝">
+<meta name="twitter:title" content="JavaScript - .Bind() .Apply() .Call()">
+<meta name="twitter:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
+1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
+<meta name="twitter:image" content="http://www.andrewchen.tw/images/javascript.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -98,46 +107,50 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
               
-              <h1 class="header"><i class="icon" id="icon-tag"></i>標籤：<em>Java</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categoriesl/JavaScript/">JavaScript</a></h1>
             </div>
             <div class="main-body-content">
               
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
+  <article id="post-20150818_JS_buildCallApply" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-<a href="/2015/08/19/20150819_APP_TTtimerForOIT/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span style="background-image:url(/images/TTtimer/ic_launcher.png
-)" alt="Android App - TTtimer" class="thumbnail-image"></span>
+    <h1 class="article-title" itemprop="name">
+      JavaScript - .Bind() .Apply() .Call()
+    </h1>
   
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/08/18/20150818_JS_buildCallApply/" class="article-date">
+  <time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time>
 </a>
-
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categoriesl/作品集/">作品集</a></p>
-        <p class="date"><time datetime="2015-08-19T07:46:12.000Z" itemprop="datePublished">2015-08-19</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/08/19/20150819_APP_TTtimerForOIT/" class="title">Android App - TTtimer</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-
-名稱：TTtimer類型：Andriod App / Java, 未上架時間：2015/1 (大三上學期)用途：期末作業
-簡介Android APP - TTtime 是我在大三上學期修 Amy 老師 Java 課程的期末作品。這隻 APP 大概是我個人最喜歡期末作品之一，包括結構和設計是我個人最喜歡的，當時我有不少的時間與不曉得發揮空間。TTtimer 的設計概念出自於 10,000 小時，
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/images/javascript.jpg" alt="javascript"></p>
+<h4 id="function_-bind()">function .bind()</h4><p>.bind() 不會立即執行 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.bind( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 不會立即執行</span></div></pre></td></tr></table></figure>
+<h4 id="function_-call()">function .call()</h4><p>.call() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.call( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 逐一傳入參數 (立即執行)</span></div></pre></td></tr></table></figure>
+<h4 id="function_-apply()">function .apply()</h4><p>.apply() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。而參數是統一用一個陣列包起來，apply 會自行拆開傳入。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.apply( <span class="literal">null</span>, [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ] );  <span class="comment">// 參數統一用 array 傳入 (立即執行)</span></div></pre></td></tr></table></figure>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciykykon9000ciwu0kzzsixwt" class="article-share-link">分享至</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
   
-
 
             </div>
           </section>
@@ -153,6 +166,29 @@ ga('send', 'pageview');
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/19/20150819_APP_TTtimerForOIT/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          Android App - TTtimer
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2015/08/16/Node_Redis記憶體快取/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Redis - Node.js 記憶體快取</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
