@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.andrewchen.tw/about/index.html</loc>
+    <lastmod>2017-01-31T16:09:28.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.andrewchen.tw/2016/12/28/20161228_FOODS_%E9%9B%9E%E6%8E%92/</loc>
-    <lastmod>2017-01-31T15:58:08.000Z</lastmod>
+    <lastmod>2017-01-31T16:07:44.000Z</lastmod>
   </url>
   
   <url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/</loc>
     <lastmod>2017-01-31T01:46:15.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.andrewchen.tw/about/index.html</loc>
-    <lastmod>2017-01-31T01:40:49.000Z</lastmod>
   </url>
   
   <url>
