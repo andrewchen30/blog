@@ -14,13 +14,15 @@ var config = {
 };
 
 ftpDeploy.deploy(config, function(err) {
+	var exec = require('child_process').exec;
+	var cmd = 'osascript -e \'display notification "@content" with title "@title"\'';
 	if (err) {
-		var exec = require('child_process').exec;
-		var cmd = 'osascript -e \'display notification "上傳至FTP出現錯誤" with title "AndrewChenBlog Deloy fail"\'';
-		exec(cmd);
-		console.log(err);
+		cmd = cmd.replace(/@title/, 'AndrewChenBlog ERROR').replace(/@content/, '上傳至FTP出現錯誤:' + err.message);
+		console.log('%j', err);
 	}
 	else {
+		cmd = cmd.replace(/@title/, 'AndrewChenBlog').replace(/@content/, '上傳至FTP完成');
 		console.log('FINISHED');
 	}
+	exec(cmd);
 });
