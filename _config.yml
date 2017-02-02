@@ -95,21 +95,21 @@ thumbnail: true
 # Scroll Loading
 scrollLoading: true
 
-widgets:
-- recent_posts
-- category
-- archive
-- tag
-- tagcloud
-- links
+# widgets:
+# - recent_posts
+# - category
+# - archive
+# - tag
+# - tagcloud
+# - links
 
 # # Links
 # links:
 #   JSDC: http://jsdc.tw
 #   Hackathon Taiwan: https://hackathon.tw
-#   hexo: http://hexo.io
+#   hexo: http://hexo.iov
   # theme: https://github.com/ppoffice/hexo-theme-hueman
 
 # Miscellaneous
-google_analytics: UA-65872031-1
-favicon: /favicon.png
+# google_analytics: UA-65872031-1
+# favicon: /images/logo.png
