@@ -1019,18 +1019,13 @@ a.article-title:hover {
   display: inline-block;
   line-height: 1em;
   padding: 6px 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  background: #f5f8f9;
-  color: #999;
   text-shadow: 0 1px #fff;
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #38b7ea;
-  color: #fff;
+  background: #f5f8f9;
   text-decoration: none;
-  text-shadow: 0 1px #169cd2;
+  text-shadow: none;
 }
 .article-footer {
   font-size: 0.85em;
@@ -2196,4 +2191,10 @@ ol.toc {
 .highlight .code .type,
 .highlight .code .selector-id {
   font-weight: bold;
+}
+#main {
+  float: right;
+}
+#profile {
+  float: right;
 }

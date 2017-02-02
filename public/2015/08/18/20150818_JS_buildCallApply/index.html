@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     
-    <title>JavaScript - .bind() .apply() .call() | 愛吃東西的RD - AndrewChen</title>
+    <title>JavaScript - .Bind() .Apply() .Call() | 愛吃東西的RD - AndrewChen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
 1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
 function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript - .bind() .apply() .call()">
+<meta property="og:title" content="JavaScript - .Bind() .Apply() .Call()">
 <meta property="og:url" content="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/index.html">
 <meta property="og:site_name" content="愛吃東西的RD - AndrewChen">
 <meta property="og:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
@@ -18,7 +18,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
 <meta property="og:image" content="http://www.andrewchen.tw/images/javascript.jpg">
 <meta property="og:updated_time" content="2017-01-30T11:57:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript - .bind() .apply() .call()">
+<meta name="twitter:title" content="JavaScript - .Bind() .Apply() .Call()">
 <meta name="twitter:description" content="function .bind().bind() 不會立即執行 function，並設定 this 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 this 的範疇。
 1func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
 function .call().call() 呼叫 function，並設定 this 範疇與傳入參數。傳入第一個參數是">
@@ -44,6 +44,19 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
         <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65872031-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+        <meta name="google-site-verification" content="1" />
     
     
 
@@ -205,7 +218,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
                 
     
         <h1 class="article-title" itemprop="name">
-            JavaScript - .bind() .apply() .call()
+            JavaScript - .Bind() .Apply() .Call()
         </h1>
     
 
@@ -241,11 +254,11 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
         
             
             <p><img src="/images/javascript.jpg" alt="javascript"></p>
-<h4 id="function_-bind()">function .bind()</h4><p>.bind() 不會立即執行 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<h4 id="function-bind"><a href="#function-bind" class="headerlink" title="function .bind()"></a>function .bind()</h4><p>.bind() 不會立即執行 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.bind( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 不會立即執行</span></div></pre></td></tr></table></figure>
-<h4 id="function_-call()">function .call()</h4><p>.call() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
+<h4 id="function-call"><a href="#function-call" class="headerlink" title="function .call()"></a>function .call()</h4><p>.call() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.call( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 逐一傳入參數 (立即執行)</span></div></pre></td></tr></table></figure>
-<h4 id="function_-apply()">function .apply()</h4><p>.apply() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。而參數是統一用一個陣列包起來，apply 會自行拆開傳入。</p>
+<h4 id="function-apply"><a href="#function-apply" class="headerlink" title="function .apply()"></a>function .apply()</h4><p>.apply() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。而參數是統一用一個陣列包起來，apply 會自行拆開傳入。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.apply( <span class="literal">null</span>, [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ] );  <span class="comment">// 參數統一用 array 傳入 (立即執行)</span></div></pre></td></tr></table></figure>
 
         
@@ -257,7 +270,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciynwb5h10008zou0wrqqrxgd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciyo3mjlr0008h6u0ko9narzd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -353,6 +366,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
 
 
     
+
 </section>
             
                 <aside id="sidebar">
@@ -397,7 +411,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categoriesl/讀書心得/">讀書心得</a></p>
                             <p class="item-title"><a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" class="title">被討厭的勇氣 1 (下)</a></p>
-                            <p class="item-date"><time datetime="2017-01-31T02:20:15.000Z" itemprop="datePublished">2017-01-31</time></p>
+                            <p class="item-date"><time datetime="2017-01-31T02:10:15.000Z" itemprop="datePublished">2017-01-31</time></p>
                         </div>
                     </li>
                 
@@ -453,7 +467,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categoriesl/JavaScript/">JavaScript</a></p>
-                            <p class="item-title"><a href="/2015/08/18/20150818_JS_buildCallApply/" class="title">JavaScript - .bind() .apply() .call()</a></p>
+                            <p class="item-title"><a href="/2015/08/18/20150818_JS_buildCallApply/" class="title">JavaScript - .Bind() .Apply() .Call()</a></p>
                             <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
                         </div>
                     </li>
@@ -538,7 +552,7 @@ function .call().call() 呼叫 function，並設定 this 範疇與傳入參數�
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/count.js';
+        s.src = '//' + '愛吃東西的RD - Andrew' + '.disqus.com/count.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

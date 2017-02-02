@@ -1,9 +1,12 @@
 
+# clean old builds
+sudo hexo clean
+
 # to build a new blog to public folder
 sudo hexo generate
 
 # notify
-osascript -e 'display notification "Data Build Success, Start server ..." with title "AndrewChenBlog"'
+osascript -e 'display notification "Data Build Success, Starting server..." with title "AndrewChenBlog"'
 
 # run dev server on local
 sudo hexo server --watch
