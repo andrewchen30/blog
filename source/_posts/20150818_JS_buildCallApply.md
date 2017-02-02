@@ -1,12 +1,19 @@
 title: JavaScript - .bind() .apply() .call()
 date: 2015-08-18 22:30:15
+categories: JavaScript
+thumbnail: /images/javascript.jpg
 tags:
 - JavaScript
-categories: JavaScript
-comments: false
+- 學習筆記
+- 教學
+
 ---
 
 ![javascript](/images/javascript.jpg)
+
+學習筆記，JavaScript 在綁定 Function 時有三種方式，分別為 `.bind()`,`.call()`, `.apply()`, 而這三種又有些許的差異：
+
+<!--more-->
 
 #### function .bind()
 

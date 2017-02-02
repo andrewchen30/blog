@@ -1,14 +1,14 @@
 title: JS Devil day 參與心得
 date: 2015-08-02 09:05:42
+thumbnail: https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg
+categories: 社群活動
 tags:
 - 社群活動
 - JavaScript
 - ES6
-categories: 社群活動
-comments: false
 ---
 
-> 本篇文上是本人Andrew Chen為[JSDC 2015](http://jsdc.tw)撰寫
+> 本篇文上是我為[JSDC 2015](http://jsdc.tw)撰寫
 > 感謝[Caeser Chi](https://www.facebook.com/clonncd?fref=ts)給予指導
 
 ![JS Devil Day](https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg)
@@ -18,6 +18,8 @@ JS Devil Day 是本次 JSDC 2015 所舉辦第一場對外 Meetup，也是首次�
 JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對談與交流。
 
 ## 專家分享
+
+<!--more-->
 
 儘管對 Angular.js相當不熟悉，透過講者阿梨的分享讓我對Angular.js的概念有些許的了解，事後座談時講者也推薦初學者直接以Angular.js 2.0作為起手版本。
 

@@ -105,9 +105,9 @@ scrollLoading: true
 
 # # Links
 # links:
-#   JSDC: http://jsdc.tw
-#   Hackathon Taiwan: https://hackathon.tw
-#   hexo: http://hexo.iov
+  # JSDC: http://jsdc.tw
+  # Hackathon Taiwan: https://hackathon.tw
+  # hexo: http://hexo.iov
   # theme: https://github.com/ppoffice/hexo-theme-hueman
 
 # Miscellaneous
