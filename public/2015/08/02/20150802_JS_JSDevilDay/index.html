@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  <title>JS Devil Day 參與心得 | 愛吃東西的RD - AndrewChen Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
+    <meta charset="utf-8">
+    
+    <title>JS Devil day 參與心得 | 愛吃東西的RD - AndrewChen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
 
 
 JS Devil Day 是本次 JSDC 2015 所舉辦第一場對外 Meetup，也是首次透過北中南三方連線方式進行，本次以參與者角色，記錄此次活動。
 JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對談與交流。
 專家分享儘管對 Angular.j">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS Devil Day 參與心得">
+<meta property="og:title" content="JS Devil day 參與心得">
 <meta property="og:url" content="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/index.html">
-<meta property="og:site_name" content="愛吃東西的RD - AndrewChen Blog">
+<meta property="og:site_name" content="愛吃東西的RD - AndrewChen">
 <meta property="og:description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
 
 
@@ -24,7 +24,7 @@ JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對�
 <meta property="og:image" content="https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg">
 <meta property="og:updated_time" content="2015-08-03T11:42:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS Devil Day 參與心得">
+<meta name="twitter:title" content="JS Devil day 參與心得">
 <meta name="twitter:description" content="本篇文上是本人Andrew Chen為JSDC 2015撰寫感謝Caeser Chi給予指導
 
 
@@ -32,115 +32,224 @@ JS Devil Day 是本次 JSDC 2015 所舉辦第一場對外 Meetup，也是首次�
 JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對談與交流。
 專家分享儘管對 Angular.j">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
+    
 
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  
-    <link rel="stylesheet" href="/scrollLoading/style.css">
-  
-  
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
 
-ga('create', 'UA-65872031-1', 'auto');
-ga('send', 'pageview');
+    
 
-</script>
-<!-- End Google Analytics -->
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
+    <link rel="stylesheet" href="/css/style.css">
 
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
 
-
-  
-
-  
-    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
-    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
 
 </head>
 
 <body>
-  <div id="wrap">
-    <header id="header">
-  <div id="header-outer" class="outer">
-    <div class="container">
-      <div class="container-inner">
-        <div id="header-title">
-          <h1 class="logo-wrap">
-            <a href="http://polarbearandrew.github.io/blog/" class="logo"></a>
-            <!-- <a href="/" class="logo"></a> -->
-          </h1>
-          
-            <h2 class="subtitle-wrap">
-              <p class="subtitle">Node.js、JavaScript、讀書心得、吃吃喝喝</p>
-            </h2>
-          
-        </div>
-        <div id="header-inner" class="nav-container">
-          <a id="main-nav-toggle" class="nav-icon"></a>
-          <div class="nav-container-inner">
-            <ul id="main-nav">
-              
-                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://www.andrewchen.tw/">首頁</a></li>
-              
-                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categoriesl/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categoriesl/Node-js/">Node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categoriesl/作品集/">作品集</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categoriesl/社群活動/">社群活動</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categoriesl/讀書心得/">讀書心得</a></li></ul>
-                  
-                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">關於</a></li>
-              
-            </ul>
-            <nav id="sub-nav">
-              <div id="search-form-wrap">
-                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜尋"><input type="hidden" name="sitesearch" value="http://www.andrewchen.tw"></form>
-              </div>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">愛吃東西的RD - AndrewChen</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
             </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-    <div class="container">
-      <div class="main-body container-inner">
-        <div class="main-body-inner">
-          <section id="main">
-            <div class="main-body-header">
-              
-              <h1 class="header"><a class="page-title-link" href="/categoriesl/社群活動/">社群活動</a></h1>
-            </div>
-            <div class="main-body-content">
-              
-  <article id="post-20150802_JS_JSDevilDay" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-      <!--  -->
-      
-        <header class="article-header">
-          
-  
-    <h1 class="article-title" itemprop="name">
-      JS Devil Day 參與心得
-    </h1>
-  
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/me.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
 
-        </header>
-      
-      <p class="article-byline">
-        <a href="/2015/08/02/20150802_JS_JSDevilDay/" class="article-date">
-  <time datetime="2015-08-02T01:05:42.000Z" itemprop="datePublished">2015-08-02</time>
-</a>
-      </p>
-      <div class="article-entry" itemprop="articleBody">
-        <blockquote>
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: 'Pages',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/me.jpg" />
+            <h2 id="name">AndrewChen</h2>
+            <h3 id="title">Node.js Backend Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Taipei, Taiwan</span>
+            <a id="follow" target="_blank" href="https://github.com/polarbearandrew">關注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                8
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                14
+                <span>標籤</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://www.facebook.com/profile.php?id=100001317746154" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://github.com/PolarBearAndrew" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-20150802_JS_JSDevilDay" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            JS Devil day 參與心得
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/08/02/20150802_JS_JSDevilDay/">
+            <time datetime="2015-08-02T01:05:42.000Z" itemprop="datePublished">2015-08-02</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categoriesl/社群活動/">社群活動</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ES6/">ES6</a>, <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/社群活動/">社群活動</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <blockquote>
 <p>本篇文上是本人Andrew Chen為<a href="http://jsdc.tw" target="_blank" rel="external">JSDC 2015</a>撰寫<br>感謝<a href="https://www.facebook.com/clonncd?fref=ts" target="_blank" rel="external">Caeser Chi</a>給予指導</p>
 </blockquote>
 <p><img src="https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg" alt="JS Devil Day"></p>
@@ -152,270 +261,319 @@ ga('send', 'pageview');
 <p>現今主流瀏覽器諸如：Chrome、Safari、Firefox 等等，已經逐漸開始支援 ES6，但尚未完全支援。在瀏覽器完全支援 ES6 之前，我們可以透過 babel 在程式執行之前將 ES6 的程式碼轉譯成 ES5，讓瀏覽器完全整的支援 ES6 程式碼。</p>
 <p>另外 Jeremy 提到 webpack 和 JSCS ，協助團隊開發更為順暢，開發工具和技巧相當的重要。順暢的開發過程除了提高效率之外，也保護了開發者健康的肝。</p>
 
-      </div>
-      <footer class="article-footer">
-        <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciykykomu0006iwu0ou6lnbkq" class="article-share-link">分享至</a>
         
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/社群活動/">社群活動</a></li></ul>
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-      </footer>
+
+
+</div>
+
+    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciynwb5go0002zou0py18bsyn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+        </footer>
     </div>
-  </article>
-  
-  
-
-            </div>
-          </section>
-          <aside id="sidebar">
-  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-  <div class="sidebar-top">
-    <p>關注我 :</p>
-    <ul class="social-links">
-      
-        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100001317746154" target="_blank"><i id="icon-facebook" class="icon"></i></a></li>
-      
-        <li><a class="social-tooltip" title="github" href="https://github.com/PolarBearAndrew" target="_blank"><i id="icon-github" class="icon"></i></a></li>
-      
-    </ul>
-  </div>
-  
     
+        
 <nav id="article-nav">
-  
-    <a href="/2015/08/02/20150802_JS_AngularReactOrOther/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <p class="article-nav-title">
-        
-          淺談前端框架未來，Angular, React, 還是...？
-        
-      </p>
-      <i class="icon" id="icon-chevron-right"></i>
-    </a>
-  
-  
+    
+        <a href="/2015/08/02/20150802_JS_AngularReactOrOther/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    淺談前端框架未來，Angular, React, 還是...？
+                
+            </div>
+        </a>
+    
+    
 </nav>
 
-  
-  <div class="widgets-container">
+
     
-      
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul id="recent-post" class="">
-        
-          <li>
+</article>
+
+
+    
+</section>
             
-            <div class="item-thumbnail">
-              
-<a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" class="thumbnail">
-  
-    <span style="background-image:url(/images/books/被討厭的勇氣.jpg
-)" alt="被討厭的勇氣 1 (下)" class="thumbnail-image"></span>
-  
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
 </a>
 
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categoriesl/讀書心得/">讀書心得</a></p>
-              <p class="item-title"><a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" class="title">被討厭的勇氣 1 (下)</a></p>
-              <p class="item-date"><time datetime="2017-01-31T02:20:15.000Z" itemprop="datePublished">2017-01-31</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" class="thumbnail">
-  
-    <span style="background-image:url(/images/books/被討厭的勇氣.jpg
-)" alt="被討厭的勇氣 1 (上)" class="thumbnail-image"></span>
-  
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categoriesl/讀書心得/">讀書心得</a></p>
+                            <p class="item-title"><a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" class="title">被討厭的勇氣 1 (上)</a></p>
+                            <p class="item-date"><time datetime="2017-01-31T02:20:15.000Z" itemprop="datePublished">2017-01-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
 </a>
 
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categoriesl/讀書心得/">讀書心得</a></p>
-              <p class="item-title"><a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" class="title">被討厭的勇氣 1 (上)</a></p>
-              <p class="item-date"><time datetime="2017-01-31T02:20:15.000Z" itemprop="datePublished">2017-01-31</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2016/12/28/20161228_FOODS_雞排/" class="thumbnail">
-  
-    <span style="background-image:url(/images/foods/雞排/天使雞排.jpg
-)" alt="雞排比一比" class="thumbnail-image"></span>
-  
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categoriesl/讀書心得/">讀書心得</a></p>
+                            <p class="item-title"><a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" class="title">被討厭的勇氣 1 (下)</a></p>
+                            <p class="item-date"><time datetime="2017-01-31T02:20:15.000Z" itemprop="datePublished">2017-01-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/28/20161228_FOODS_雞排/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
 </a>
 
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a></p>
-              <p class="item-title"><a href="/2016/12/28/20161228_FOODS_雞排/" class="title">雞排比一比</a></p>
-              <p class="item-date"><time datetime="2016-12-28T13:00:00.000Z" itemprop="datePublished">2016-12-28</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/08/19/20150819_APP_TTtimerForOIT/" class="thumbnail">
-  
-    <span style="background-image:url(/images/TTtimer/ic_launcher.png
-)" alt="Android App - TTtimer" class="thumbnail-image"></span>
-  
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a></p>
+                            <p class="item-title"><a href="/2016/12/28/20161228_FOODS_雞排/" class="title">雞排比一比</a></p>
+                            <p class="item-date"><time datetime="2016-12-28T13:00:00.000Z" itemprop="datePublished">2016-12-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2015/08/19/20150819_APP_TTtimerForOIT/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
 </a>
 
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categoriesl/作品集/">作品集</a></p>
-              <p class="item-title"><a href="/2015/08/19/20150819_APP_TTtimerForOIT/" class="title">Android App - TTtimer</a></p>
-              <p class="item-date"><time datetime="2015-08-19T07:46:12.000Z" itemprop="datePublished">2015-08-19</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/2015/08/18/20150818_JS_buildCallApply/" class="thumbnail">
-  
-    <span style="background-image:url(/images/javascript.jpg
-)" alt="JavaScript - .Bind() .Apply() .Call()" class="thumbnail-image"></span>
-  
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categoriesl/作品集/">作品集</a></p>
+                            <p class="item-title"><a href="/2015/08/19/20150819_APP_TTtimerForOIT/" class="title">Android App - TTtimer</a></p>
+                            <p class="item-date"><time datetime="2015-08-19T07:46:12.000Z" itemprop="datePublished">2015-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2015/08/18/20150818_JS_buildCallApply/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
 </a>
 
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categoriesl/JavaScript/">JavaScript</a></p>
-              <p class="item-title"><a href="/2015/08/18/20150818_JS_buildCallApply/" class="title">JavaScript - .Bind() .Apply() .Call()</a></p>
-              <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">分類</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categoriesl/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/作品集/">作品集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/社群活動/">社群活動</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/讀書心得/">讀書心得</a><span class="category-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">歸檔</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">標籤</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/作品集/">作品集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吃吃喝喝/">吃吃喝喝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理學/">心理學</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/被討厭的勇氣/">被討厭的勇氣</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/讀書心得/">讀書心得</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雞排/">雞排</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-float">
-    <h3 class="widget-title">標籤雲</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/作品集/" style="font-size: 10px;">作品集</a> <a href="/tags/吃吃喝喝/" style="font-size: 10px;">吃吃喝喝</a> <a href="/tags/心理學/" style="font-size: 15px;">心理學</a> <a href="/tags/社群活動/" style="font-size: 15px;">社群活動</a> <a href="/tags/被討厭的勇氣/" style="font-size: 15px;">被討厭的勇氣</a> <a href="/tags/讀書心得/" style="font-size: 15px;">讀書心得</a> <a href="/tags/雞排/" style="font-size: 10px;">雞排</a>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-list">
-    <h3 class="widget-title">鏈結</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="http://jsdc.tw">JSDC</a>
-          </li>
-        
-          <li>
-            <a href="https://hackathon.tw">Hackathon Taiwan</a>
-          </li>
-        
-          <li>
-            <a href="http://hexo.io">hexo</a>
-          </li>
-        
-          <li>
-            <a href="https://github.com/ppoffice/hexo-theme-hueman">theme</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-    
-  </div>
-</aside>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categoriesl/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/2015/08/18/20150818_JS_buildCallApply/" class="title">JavaScript - .bind() .apply() .call()</a></p>
+                            <p class="item-date"><time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
         </div>
-      </div>
     </div>
-    <footer id="footer">
-  
-  <div class="container">
-    <div class="container-inner">
-      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
-      <div class="credit">
-        <h1 class="logo-wrap">
-          <a href="/" class="logo"></a>
-        </h1>
-        <p>&copy; 2017 AndrewChen</p>
-        <!-- <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p> -->
-      </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categoriesl/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/作品集/">作品集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/社群活動/">社群活動</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/讀書心得/">讀書心得</a><span class="category-list-count">2</span></li></ul>
+        </div>
     </div>
-  </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">歸檔</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/作品集/">作品集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吃吃喝喝/">吃吃喝喝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理學/">心理學</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/被討厭的勇氣/">被討厭的勇氣</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/讀書心得/">讀書心得</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雞排/">雞排</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/React-js/" style="font-size: 10px;">React.js</a> <a href="/tags/作品集/" style="font-size: 10px;">作品集</a> <a href="/tags/吃吃喝喝/" style="font-size: 10px;">吃吃喝喝</a> <a href="/tags/心理學/" style="font-size: 15px;">心理學</a> <a href="/tags/社群活動/" style="font-size: 15px;">社群活動</a> <a href="/tags/被討厭的勇氣/" style="font-size: 15px;">被討厭的勇氣</a> <a href="/tags/讀書心得/" style="font-size: 15px;">讀書心得</a> <a href="/tags/雞排/" style="font-size: 10px;">雞排</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 AndrewChen<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
 </footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/';
+        
+        this.page.identifier = '20150802_JS_JSDevilDay';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/count.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
 
 
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
 
-
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-  <script src="/scrollLoading/jquery.scrollLoading.js"></script>
-  <script src="/scrollLoading/main.js"></script>
-
-
-<script src="/js/html-patch.js"></script>
-<script src="/js/script.js"></script>
-
-  </div>
+    </div>
 </body>
 </html>

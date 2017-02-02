@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 愛吃東西的RD - AndrewChen Blog
+title: 愛吃東西的RD - AndrewChen
 subtitle: Node.js、JavaScript、讀書心得、吃吃喝喝
 description: Node.js、JavaScript、讀書心得、吃吃喝喝
 author: AndrewChen
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: hueman
+theme: icarus
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -79,9 +79,12 @@ sitemap:
 # themes ------
 # Header
 menu:
-  Home: http://www.andrewchen.tw/
+  Home: .
+  Archives: archives
+  # Categories: categories
+  # Tags: tags
   Categories:
-  About: /about/index.html
+  About: about
 
 # Content
 fancybox: true
@@ -92,13 +95,6 @@ thumbnail: true
 # Scroll Loading
 scrollLoading: true
 
-# Sidebar
-social_links:
-  # twitter: https://twitter.com/?lang=zh-tw
-  facebook: https://www.facebook.com/profile.php?id=100001317746154
-  github: https://github.com/PolarBearAndrew
-  #weibo:
-  #rss:
 widgets:
 - recent_posts
 - category
@@ -107,12 +103,12 @@ widgets:
 - tagcloud
 - links
 
-# Links
-links:
-  JSDC: http://jsdc.tw
-  Hackathon Taiwan: https://hackathon.tw
-  hexo: http://hexo.io
-  theme: https://github.com/ppoffice/hexo-theme-hueman
+# # Links
+# links:
+#   JSDC: http://jsdc.tw
+#   Hackathon Taiwan: https://hackathon.tw
+#   hexo: http://hexo.io
+  # theme: https://github.com/ppoffice/hexo-theme-hueman
 
 # Miscellaneous
 google_analytics: UA-65872031-1

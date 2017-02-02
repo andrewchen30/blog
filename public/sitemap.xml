@@ -2,58 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/</loc>
+    
+    <lastmod>2017-02-02T03:50:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.andrewchen.tw/about/index.html</loc>
+    
     <lastmod>2017-01-31T16:09:28.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2016/12/28/20161228_FOODS_%E9%9B%9E%E6%8E%92/</loc>
+    
     <lastmod>2017-01-31T16:07:44.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_%E8%A2%AB%E8%A8%8E%E5%8E%AD%E7%9A%84%E5%8B%87%E6%B0%A31-2/</loc>
+    
     <lastmod>2017-01-31T15:34:21.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_%E8%A2%AB%E8%A8%8E%E5%8E%AD%E7%9A%84%E5%8B%87%E6%B0%A31-1/</loc>
+    
     <lastmod>2017-01-31T15:34:15.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/</loc>
+    
     <lastmod>2017-01-31T01:46:15.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/</loc>
+    
     <lastmod>2017-01-30T11:57:14.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/</loc>
+    
     <lastmod>2017-01-30T11:32:36.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/</loc>
+    
     <lastmod>2015-08-03T11:42:51.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/</loc>
-    <lastmod>2015-08-03T11:29:32.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/categories/index.html</loc>
+    
     <lastmod>2015-08-02T01:34:09.000Z</lastmod>
+    
   </url>
   
   <url>
     <loc>http://www.andrewchen.tw/tags/index.html</loc>
+    
     <lastmod>2015-08-02T01:33:43.000Z</lastmod>
+    
   </url>
   
 </urlset>
