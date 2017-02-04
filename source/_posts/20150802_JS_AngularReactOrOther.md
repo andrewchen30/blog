@@ -1,12 +1,13 @@
 title: 淺談前端框架未來，Angular, React, 還是...？
 date: 2015-08-02 09:13:44
+categories: 社群活動
+thumbnail: http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png
 tags:
 - 社群活動
 - JavaScript
 - Angular.js
 - React.js
-categories: 社群活動
-comments: false
+
 ---
 
 > 本篇文上是本人Andrew Chen為[JSDC 2015](http://jsdc.tw)撰寫
@@ -17,6 +18,8 @@ comments: false
 前端入坑深似海，一入宅門出不來。這肯定是許多前端工程師可以體認到的共同感觸，前端真可以說是一個坑，維繫大家能夠持續學習的動機，除了熱情，應該就還是熱情吧。
 
 ## 淺談前端框架
+
+<!--more-->
 
 隨著前端應用變化越來越多，因此許多前端框架不斷的推陳出新，從早期大家所熟知的 [batman.js](http://batmanjs.org), [backbone.js](http://backbonejs.org), [emberjs](http://emberjs.com) 在中期也開始出現了許多不同框架，其中到了 Google 踏進 Angular.js 之後前端框架正式熱門起來，也掀起另外一波大戰。
 
