@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "deploy": "node deploy2ftp.js",
-    "server": "sh buildAndDemo.sh",
+    "server": "sh server.sh",
     "build": "sh build.sh"
   },
   "hexo": {
