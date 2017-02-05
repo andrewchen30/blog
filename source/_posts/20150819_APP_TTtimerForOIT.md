@@ -1,6 +1,6 @@
 title: Android App - TTtimer
 date: 2015-08-19 15:46:12
-categories: 雜七雜八
+categories: 學生時期
 thumbnail: /images/TTtimer/ic_launcher.png
 tags:
 - Android

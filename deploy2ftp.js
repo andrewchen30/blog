@@ -26,7 +26,7 @@ getSize(__dirname + "/public", function(err, size) {
 		var cmd = 'osascript -e \'display notification "@content" with title "@title"\'';
 		if (err) {
 			cmd = cmd.replace(/@title/, 'AndrewChenBlog ERROR').replace(/@content/, '上傳至FTP出現錯誤:' + err.message);
-			console.log('%j', err);
+			console.log('Error', err);
 		}
 		else {
 			cmd = cmd.replace(/@title/, 'AndrewChenBlog').replace(/@content/, '上傳至FTP完成');
