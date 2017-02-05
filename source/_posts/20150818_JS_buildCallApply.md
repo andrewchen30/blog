@@ -1,8 +1,9 @@
-title: JavaScript - .bind() .apply() .call()
+title: JavaScript 綁定函數方式比較 - .bind() .apply() .call()
 date: 2015-08-18 22:30:15
-categories: JavaScript
+categories: Node.js
 thumbnail: /images/javascript.jpg
 tags:
+- Node.js
 - JavaScript
 - 學習筆記
 - 教學
