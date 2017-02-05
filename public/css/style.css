@@ -822,6 +822,7 @@ code {
 .article-header .article-title {
   display: block;
   margin-bottom: 14px;
+  font-weight: bolder;
 }
 .article-title {
   font-size: 2em;
