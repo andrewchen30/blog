@@ -168,9 +168,9 @@ ga('send', 'pageview');
                 8
                 <span>文章</span>
             </div>
-            <div class="article-info-block">
-                18
-                <span>標籤</span>
+            <div id="github-followers" class="article-info-block">
+                <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>
+                <span>Github</span>
             </div>
         </div>
         
@@ -203,6 +203,23 @@ ga('send', 'pageview');
         
     </div>
 </aside>
+
+<script type="text/javascript">
+(function (window) {
+	setTimeout(fetchGithubStarts, 800); // UX 
+	function fetchGithubStarts() {
+		var url = 'https://api.github.com/users/PolarBearAndrew/repos';
+		$.ajax(url).done(function(repos) {
+			var total = repos.reduce(function(pre, curr) {
+				console.log('curr.stargazers_count', curr.stargazers_count);
+				return pre + curr.stargazers_count;
+			}, 0)
+			var html = '<i class="fa fa-star"></i> ' + total + '<span>Github</span>';
+			$('#github-followers').html(html);
+		});
+	}
+})(window);
+</script>
 
             
             <section id="main"><div class="timeline timeline-wrap">
@@ -580,21 +597,6 @@ ga('send', 'pageview');
     </div>
 </footer>
         
-    
-    <script>
-    var disqus_config = function () {
-        
-        this.page.identifier = 'undefined';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'AndrewChen' + '.disqus.com/count.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-
 
     
         <script src="/libs/lightgallery/js/lightgallery.min.js"></script>

@@ -168,9 +168,9 @@ ga('send', 'pageview');
                 8
                 <span>文章</span>
             </div>
-            <div class="article-info-block">
-                18
-                <span>標籤</span>
+            <div id="github-followers" class="article-info-block">
+                <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>
+                <span>Github</span>
             </div>
         </div>
         
@@ -203,6 +203,23 @@ ga('send', 'pageview');
         
     </div>
 </aside>
+
+<script type="text/javascript">
+(function (window) {
+	setTimeout(fetchGithubStarts, 800); // UX 
+	function fetchGithubStarts() {
+		var url = 'https://api.github.com/users/PolarBearAndrew/repos';
+		$.ajax(url).done(function(repos) {
+			var total = repos.reduce(function(pre, curr) {
+				console.log('curr.stargazers_count', curr.stargazers_count);
+				return pre + curr.stargazers_count;
+			}, 0)
+			var html = '<i class="fa fa-star"></i> ' + total + '<span>Github</span>';
+			$('#github-followers').html(html);
+		});
+	}
+})(window);
+</script>
 
             
             <section id="main">
@@ -266,7 +283,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" data-id="ciyqw47cn000epuu0tb8uj3un" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" data-id="ciys6tug4000e9au0tnizflss" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -333,8 +350,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/">評論</a>
     
 
         </footer>
@@ -405,7 +420,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" data-id="ciyqw47cr000hpuu088ozq64s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" data-id="ciys6tug8000h9au049fzvqaq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -472,8 +487,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/">評論</a>
     
 
         </footer>
@@ -545,7 +558,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2016/12/28/20161228_FOODS_雞排/" data-id="ciyqw47cl000cpuu0cd50pfrr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2016/12/28/20161228_FOODS_雞排/" data-id="ciys6tug1000c9au018qogrzt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -612,8 +625,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2016/12/28/20161228_FOODS_雞排/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2016/12/28/20161228_FOODS_雞排/">評論</a>
     
 
         </footer>
@@ -685,7 +696,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/" data-id="ciyqw47ch0009puu006gqw4ey" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/" data-id="ciys6tufx00099au09mulj1m2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -752,8 +763,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/">評論</a>
     
 
         </footer>
@@ -823,7 +832,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciyqw47cc0008puu0dwhdqr9e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciys6tufm00069au0x067wg77" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -890,8 +899,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/">評論</a>
     
 
         </footer>
@@ -976,7 +983,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/" data-id="ciyqw47c70006puu0t4qt0l9y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/" data-id="ciys6tufr00089au0h8buzcaj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1043,8 +1050,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/">評論</a>
     
 
         </footer>
@@ -1118,7 +1123,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/" data-id="ciyqw47bq0000puu0964vvcvs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/" data-id="ciys6tuf000009au0ue1uidem" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1185,8 +1190,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/">評論</a>
     
 
         </footer>
@@ -1261,7 +1264,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciyqw47by0002puu0jtdvqyru" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciys6tufa00029au03bug93p8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1328,8 +1331,6 @@ ga('send', 'pageview');
 </script>
 
             
-    
-        <a href="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/">評論</a>
     
 
         </footer>
@@ -1526,21 +1527,6 @@ ga('send', 'pageview');
     </div>
 </footer>
         
-    
-    <script>
-    var disqus_config = function () {
-        
-        this.page.identifier = 'undefined';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'AndrewChen' + '.disqus.com/count.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-
 
     
         <script src="/libs/lightgallery/js/lightgallery.min.js"></script>

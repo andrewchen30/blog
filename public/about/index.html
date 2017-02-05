@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="愛吃東西的RD - AndrewChen">
 <meta property="og:description" content="AndrewChenNode.js backend developer
  &amp;nbsp;&amp;nbsp;&amp;nbsp; Taipei, Taiwan &amp;nbsp;&amp;nbsp; chenpoanandrew@gmail.com如果對部落格內容有任何疑問，或是發現錯誤歡迎透過 Facebook 或是 Gamil 聯絡，請各位多指教。更多關於工作經歷、個人接案經驗也會在日後逐步更新到部落格中。">
-<meta property="og:updated_time" content="2017-02-04T06:59:56.000Z">
+<meta property="og:updated_time" content="2017-02-05T03:44:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="AndrewChenNode.js backend developer
@@ -172,9 +172,9 @@ ga('send', 'pageview');
                 8
                 <span>文章</span>
             </div>
-            <div class="article-info-block">
-                18
-                <span>標籤</span>
+            <div id="github-followers" class="article-info-block">
+                <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>
+                <span>Github</span>
             </div>
         </div>
         
@@ -208,8 +208,26 @@ ga('send', 'pageview');
     </div>
 </aside>
 
+<script type="text/javascript">
+(function (window) {
+	setTimeout(fetchGithubStarts, 800); // UX 
+	function fetchGithubStarts() {
+		var url = 'https://api.github.com/users/PolarBearAndrew/repos';
+		$.ajax(url).done(function(repos) {
+			var total = repos.reduce(function(pre, curr) {
+				console.log('curr.stargazers_count', curr.stargazers_count);
+				return pre + curr.stargazers_count;
+			}, 0)
+			var html = '<i class="fa fa-star"></i> ' + total + '<span>Github</span>';
+			$('#github-followers').html(html);
+		});
+	}
+})(window);
+</script>
+
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main">
+<article id="about-undefined" class="article article-type-about" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -222,16 +240,34 @@ ga('send', 'pageview');
     
 
                 
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/about/index.html">
+            <time datetime="2017-01-31T01:40:49.000Z" itemprop="datePublished">2017-01-31</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
+
+
         
             
             <h1 id="AndrewChen"><a href="#AndrewChen" class="headerlink" title="AndrewChen"></a>AndrewChen</h1><h3 id="Node-js-backend-developer"><a href="#Node-js-backend-developer" class="headerlink" title="Node.js backend developer"></a>Node.js backend developer</h3><hr>
 <h4 id="nbsp-nbsp-nbsp-Taipei-Taiwan"><a href="#nbsp-nbsp-nbsp-Taipei-Taiwan" class="headerlink" title=" &nbsp;&nbsp;&nbsp; Taipei, Taiwan"></a><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; Taipei, Taiwan</h4><h4 id="nbsp-nbsp-chenpoanandrew-gmail-com"><a href="#nbsp-nbsp-chenpoanandrew-gmail-com" class="headerlink" title=" &nbsp;&nbsp; chenpoanandrew@gmail.com"></a><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;&nbsp; chenpoanandrew@gmail.com</h4><p>如果對部落格內容有任何疑問，或是發現錯誤歡迎透過 Facebook 或是 Gamil 聯絡，請各位多指教。更多關於工作經歷、個人接案經驗也會在日後逐步更新到部落格中。</p>
 
         
+
+
         </div>
         <footer class="article-footer">
             <div class="share-container">
@@ -240,7 +276,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/about/index.html" data-id="ciyqw47bw0001puu02ca9s7xu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/about/index.html" data-id="ciys6tuf700019au0hhjg6jzx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -308,8 +344,6 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://www.andrewchen.tw/about/index.html#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.andrewchen.tw/about/index.html">評論</a>
-    
 
         </footer>
     </div>
@@ -323,13 +357,8 @@ ga('send', 'pageview');
     
     <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
     </section>
+
 
 
 </section>
@@ -519,23 +548,6 @@ ga('send', 'pageview');
     </div>
 </footer>
         
-    
-    <script>
-    var disqus_config = function () {
-        
-            this.page.url = 'http://www.andrewchen.tw/about/index.html';
-        
-        this.page.identifier = 'undefined';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'AndrewChen' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-
 
     
         <script src="/libs/lightgallery/js/lightgallery.min.js"></script>

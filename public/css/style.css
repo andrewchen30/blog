@@ -1364,6 +1364,7 @@ ol.toc {
   border-radius: 0 !important;
 }
 #comments {
+  display: none;
   padding: 20px;
   margin: 40px 0;
 }
