@@ -186,26 +186,37 @@ ga('send', 'pageview');
                     
                     
                     <td>
+                      
                         <a href="https://www.facebook.com/AndrewChen.good" target="_blank" title="facebook" class=tooltip>
                             <i class="fa fa-facebook"></i>
                         </a>
                     </td>
                     
                     <td>
+                      
                         <a href="mailto:chenpoanandrew@gmail.com" target="_blank" title="google" class=tooltip>
                             <i class="fa fa-google"></i>
                         </a>
                     </td>
                     
                     <td>
+                      
                         <a href="https://github.com/PolarBearAndrew" target="_blank" title="github" class=tooltip>
                             <i class="fa fa-github"></i>
                         </a>
                     </td>
                     
                     <td>
+                      
                         <a href="https://www.linkedin.com/in/andrewchenonlinked/?locale=zh_TW" target="_blank" title="linkedin" class=tooltip>
                             <i class="fa fa-linkedin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                      
+                        <a href="https://www.cakeresume.com/db77c1" target="_blank" title="Resume" class=tooltip>
+                            <i class="fa fa-briefcase"></i>
                         </a>
                     </td>
                     
@@ -218,7 +229,7 @@ ga('send', 'pageview');
 
 <script type="text/javascript">
 (function (window) {
-	setTimeout(fetchGithubStarts, 800); // UX
+	setTimeout(useStaticStartCount, 800); // UX
 	function fetchGithubStarts() {
 		var url = 'https://api.github.com/users/PolarBearAndrew/repos';
 		$.ajax(url).done(function(repos) {
@@ -229,6 +240,10 @@ ga('send', 'pageview');
 			$('#github-followers').html(html);
 		});
 	}
+  function  useStaticStartCount() {
+    var html = '<i class="fa fa-star"></i> ' + 5 + '<span>Github</span>';
+    $('#github-followers').html(html);
+  }
 })(window);
 </script>
 
