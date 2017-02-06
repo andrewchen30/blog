@@ -1,6 +1,6 @@
 
 # # clean old builds
-sudo hexo clean
+# sudo hexo clean
 
 # to build a new blog to public folder
 sudo hexo generate
