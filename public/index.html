@@ -286,7 +286,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2017/02/05/20170205_BOOKS_CleanCode1-2/" data-id="ciystwvnl000ekou0fxw0vxzd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2017/02/05/20170205_BOOKS_CleanCode1-2/" data-id="ciythxvv7000n81u0n10kd7ag" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -427,7 +427,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2017/02/05/20170205_BOOKS_CleanCode1-1/" data-id="ciystwvnu000mkou0sxhe35bv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2017/02/05/20170205_BOOKS_CleanCode1-1/" data-id="ciythxvuu000981u0av1mba7j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -566,7 +566,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" data-id="ciystwvnq000ikou0mrpvv71g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/" data-id="ciythxvv4000j81u00i4l93t8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -705,7 +705,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" data-id="ciystwvno000hkou0gktp4j07" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/" data-id="ciythxvv2000h81u0x0u00fye" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -843,145 +843,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2016/12/28/20161228_FOODS_雞排/" data-id="ciystwvni000ckou0txawayb5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-20150819_APP_TTtimerForOIT" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/08/19/20150819_APP_TTtimerForOIT/">Android App - TTtimer</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/08/19/20150819_APP_TTtimerForOIT/">
-            <time datetime="2015-08-19T07:46:12.000Z" itemprop="datePublished">2015-08-19</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/學生時期/">學生時期</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/學生時期作品/">學生時期作品</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><center><br><img src="/images/TTtimer/ic_launcher.png" alt="TTtimer"><br></center>
-
-<p>名稱：TTtimer<br>類型：Andriod App / Java, 未上架<br>時間：2015/1 (大三上學期)<br>用途：期末作業</p>
-<h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>Android APP - TTtime 是我在大三上學期修 Amy 老師 Java 課程的期末作品。這隻 APP 大概是我個人最喜歡期末作品之一，包括結構和設計是我個人最喜歡的，當時我有不少的時間與不曉得發揮空間。TTtimer 的設計概念出自於 10,000 小時，意指在某一個專業區域中努力 10,000 小時才能成為該專業領域中的佼佼者(這個理念最後被我個人推翻了)。而 TTtimer 即是此類型的計時器，選擇目標的專業項目後，持續累計時間來達成最初設定的目標，並透過累計時間的百分比、累計總數來給予獎勵或是頭銜的稱號。</p></p>
-            <p class="article-more-link">
-                <a href="/2015/08/19/20150819_APP_TTtimerForOIT/#more">
-                  繼續閱讀
-                  <i class="fa fa-play" aria-hidden="true"></i>
-                </a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.andrewchen.tw/2015/08/19/20150819_APP_TTtimerForOIT/" data-id="ciystwvnf0009kou0ak2880vs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2016/12/28/20161228_FOODS_雞排/" data-id="ciythxvuy000e81u01vvjfc2v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1117,7 +979,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciystwvnb0008kou02pm85sh9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciythxvul000681u0ocf1nu1c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1268,7 +1130,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/" data-id="ciystwvmu0002kou0s89kgzyn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/" data-id="ciythxvu3000081u0haru3pi7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1408,7 +1270,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/" data-id="ciystwvn60006kou0d6h10vds" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_AngularReactOrOther/" data-id="ciythxvub000281u0pls6yjdk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1549,7 +1411,145 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciystwvmk0000kou0bv8grd9z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciythxvuw000c81u0wqoy36qa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-20150719_APP_TTtimerForOIT" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/07/19/20150719_APP_TTtimerForOIT/">Android App - TTtimer</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/07/19/20150719_APP_TTtimerForOIT/">
+            <time datetime="2015-07-19T07:46:12.000Z" itemprop="datePublished">2015-07-19</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categoriesl/學生時期/">學生時期</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/學生時期作品/">學生時期作品</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><center><br><img src="/images/TTtimer/ic_launcher.png" alt="TTtimer"><br></center>
+
+<p>名稱：TTtimer<br>類型：Andriod App / Java, 未上架<br>時間：2015/1 (大三上學期)<br>用途：期末作業</p>
+<h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>Android APP - TTtime 是我在大三上學期修 Amy 老師 Java 課程的期末作品。這隻 APP 大概是我個人最喜歡期末作品之一，包括結構和設計是我個人最喜歡的，當時我有不少的時間與不曉得發揮空間。TTtimer 的設計概念出自於 10,000 小時，意指在某一個專業區域中努力 10,000 小時才能成為該專業領域中的佼佼者(這個理念最後被我個人推翻了)。而 TTtimer 即是此類型的計時器，選擇目標的專業項目後，持續累計時間來達成最初設定的目標，並透過累計時間的百分比、累計總數來給予獎勵或是頭銜的稱號。</p></p>
+            <p class="article-more-link">
+                <a href="/2015/07/19/20150719_APP_TTtimerForOIT/#more">
+                  繼續閱讀
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.andrewchen.tw/2015/07/19/20150719_APP_TTtimerForOIT/" data-id="ciythxvuq000881u0fz2xmaa9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1759,12 +1759,13 @@ ga('send', 'pageview');
         </div>
     </div>
 
+
     
         
     <div class="widget-wrap">
         <h3 class="widget-title">歸檔</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
