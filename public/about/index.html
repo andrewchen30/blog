@@ -159,7 +159,7 @@ ga('send', 'pageview');
                 
 
 <aside id="profile">
-  <div id="totalVisitors" style="display:block">
+  <div id="totalVisitors" style="display:none;">
     <script language="javascript" src="http://toolkit.url.com.tw/counter/setcounter.php?sid=110083"></script>
   </div>
     <div class="inner profile-inner">
@@ -246,7 +246,7 @@ ga('send', 'pageview');
     html = html.substring(html.indexOf('<img'), html.length)
     html = html.replace(/<img src="http:\/\/toolkit.url.com.tw\/counter\/style\/style001\//g, '');
     html = html.replace(/.png">/g, '');
-    var totalVisitors = parseInt(html) || 9999;
+    var totalVisitors = parseInt(html) + 100 || 9999;
     render('fa-users', '訪客數', totalVisitors);
   }
   function render(icon, str, num) {
