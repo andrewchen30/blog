@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.andrewchen.tw/2017/02/11/20170211_NOTE_git%E9%82%84%E5%8E%9F%E5%96%AE%E4%B8%80%E6%AA%94%E6%A1%88/</loc>
+    
+    <lastmod>2017-02-11T02:21:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.andrewchen.tw/scripts/test.js</loc>
+    
+    <lastmod>2017-02-11T01:32:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.andrewchen.tw/scripts/icon_fa-arrow-right.js</loc>
+    
+    <lastmod>2017-02-11T01:14:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.andrewchen.tw/2017/02/05/20170205_BOOKS_CleanCode1-2/</loc>
     
     <lastmod>2017-02-10T16:36:00.000Z</lastmod>
@@ -72,7 +93,14 @@
   </url>
   
   <url>
-    <loc>http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/</loc>
+    <loc>http://www.andrewchen.tw/categories/index.html</loc>
+    
+    <lastmod>2017-02-04T06:59:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.andrewchen.tw/tags/index.html</loc>
     
     <lastmod>2017-02-04T06:59:56.000Z</lastmod>
     
@@ -86,14 +114,7 @@
   </url>
   
   <url>
-    <loc>http://www.andrewchen.tw/categories/index.html</loc>
-    
-    <lastmod>2017-02-04T06:59:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.andrewchen.tw/tags/index.html</loc>
+    <loc>http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/</loc>
     
     <lastmod>2017-02-04T06:59:56.000Z</lastmod>
     

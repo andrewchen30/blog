@@ -3,20 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>JavaScript 綁定函數方式比較 - .Bind() .Apply() .Call() | 愛吃東西的RD - AndrewChen</title>
+    <title>分類: 做個筆記怕忘記 | 愛吃東西的RD - AndrewChen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="學習筆記，JavaScript 在綁定 Function 時有三種方式，分別為 .bind(),.call(), .apply(), 而這三種又有些許的差異：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 綁定函數方式比較 - .Bind() .Apply() .Call()">
-<meta property="og:url" content="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/index.html">
+    <meta name="description" content="Node.js、JavaScript、學習筆記、讀書心得、吃吃喝喝">
+<meta property="og:type" content="website">
+<meta property="og:title" content="愛吃東西的RD - AndrewChen">
+<meta property="og:url" content="http://www.andrewchen.tw/categoriesl/做個筆記怕忘記/index.html">
 <meta property="og:site_name" content="愛吃東西的RD - AndrewChen">
-<meta property="og:description" content="學習筆記，JavaScript 在綁定 Function 時有三種方式，分別為 .bind(),.call(), .apply(), 而這三種又有些許的差異：">
-<meta property="og:image" content="http://www.andrewchen.tw/images/javascript.jpg">
-<meta property="og:updated_time" content="2017-02-05T15:00:23.000Z">
+<meta property="og:description" content="Node.js、JavaScript、學習筆記、讀書心得、吃吃喝喝">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 綁定函數方式比較 - .Bind() .Apply() .Call()">
-<meta name="twitter:description" content="學習筆記，JavaScript 在綁定 Function 時有三種方式，分別為 .bind(),.call(), .apply(), 而這三種又有些許的差異：">
-<meta name="twitter:image" content="http://www.andrewchen.tw/images/javascript.jpg">
+<meta name="twitter:title" content="愛吃東西的RD - AndrewChen">
+<meta name="twitter:description" content="Node.js、JavaScript、學習筆記、讀書心得、吃吃喝喝">
     
 
     
@@ -245,171 +242,50 @@ ga('send', 'pageview');
 </script>
 
             
-            <section id="main"><article id="post-20150818_JS_buildCallApply" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-folder"></i></span>
+        <h1 class="title">做個筆記怕忘記</h1>
+    </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            JavaScript 綁定函數方式比較 - .Bind() .Apply() .Call()
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2017/02/11/20170211_NOTE_git還原單一檔案/">Git 還原單一檔案</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/08/18/20150818_JS_buildCallApply/">
-            <time datetime="2015-08-18T14:30:15.000Z" itemprop="datePublished">2015-08-18</time>
+        <a href="/2017/02/11/20170211_NOTE_git還原單一檔案/">
+            <time datetime="2017-02-11T00:45:15.000Z" itemprop="datePublished">2017-02-11</time>
         </a>
     </div>
 
 
-                        
+                    
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/Node-js/">Node.js</a>
+        <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a>
     </div>
 
-                        
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/Node-js/">Node.js</a>, <a class="tag-link" href="/tags/學習筆記/">學習筆記</a>, <a class="tag-link" href="/tags/教學/">教學</a>
+        <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p><img src="/images/javascript.jpg" alt="javascript"></p>
-<p>學習筆記，JavaScript 在綁定 Function 時有三種方式，分別為 <code>.bind()</code>,<code>.call()</code>, <code>.apply()</code>, 而這三種又有些許的差異：</p>
-<a id="more"></a>
-<h4 id="function-bind"><a href="#function-bind" class="headerlink" title="function .bind()"></a>function .bind()</h4><p>.bind() 不會立即執行 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.bind( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 不會立即執行</span></div></pre></td></tr></table></figure>
-<h4 id="function-call"><a href="#function-call" class="headerlink" title="function .call()"></a>function .call()</h4><p>.call() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.call( <span class="literal">null</span>, <span class="number">1</span> ,<span class="number">2</span> ,<span class="number">3</span> ) ;   <span class="comment">// 逐一傳入參數 (立即執行)</span></div></pre></td></tr></table></figure>
-<h4 id="function-apply"><a href="#function-apply" class="headerlink" title="function .apply()"></a>function .apply()</h4><p>.apply() 呼叫 function，並設定 <code>this</code> 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 <code>this</code> 的範疇。而參數是統一用一個陣列包起來，apply 會自行拆開傳入。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func.apply( <span class="literal">null</span>, [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ] );  <span class="comment">// 參數統一用 array 傳入 (立即執行)</span></div></pre></td></tr></table></figure>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.andrewchen.tw/2015/08/18/20150818_JS_buildCallApply/" data-id="ciyticqeq0009qyu0c0lp8a6p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2016/12/28/20161228_FOODS_雞排/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    天使與惡魔，炸雞排試吃評比 !!
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2015/08/16/20150816_JS_redis/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Redis - Node.js 記憶體快取</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
-    
-    </section>
-
-
+</div>
 </section>
             
                 <aside id="sidebar">
