@@ -161,6 +161,9 @@ ga('send', 'pageview');
                 
 
 <aside id="profile">
+  <div id="totalVisitors" style="display:block">
+    <script language="javascript" src="http://toolkit.url.com.tw/counter/setcounter.php?sid=110083"></script>
+  </div>
     <div class="inner profile-inner">
         <div class="base-info profile-block">
             <img id="avatar" src="/images/me.jpg" />
@@ -176,7 +179,7 @@ ga('send', 'pageview');
             </div>
             <div id="github-followers" class="article-info-block">
                 <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>
-                <span>Github</span>
+                <!-- <span>Github</span> -->
             </div>
         </div>
         
@@ -229,19 +232,30 @@ ga('send', 'pageview');
 
 <script type="text/javascript">
 (function (window) {
-	setTimeout(useStaticStartCount, 800); // UX
-	function fetchGithubStarts() {
-		var url = 'https://api.github.com/users/PolarBearAndrew/repos';
-		$.ajax(url).done(function(repos) {
-			var total = repos.reduce(function(pre, curr) {
-				return pre + curr.stargazers_count;
-			}, 0)
-			var html = '<i class="fa fa-star"></i> ' + total + '<span>Github</span>';
-			$('#github-followers').html(html);
-		});
-	}
-  function  useStaticStartCount() {
-    var html = '<i class="fa fa-star"></i> ' + 5 + '<span>Github</span>';
+	setTimeout(fetchTotalUser, 800); // UX
+  // 因為 Github 請求次數限制和我本人的實際星星數也不夠多，故此暫時不使用此 API
+  function fetchGithubStarts() {
+    var url = 'https://api.github.com/users/PolarBearAndrew/repos';
+    $.ajax(url).done(function(repos) {
+      var total = repos.reduce(function(pre, curr) {
+        return pre + curr.stargazers_count;
+      }, 0)
+      render('fa-star', 'Github', total);
+    });
+  }
+  function fetchTotalUser() {
+    var html = $('#totalVisitors').html();
+    html = html.substring(html.indexOf('<img'), html.length)
+    html = html.replace(/<img src="http:\/\/toolkit.url.com.tw\/counter\/style\/style001\//g, '');
+    html = html.replace(/.png">/g, '');
+    var totalVisitors = parseInt(html) || 9999;
+    render('fa-users', '訪客數', totalVisitors);
+  }
+  function render(icon, str, num) {
+    var html = '<i class="fa @icon"></i> @num <span>@str</span>'
+      .replace(/@icon/, icon)
+      .replace(/@num/, num)
+      .replace(/@str/, str);
     $('#github-followers').html(html);
   }
 })(window);
