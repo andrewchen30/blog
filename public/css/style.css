@@ -956,7 +956,7 @@ a.article-title:hover {
   position: static;
   font-family: Georgia, "Times New Roman", "Microsoft Yahei", serif;
   font-size: 1.1em;
-  margin: 0 -20px;
+  margin: 0 -10px;
   padding: 10px 20px 10px 54px;
   background: #fcfcfc;
   border-left: 4px solid #eee;
@@ -966,7 +966,7 @@ a.article-title:hover {
   left: 10px;
   content: "\f10d";
   color: #e2e2e2;
-  font-size: 32px;
+  font-size: 24px;
   font-family: FontAwesome;
   text-align: center;
   position: static;
@@ -2219,7 +2219,7 @@ ol.toc {
   float: right;
 }
 .categories-card {
-  display: none;
+  display: display;
 }
 @media screen and (min-width: 1200px) {
   .categories-card {
@@ -2227,12 +2227,19 @@ ol.toc {
   }
 }
 .categories-card .inner {
-  float: left;
-  width: calc(33.3% - 1.2em);
-  margin-left: 0.6em;
-  margin-right: 0.6em;
-  margin-top: 1.2em;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 2em;
   background: #fff;
+}
+@media screen and (min-width: 1200px) {
+  .categories-card .inner {
+    float: left;
+    width: calc(33.3% - 1.2em);
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+    margin-top: 1.2em;
+  }
 }
 .categories-card .inner .base-info .avatar {
   display: block;
