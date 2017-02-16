@@ -1,0 +1,14 @@
+# hexo robots.txt
+
+User-agent: *
+
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /scripts/
+
+Sitemap: http://www.andrewchen.tw/sitemap.xml
