@@ -1,114 +1,86 @@
-# Hexo Configuration
-## Docs: http://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+# Menus
+menu:
+    首頁: .
+    文章時間軸: archives
+    分類檢索: categories
+    # 標籤檢索: tags
+    關於我: about
 
-# Site
-title: 愛吃東西的RD
-subtitle: Node.js、JavaScript、好書筆記、吃吃喝喝
-description: Node.js、JavaScript、好書筆記、吃吃喝喝
-author: AndrewChen
-language: zh-TW
-email: chenpoanandrew@gmail.com
 
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.andrewchen.tw/
-root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+# Customize
+customize:
+    logo:
+        enabled: true
+        width: 40
+        height: 40
+        url: /images/logo.png
+    profile:
+        enabled: true # Whether to show profile bar
+        avatar: /images/me.jpg
+        gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
+        author: AndrewChen
+        author_title: Node.js Backend Developer
+        location: Taipei, Taiwan
+        follow: /about
+    # highlight: agate
+    # highlight: hybrid
+    highlight: github
 
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categoriesl
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+    sidebar: left # sidebar position, options: left, right
+    thumbnail: true # enable posts thumbnail, options: true, false
+    favicon: /images/favicon.png
+    social_links:
+        facebook: https://www.facebook.com/AndrewChen.good
+        google: mailto:chenpoanandrew@gmail.com
+        github: https://github.com/PolarBearAndrew
+        linkedin: https://www.linkedin.com/in/andrewchenonlinked/?locale=zh_TW
+        briefcase: https://www.cakeresume.com/db77c1
+        # twitter: https://twitter.com/?lang=zh-tw
+        # rss: /
+    social_link_tooltip: true # enable the social link tooltip, options: true, false
 
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: ture # Transform title into titlecase
-external_link: true # Open external links in new tab
-filename_case: 0
-render_drafts: false
-post_asset_folder: true
-relative_link: false
-future: true
-highlight:
-  enable: true
-  line_number: true
-  auto_detect: true
-  tab_replace:
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+# Widgets
+widgets:
+    - recent_posts
+    - category
+    - archive
+    - tag
+    - tagcloud
+    - links
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+# Search
+search:
+    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+    swiftype: # enter swiftype install key here
+    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
 
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 20
-pagination_dir: page
+# Comment
+comment:
+    disqus: # enter disqus shortname here
+    duoshuo: # enter duoshuo shortname here
+    youyan: # enter youyan uid here
 
-# Extensions
-## Plugins: http://hexo.io/plugins/
-## Themes: http://hexo.io/themes/
-theme: icarus
+# Share
+share: default # options: jiathis, bdshare, addtoany, default
 
-# Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: https://github.com/PolarBearAndrew/blog
-  branch: gh-pages
-  message:
-
-sitemap:
-  path: sitemap.xml
-
-# themes ------
-# Header
-# menu:
-#   Home: .
-#   Archives: archives
-#   Categories: categories
-#   Tags: tags
-#   About: about
-
-# Content
-fancybox: true
-
-# Thumbnail
-thumbnail: true
-
-# Scroll Loading
-scrollLoading: true
-
-# widgets:
-# - recent_posts
-# - category
-# - archive
-# - tag
-# - tagcloud
-# - links
-
-# # Links
-# links:
-  # JSDC: http://jsdc.tw
-  # Hackathon Taiwan: https://hackathon.tw
-  # hexo: http://hexo.iov
-  # theme: https://github.com/ppoffice/hexo-theme-hueman
+# Plugins
+plugins:
+    lightgallery: true # options: true, false
+    justifiedgallery: true # options: true, false
+    google_analytics: UA-65872031-1 # enter the tracking ID for your Google Analytics
+    google_site_verification: 1.0 # enter Google site verification code
+    # baidu_analytics: # enter Baidu Analytics hash key
 
 # Miscellaneous
-# google_analytics: UA-65872031-1
-# favicon: /images/logo.png
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:
+    links:
+        # JSDC: http://jsdc.tw
+        # Hackathon Taiwan: https://hackathon.tw
+        Hexo: http://hexo.io
+        Hexo-theme Icarus: https://github.com/ppoffice/hexo-theme-icarus
