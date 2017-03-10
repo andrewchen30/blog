@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://www.andrewchen.tw/2017/02/17/20170217_NOTE_ATOM%E7%84%A1%E7%97%9B%E8%BD%89%E7%A7%BB%E8%87%B3VSCode/</loc>
+    <lastmod>2017-03-10T23:11:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>ATOM無痛轉移至VSCode</title>
+        <pubTime>2017-02-17T00:13:20.000Z</pubTime>
+        
+        <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
+         
+        <tag>atom2vscode</tag>
+         
+        <tag>atom</tag>
+         
+        <tag>vscode</tag>
+         
+        <tag>visual studio code</tag>
+         
+         
+           
+             
+              <breadCrumb title="做個筆記怕忘記" url="http://www.andrewchen.tw/categoriesl/%E5%81%9A%E5%80%8B%E7%AD%86%E8%A8%98%E6%80%95%E5%BF%98%E8%A8%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.andrewchen.tw/2017/02/05/20170205_BOOKS_CleanCode1-1/</loc>
     <lastmod>2017-03-03T15:37:35.000Z</lastmod>
     <data>
@@ -180,36 +210,6 @@
         <tag>Telegram</tag>
          
         <tag>telegraf.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="做個筆記怕忘記" url="http://www.andrewchen.tw/categoriesl/%E5%81%9A%E5%80%8B%E7%AD%86%E8%A8%98%E6%80%95%E5%BF%98%E8%A8%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.andrewchen.tw/2017/02/17/20170217_NOTE_ATOM%E7%84%A1%E7%97%9B%E8%BD%89%E7%A7%BB%E8%87%B3VSCode/</loc>
-    <lastmod>2017-02-17T01:21:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>ATOM無痛轉移至VSCode</title>
-        <pubTime>2017-02-17T00:13:20.000Z</pubTime>
-        
-        <tag>重點筆記</tag>
-         
-        <tag>程式設計</tag>
-         
-        <tag>atom2vscode</tag>
-         
-        <tag>atom</tag>
-         
-        <tag>vscode</tag>
-         
-        <tag>visual studio code</tag>
          
          
            

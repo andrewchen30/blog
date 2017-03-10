@@ -1,5 +1,5 @@
 {
-  "name": "AndrewChenBlog",
+  "name": "andrewchenblog",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bluebird": "^3.4.7",
+    "ejs": "^2.5.6",
     "fs-extra": "^2.0.0",
     "ftp": "^0.3.10",
     "ftp-deploy": "^1.1.0",

@@ -18,7 +18,7 @@ tags:
 
 隨這過去這一年 VS Code 的使用者增加，Atom vs Sublime vs VSCode 相關的討論炒得越來越火熱，也有越來越多社群上的大大表示跳槽到 VSCode 的圈內。以我個人來說，我是從 Atom 跳槽到 VSCode ，剛跳槽的時候也遇到了不少的問題，以下介紹了 Atom 跟 VSCode 跳槽的細節過程：
 
-### 將快捷鍵全部調整成跟 Atmo 一樣
+### 將快捷鍵全部調整成跟 Atom 一樣
 
 <!--more-->
 
