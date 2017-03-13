@@ -5,11 +5,6 @@ thumbnail: /images/notes/noteForYougerProgramer_thumbnail.jpg
 tags:
 - 程式設計
 - 重點筆記
-- TelegramBot
-- ChatBot
-- Telegram
-- Node.js 
-- telegraf.js
 ---
 
 * 當你遇到問題時，花個 15 分鐘常識尋找答案。如果還是不行，就問問別人吧。

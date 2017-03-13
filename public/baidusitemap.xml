@@ -4,26 +4,42 @@
 
     
   <url>
-    <loc>http://www.andrewchen.tw/2017/03/12/20170312_NOTE_%E7%BF%BB%E8%AD%AF%E5%88%86%E4%BA%ABNoteForYougerProgramer/</loc>
-    <lastmod>2017-03-12T02:21:25.000Z</lastmod>
+    <loc>http://www.andrewchen.tw/2017/03/13/20170313_BOOKS_CleanCode2/</loc>
+    <lastmod>2017-03-13T04:11:03.000Z</lastmod>
     <data>
         <display>
-        <title>分享：給年輕程式設計的忠告</title>
-        <pubTime>2017-03-12T01:11:20.000Z</pubTime>
+        <title>CleanCode 無瑕的程式碼-番外篇</title>
+        <pubTime>2017-03-13T01:17:10.000Z</pubTime>
         
-        <tag>Node.js</tag>
+        <tag>讀書心得</tag>
          
         <tag>重點筆記</tag>
          
         <tag>程式設計</tag>
          
-        <tag>TelegramBot</tag>
+        <tag>心得分享</tag>
          
-        <tag>ChatBot</tag>
          
-        <tag>Telegram</tag>
+           
+             
+              <breadCrumb title="Code要好好寫" url="http://www.andrewchen.tw/categoriesl/Code%E8%A6%81%E5%A5%BD%E5%A5%BD%E5%AF%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.andrewchen.tw/2017/03/12/20170312_NOTE_%E7%BF%BB%E8%AD%AF%E5%88%86%E4%BA%ABNoteForYougerProgramer/</loc>
+    <lastmod>2017-03-13T00:48:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>分享：給年輕程式設計的忠告</title>
+        <pubTime>2017-03-12T01:11:20.000Z</pubTime>
+        
+        <tag>重點筆記</tag>
          
-        <tag>telegraf.js</tag>
+        <tag>程式設計</tag>
          
          
            
