@@ -3,17 +3,71 @@
 <head>
     <meta charset="utf-8">
     
-    <title>標籤: 重點筆記 | 愛吃東西的RD</title>
+    <title>設計模式五大基本原則 SOLID | 愛吃東西的RD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Node.js、JavaScript、好書筆記、吃吃喝喝">
-<meta property="og:type" content="website">
-<meta property="og:title" content="愛吃東西的RD">
-<meta property="og:url" content="http://www.andrewchen.tw/tags/重點筆記/index.html">
+    <meta name="description" content="最近複習 Design Pattern 順手做個筆記，Design Pattern 的是基本 5 大原則 SOLID。先說明這部分的名詞翻譯，中文翻譯我是查詢 維基百科 的翻譯，畢竟中文翻譯方式本身就是一個約定成俗即可的東西。
+
+
+
+縮寫
+英文全名
+中譯
+
+
+
+
+SRP
+Single Responsibility Principle
+單一職責原則
+
+
+OCP
+Open Closed Princip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="設計模式五大基本原則 SOLID">
+<meta property="og:url" content="http://www.andrewchen.tw/2017/04/09/20170409_NOTE_設計模式五大基本原則SOLID/index.html">
 <meta property="og:site_name" content="愛吃東西的RD">
-<meta property="og:description" content="Node.js、JavaScript、好書筆記、吃吃喝喝">
+<meta property="og:description" content="最近複習 Design Pattern 順手做個筆記，Design Pattern 的是基本 5 大原則 SOLID。先說明這部分的名詞翻譯，中文翻譯我是查詢 維基百科 的翻譯，畢竟中文翻譯方式本身就是一個約定成俗即可的東西。
+
+
+
+縮寫
+英文全名
+中譯
+
+
+
+
+SRP
+Single Responsibility Principle
+單一職責原則
+
+
+OCP
+Open Closed Princip">
+<meta property="og:image" content="http://www.andrewchen.tw/images/books/CleanCode.jpg">
+<meta property="og:updated_time" content="2017-04-09T12:00:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="愛吃東西的RD">
-<meta name="twitter:description" content="Node.js、JavaScript、好書筆記、吃吃喝喝">
+<meta name="twitter:title" content="設計模式五大基本原則 SOLID">
+<meta name="twitter:description" content="最近複習 Design Pattern 順手做個筆記，Design Pattern 的是基本 5 大原則 SOLID。先說明這部分的名詞翻譯，中文翻譯我是查詢 維基百科 的翻譯，畢竟中文翻譯方式本身就是一個約定成俗即可的東西。
+
+
+
+縮寫
+英文全名
+中譯
+
+
+
+
+SRP
+Single Responsibility Principle
+單一職責原則
+
+
+OCP
+Open Closed Princip">
+<meta name="twitter:image" content="http://www.andrewchen.tw/images/books/CleanCode.jpg">
     
 
     
@@ -256,25 +310,21 @@ ga('send', 'pageview');
 </script>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#重點筆記</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-20170409_NOTE_設計模式五大基本原則SOLID" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/04/09/20170409_NOTE_設計模式五大基本原則SOLID/">設計模式五大基本原則 SOLID</a>
+        <h1 class="article-title" itemprop="name">
+            設計模式五大基本原則 SOLID
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/04/09/20170409_NOTE_設計模式五大基本原則SOLID/">
@@ -283,491 +333,176 @@ ga('send', 'pageview');
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/13/20170313_BOOKS_CleanCode2/">CleanCode 無瑕的程式碼-番外篇</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>最近複習 Design Pattern 順手做個筆記，Design Pattern 的是基本 5 大原則 SOLID。先說明這部分的名詞翻譯，中文翻譯我是查詢 <a href="https://zh.wikipedia.org/wiki/SOLID_(%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1" target="_blank" rel="external">維基百科</a> 的翻譯，畢竟中文翻譯方式本身就是一個約定成俗即可的東西。</p>
+<table>
+<thead>
+<tr>
+<th>縮寫</th>
+<th>英文全名</th>
+<th>中譯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SRP</td>
+<td>Single Responsibility Principle</td>
+<td>單一職責原則</td>
+</tr>
+<tr>
+<td>OCP</td>
+<td>Open Closed Principle</td>
+<td>開閉原則</td>
+</tr>
+<tr>
+<td>LSP</td>
+<td>Liskov Substitution Principle</td>
+<td>里氏替換原則</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>Interface Segregation Principles</td>
+<td>介面隔離原則</td>
+</tr>
+<tr>
+<td>DIP</td>
+<td>Dependency Inversion Principle</td>
+<td>依賴反轉原則</td>
+</tr>
+</tbody>
+</table>
+<p>讓我們針對這幾個逐一做介紹：</p>
+<h1 id="單一職責原則-Single-Responsibility-Principle"><a href="#單一職責原則-Single-Responsibility-Principle" class="headerlink" title="單一職責原則 Single Responsibility Principle"></a>單一職責原則 Single Responsibility Principle</h1><p>從最高維的系統角度來看，每個系統該明確規劃並解決某中問題，或是針對某個功能的實作，而不是一個功能複雜卻難用的系統，可以想像成一個 APP 就是做一件事情，日曆就是日曆，過多的功能只會導致開發上的複雜或是需求定位不夠明確的問題。若是從低維度往上看，程式碼中的 Function 應該遵循所謂的 Pure Function，每個函數負責好自己做的事情，一次只做一件事情，不依賴於外界任何的東西，也不多做任何其他的手腳。</p>
+<p>單一職責原則最終的目的是 <code>高內聚</code>。一次做一件事情，並移除與這件事情無關的程式碼和變數，整體程式碼中的每個部分都與自己實作的功能相關，並沒有冗余的程式碼或功能。可以將單一職責原則視為樂高的每一塊積木，積木就做好一塊正方型積木堆疊的工作，草形狀的積木就是裝飾草形狀的工作，要是有一塊積木是正方形的同時上面又長草，或許在某些情境下特別好用，但這也代表他在其他地方不適用，因為他組合了兩個不同的功能，並非單一職責原則。</p>
+<h1 id="開閉原則-Open-Closed-Principle"><a href="#開閉原則-Open-Closed-Principle" class="headerlink" title="開閉原則 Open Closed Principle"></a>開閉原則 Open Closed Principle</h1><p>一個模組應該是透過延展功能的彈性來獲得更多功能上的變化，而並非直接修改內部的程式碼。將模組設計的易於延展功能，實務上的困難就是難以預測，到底模組中的哪些功能有可能會面對到修改。目的是避免最原始的模組被頻繁的修改，基層模組被頻繁修改時相當難維護其穩定性，OCP 希望直接避免掉修改的機會，使用延展新功能的方式來達成不同的需求。而新的需求就從新延展出來的模組中來實作，這樣維持舊有程式碼的安定性和新需求的彈性。</p>
+<p>明顯的，延展模組就是說物件導向中的繼承，而針對延展方式也有不同的手法，如直接繼承就有的模組並覆蓋新功能上去、繼承抽象類別、透過抽象類別的規範來實作新功能、透過多行來實作不同的新功能。</p>
+<h1 id="里氏替換原則-Liskov-Substitution-Principle"><a href="#里氏替換原則-Liskov-Substitution-Principle" class="headerlink" title="里氏替換原則 Liskov Substitution Principle"></a>里氏替換原則 Liskov Substitution Principle</h1><p>在繼承中衍生出來的子類別，能完全支援父類別的功能。之所以稱做替換原則，就是指腹類別成出現的地方，一定能替換成衍生類別來使用。這中間其實多少有牽扯到 SRP 的原則，當你的模組或衍生的模組夾雜太多功能時，儘管依照著 LSP 的原則元整的實作了上一階的所有功能是相當不錯的方式，但這樣會造成這個類別或是模組越來越複雜，而當面臨下一次的功能擴充時，這個狀況會越來越明顯的陷入泥濘。因此在嘗試 LSP 時，必定要注意到不能忽略了 SRP 的觀念，避免在多次的升級或是改版中，最終導致整個系統極低的內聚力，並且相當不易拆分或刪減功能維護。</p>
+<h1 id="介面隔離原則-Interface-Segregation-Principles"><a href="#介面隔離原則-Interface-Segregation-Principles" class="headerlink" title="介面隔離原則 Interface Segregation Principles"></a>介面隔離原則 Interface Segregation Principles</h1><p>設計模組時避免設計龐大且同時多功能的單一介面，我們不應該大規模的假設使用者會完全符合這樣的需求。介面設計時應該力求介面的功能單一化，分割出多個單一功能的碎片，而眾多的功能介面中，使用者只需要挑出幾個符合需求的，並了解之後拼裝成對應的功能。同樣與 SRP 有類似的觀念，當某個 API 設計越複雜越完整時，這只會導致該 API 能適用的場合越來越少，多做了不該做的事情。ISP 即是esign Pattern 中的 <code>低耦合</code> 目標。</p>
+<h1 id="依賴反轉原則-Dependency-Inversion-Principle"><a href="#依賴反轉原則-Dependency-Inversion-Principle" class="headerlink" title="依賴反轉原則 Dependency Inversion Principle"></a>依賴反轉原則 Dependency Inversion Principle</h1><p>重點在於誰依賴誰，是設計模式中相當重要的事情，子類別肯定依賴父類別的，而父類別不能去依賴子類別實作功能。另一個重點是抽象類別，抽象類別不應該有太多細節，而實作類別依賴抽象細節，這之間的重點是，依賴應該是單向的，當然最好的目標是完全的沒有耦合，但繼承這個行為本身就讓某個類別依賴另一個類別，因此單向的依賴是最乾淨的，雙向的依賴，或是違反常理的依賴，會導致程式碼相當難追蹤。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>五個基本原則大致上勾勒出：<code>低耦合</code>、<code>高內巨</code>、介面設計方式、繼承方式、兼容。而實作設計模式的方式與細節重點在於讓程式碼更乾淨，更能讓後者完全了解前者所撰寫的功能，也降低在後續修改上的成本。</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/13/20170313_BOOKS_CleanCode2/">
-            <time datetime="2017-03-13T01:17:10.000Z" itemprop="datePublished">2017-03-13</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/讀書心得/">讀書心得</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/12/20170312_NOTE_翻譯分享NoteForYougerProgramer/">分享：給年輕程式設計的忠告</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/12/20170312_NOTE_翻譯分享NoteForYougerProgramer/">
-            <time datetime="2017-03-12T01:11:20.000Z" itemprop="datePublished">2017-03-12</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a>
-    </div>
 
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/03/20170303_BOOKS_領導的品格/">領導的品格</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/03/20170303_BOOKS_領導的品格/">
-            <time datetime="2017-03-03T15:12:00.000Z" itemprop="datePublished">2017-03-03</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/好書筆記/">好書筆記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/溝通技巧/">溝通技巧</a>, <a class="tag-link" href="/tags/自我成長/">自我成長</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/18/20170218_NOTE_建立自己的TelegramBot/">建立自己的 Telegram ChatBot</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/18/20170218_NOTE_建立自己的TelegramBot/">
-            <time datetime="2017-02-18T02:25:35.000Z" itemprop="datePublished">2017-02-18</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ChatBot/">ChatBot</a>, <a class="tag-link" href="/tags/Node-js/">Node.js</a>, <a class="tag-link" href="/tags/Telegram/">Telegram</a>, <a class="tag-link" href="/tags/TelegramBot/">TelegramBot</a>, <a class="tag-link" href="/tags/telegraf-js/">telegraf.js</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/17/20170217_NOTE_ATOM無痛轉移至VSCode/">ATOM無痛轉移至VSCode</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/17/20170217_NOTE_ATOM無痛轉移至VSCode/">
-            <time datetime="2017-02-17T00:13:20.000Z" itemprop="datePublished">2017-02-17</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/atom/">atom</a>, <a class="tag-link" href="/tags/atom2vscode/">atom2vscode</a>, <a class="tag-link" href="/tags/visual-studio-code/">visual studio code</a>, <a class="tag-link" href="/tags/vscode/">vscode</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/11/20170211_BOOKS_兼具情與理的傳達力-2/">兼具情與理的傳達力(下篇) 管理的表達與工作外的事</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/11/20170211_BOOKS_兼具情與理的傳達力-2/">
-            <time datetime="2017-02-11T12:00:00.000Z" itemprop="datePublished">2017-02-11</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/好書筆記/">好書筆記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/溝通技巧/">溝通技巧</a>, <a class="tag-link" href="/tags/自我成長/">自我成長</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/11/20170211_BOOKS_兼具情與理的傳達力-1/">兼具情與理的傳達力 (上篇) 團隊的向心力</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/11/20170211_BOOKS_兼具情與理的傳達力-1/">
-            <time datetime="2017-02-11T10:25:55.000Z" itemprop="datePublished">2017-02-11</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/好書筆記/">好書筆記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/溝通技巧/">溝通技巧</a>, <a class="tag-link" href="/tags/自我成長/">自我成長</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/11/20170211_NOTE_git還原單一檔案/">Git 還原單一檔案</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/11/20170211_NOTE_git還原單一檔案/">
-            <time datetime="2017-02-11T00:45:15.000Z" itemprop="datePublished">2017-02-11</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/10/20170210_BOOKS_人月神話/">人月神話 - 軟體專案管理之道</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/10/20170210_BOOKS_人月神話/">
-            <time datetime="2017-02-10T15:00:49.000Z" itemprop="datePublished">2017-02-10</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/讀書心得/">讀書心得</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/05/20170205_BOOKS_CleanCode1-2/">CleanCode 無瑕的程式碼 (下篇)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/05/20170205_BOOKS_CleanCode1-2/">
-            <time datetime="2017-02-05T15:50:49.000Z" itemprop="datePublished">2017-02-05</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/讀書心得/">讀書心得</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/05/20170205_BOOKS_CleanCode1-1/">CleanCode 無瑕的程式碼 (上篇)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/05/20170205_BOOKS_CleanCode1-1/">
-            <time datetime="2017-02-05T14:55:10.000Z" itemprop="datePublished">2017-02-05</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/讀書心得/">讀書心得</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/">被討厭的勇氣 (下篇)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-2/">
-            <time datetime="2017-01-31T11:10:15.000Z" itemprop="datePublished">2017-01-31</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/好書筆記/">好書筆記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心理學/">心理學</a>, <a class="tag-link" href="/tags/自我成長/">自我成長</a>, <a class="tag-link" href="/tags/讀書心得/">讀書心得</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/">被討厭的勇氣 (上篇)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/31/20170131_BOOKS_被討厭的勇氣1-1/">
-            <time datetime="2017-01-31T02:20:15.000Z" itemprop="datePublished">2017-01-31</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/好書筆記/">好書筆記</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/心理學/">心理學</a>, <a class="tag-link" href="/tags/自我成長/">自我成長</a>, <a class="tag-link" href="/tags/讀書心得/">讀書心得</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
+
+    <a data-url="http://www.andrewchen.tw/2017/04/09/20170409_NOTE_設計模式五大基本原則SOLID/" data-id="cj1aie7im0000u0wapnpr0l28" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/03/13/20170313_BOOKS_CleanCode2/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">CleanCode 無瑕的程式碼-番外篇</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+    </section>
+
+
 </section>
             
                 <aside id="sidebar">
