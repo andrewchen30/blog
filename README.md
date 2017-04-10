@@ -1,8 +1,8 @@
 # AndrewChen blog
 
-My Blog : [http://polarbearandrew.github.io/blog/](http://polarbearandrew.github.io/blog/)
+My Blog : [http://www.andrewchen.tw](http://www.andrewchen.tw)
 
-Author Facebook：[AndrewChen](https://www.facebook.com)
+Author's Facebook：[AndrewChen](https://www.facebook.com)
 
 ### Node version
 
