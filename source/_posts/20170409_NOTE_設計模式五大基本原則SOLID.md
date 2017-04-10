@@ -1,7 +1,7 @@
 title: 設計模式五大基本原則 SOLID
 date: 2017-04-09 17:49:00
 categories: Code要好好寫
-thumbnail: /images/books/CleanCode_thumbnail.jpg
+thumbnail: /images/notes/design_pattern_thumbnail.jpg
 tags:
 - 程式設計
 - 重點筆記

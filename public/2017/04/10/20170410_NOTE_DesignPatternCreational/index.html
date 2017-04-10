@@ -23,8 +23,8 @@
 行為型模式 Behavioral pattern
 
 工廠模式 Factory pattern">
-<meta property="og:image" content="http://www.andrewchen.tw/images/books/CleanCode.jpg">
-<meta property="og:updated_time" content="2017-04-10T05:42:14.000Z">
+<meta property="og:image" content="http://www.andrewchen.tw/images/notes/design_pattern.jpg">
+<meta property="og:updated_time" content="2017-04-10T12:44:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="設計模式創建型模式 Creational Pattern">
 <meta name="twitter:description" content="設計模式主要被分為三大類：
@@ -34,7 +34,7 @@
 行為型模式 Behavioral pattern
 
 工廠模式 Factory pattern">
-<meta name="twitter:image" content="http://www.andrewchen.tw/images/books/CleanCode.jpg">
+<meta name="twitter:image" content="http://www.andrewchen.tw/images/notes/design_pattern.jpg">
     
 
     
@@ -327,11 +327,12 @@ ga('send', 'pageview');
 <li>行為型模式 Behavioral pattern</li>
 </ul>
 <h1 id="工廠模式-Factory-pattern"><a href="#工廠模式-Factory-pattern" class="headerlink" title="工廠模式 Factory pattern"></a>工廠模式 Factory pattern</h1><a id="more"></a>
-<p>透過新增不同的類別來達成區分功能的需求，而這些需求的共通點是有類似的操作。在實例化類別時因應需求決定實例化對應的類別，而這幾個類別在接下來的程式碼中，可能都有差不多的操作。舉例來說：宣告 <code>user</code> 時，透過條件判定噓要實例化 <code>user</code>、<code>vip</code> 或是 <code>admin</code> 的類別，而在之後操作時可直接透過 <code>user.login()</code> 直接進行想要的操作，因為在一開始實例化類別時已經處理完成需求的擴充或更改了。</p>
+<p>透過新增不同的類別來達成延展或修改功能的需求。在實例化類別前因應需求決定實例化的對象，而這幾個類別在接下來的程式碼中，可能都有差不多的操作。舉例來說：宣告 <code>user</code> 時，透過條件判定噓要實例化 <code>user</code>、<code>vip</code> 或是 <code>admin</code> 的類別，而在之後操作時可直接透過 <code>user.login()</code> 直接進行想要的操作，因為在一開始實例化類別時已經處理完成需求的擴充或更改了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">User user;</div><div class="line"><span class="keyword">if</span>(isAdmin) &#123;</div><div class="line">    user = Admin();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span>(isVIP) &#123;</div><div class="line">    user = VIP();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    user = User();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>工廠模式有很多種實作方式：簡單工廠、抽象工廠、方法工廠等等。都是用相同的邏輯在運作，只是切分的層面或方式不同。</p>
-<h1 id="建造者模式-Builder-Pattern"><a href="#建造者模式-Builder-Pattern" class="headerlink" title="建造者模式 Builder Pattern"></a>建造者模式 Builder Pattern</h1><p>Builder Pattern  我個人認為可以直接視為工廠模式的一種，如果再細細分的話更接近抽象工廠模式。Builder Pattern 的重點在於抽取出程式碼中最終實作的某部分，透過一個抽象類別來規範這些實作的方式，而之後若有擴充的需求，直接依賴於抽象類別再行新增，然後在實例化時切換即可。可以想像成網頁中模組化的 footer 當你抽換 footer 時，整個網站的 footer 都可以跟著抽換。</p>
+<h1 id="建造者模式-Builder-Pattern"><a href="#建造者模式-Builder-Pattern" class="headerlink" title="建造者模式 Builder Pattern"></a>建造者模式 Builder Pattern</h1><p>Builder Pattern  我個人認為可以直接視為工廠模式的一種，如果再細分的話更接近抽象工廠模式。Builder Pattern 的重點在於抽取出程式碼中最終實作的某部分，透過一個抽象類別來規範這些實作的方式，而之後若有擴充的需求，直接依賴於抽象類別再行新增，然後在實例化時切換即可。可以想像成網頁中模組化的 footer 當你抽換 footer 時，整個網站的 footer 都可以跟著抽換。</p>
 <h1 id="雛形模式-Prototype-Pattern"><a href="#雛形模式-Prototype-Pattern" class="headerlink" title="雛形模式 Prototype Pattern"></a>雛形模式 Prototype Pattern</h1><p>在新建立物件時，透過複製現有的物件來建立。</p>
-<h1 id="單例模式-Singleton-Pattern"><a href="#單例模式-Singleton-Pattern" class="headerlink" title="單例模式 Singleton Pattern"></a>單例模式 Singleton Pattern</h1><p>一個類別就指雍有一個實例化，如果再次進行實例化，就直接回傳原先實例化的那個物件。Single Pattern 又細分成兩種操作模式，一種是在整個系統初始化或是啟動時就直接對該類別實例化，另一則是在第一次宣告時才實例化。差別在於佔用記憶體和初始化的效能。</p>
+<h1 id="單例模式-Singleton-Pattern"><a href="#單例模式-Singleton-Pattern" class="headerlink" title="單例模式 Singleton Pattern"></a>單例模式 Singleton Pattern</h1><p>一個類別就只擁有一個實例化，如果再次進行實例化，就直接回傳原先已實例化的物件。Single Pattern 中又細分成兩種操作模式，一種是在整個系統初始化或是啟動時就直接對該類別實例化，另一則是在第一次宣告時才實例化。差別在於佔用記憶體和初始化的效能。</p>
 
         
         </div>
@@ -452,7 +453,7 @@ ga('send', 'pageview');
                             <a href="/2017/04/10/20170410_NOTE_DesignPatternCreational/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/books/CleanCode_thumbnail.jpg)" alt="設計模式創建型模式 Creational Pattern" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/notes/design_pattern_thumbnail.jpg)" alt="設計模式創建型模式 Creational Pattern" class="thumbnail-image"></span>
     
 </a>
 
@@ -474,7 +475,7 @@ ga('send', 'pageview');
                             <a href="/2017/04/09/20170409_NOTE_設計模式五大基本原則SOLID/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/books/CleanCode_thumbnail.jpg)" alt="設計模式五大基本原則 SOLID" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/notes/design_pattern_thumbnail.jpg)" alt="設計模式五大基本原則 SOLID" class="thumbnail-image"></span>
     
 </a>
 

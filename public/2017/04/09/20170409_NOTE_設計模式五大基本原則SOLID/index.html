@@ -45,8 +45,8 @@ Single Responsibility Principle
 
 OCP
 Open Closed Princip">
-<meta property="og:image" content="http://www.andrewchen.tw/images/books/CleanCode.jpg">
-<meta property="og:updated_time" content="2017-04-09T12:04:06.000Z">
+<meta property="og:image" content="http://www.andrewchen.tw/images/notes/design_pattern.jpg">
+<meta property="og:updated_time" content="2017-04-10T12:44:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="設計模式五大基本原則 SOLID">
 <meta name="twitter:description" content="最近複習 Design Pattern 順手做個筆記，Design Pattern 的是基本 5 大原則 SOLID。先說明這部分的名詞翻譯，中文翻譯我是查詢 維基百科 的翻譯，畢竟中文翻譯方式本身就是一個約定成俗即可的東西。
@@ -67,7 +67,7 @@ Single Responsibility Principle
 
 OCP
 Open Closed Princip">
-<meta name="twitter:image" content="http://www.andrewchen.tw/images/books/CleanCode.jpg">
+<meta name="twitter:image" content="http://www.andrewchen.tw/images/notes/design_pattern.jpg">
     
 
     
@@ -399,7 +399,7 @@ ga('send', 'pageview');
 <h1 id="里氏替換原則-Liskov-Substitution-Principle"><a href="#里氏替換原則-Liskov-Substitution-Principle" class="headerlink" title="里氏替換原則 Liskov Substitution Principle"></a>里氏替換原則 Liskov Substitution Principle</h1><p>在繼承中衍生出來的子類別，能完全支援父類別的功能。之所以稱做替換原則，就是指腹類別成出現的地方，一定能替換成衍生類別來使用。這中間其實多少有牽扯到 SRP 的原則，當你的模組或衍生的模組夾雜太多功能時，儘管依照著 LSP 的原則元整的實作了上一階的所有功能是相當不錯的方式，但這樣會造成這個類別或是模組越來越複雜，而當面臨下一次的功能擴充時，這個狀況會越來越明顯的陷入泥濘。因此在嘗試 LSP 時，必定要注意到不能忽略了 SRP 的觀念，避免在多次的升級或是改版中，最終導致整個系統極低的內聚力，並且相當不易拆分或刪減功能維護。</p>
 <h1 id="介面隔離原則-Interface-Segregation-Principles"><a href="#介面隔離原則-Interface-Segregation-Principles" class="headerlink" title="介面隔離原則 Interface Segregation Principles"></a>介面隔離原則 Interface Segregation Principles</h1><p>設計模組時避免設計龐大且同時多功能的單一介面，我們不應該大規模的假設使用者會完全符合這樣的需求。介面設計時應該力求介面的功能單一化，分割出多個單一功能的碎片，而眾多的功能介面中，使用者只需要挑出幾個符合需求的，並了解之後拼裝成對應的功能。同樣與 SRP 有類似的觀念，當某個 API 設計越複雜越完整時，這只會導致該 API 能適用的場合越來越少，多做了不該做的事情。ISP 即是esign Pattern 中的 <code>低耦合</code> 目標。</p>
 <h1 id="依賴反轉原則-Dependency-Inversion-Principle"><a href="#依賴反轉原則-Dependency-Inversion-Principle" class="headerlink" title="依賴反轉原則 Dependency Inversion Principle"></a>依賴反轉原則 Dependency Inversion Principle</h1><p>重點在於誰依賴誰，是設計模式中相當重要的事情，子類別肯定依賴父類別的，而父類別不能去依賴子類別實作功能。另一個重點是抽象類別，抽象類別不應該有太多細節，而實作類別依賴抽象細節，這之間的重點是，依賴應該是單向的，當然最好的目標是完全的沒有耦合，但繼承這個行為本身就讓某個類別依賴另一個類別，因此單向的依賴是最乾淨的，雙向的依賴，或是違反常理的依賴，會導致程式碼相當難追蹤。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>五個基本原則大致上勾勒出：<code>低耦合</code>、<code>高內巨</code>、介面設計方式、繼承方式、兼容。而實作設計模式的方式與細節重點在於讓程式碼更乾淨，更能讓後者完全了解前者所撰寫的功能，也降低在後續修改上的成本。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>五個基本原則大致上勾勒出：<code>低耦合</code>、<code>高內聚</code>、介面設計方式、繼承方式、兼容。而實作設計模式的方式與細節重點在於讓程式碼更乾淨，更能讓後者完全了解前者所撰寫的功能，也降低在後續修改上的成本。</p>
 
         
         </div>
@@ -529,7 +529,7 @@ ga('send', 'pageview');
                             <a href="/2017/04/10/20170410_NOTE_DesignPatternCreational/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/books/CleanCode_thumbnail.jpg)" alt="設計模式創建型模式 Creational Pattern" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/notes/design_pattern_thumbnail.jpg)" alt="設計模式創建型模式 Creational Pattern" class="thumbnail-image"></span>
     
 </a>
 
@@ -551,7 +551,7 @@ ga('send', 'pageview');
                             <a href="/2017/04/09/20170409_NOTE_設計模式五大基本原則SOLID/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/books/CleanCode_thumbnail.jpg)" alt="設計模式五大基本原則 SOLID" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/notes/design_pattern_thumbnail.jpg)" alt="設計模式五大基本原則 SOLID" class="thumbnail-image"></span>
     
 </a>
 
