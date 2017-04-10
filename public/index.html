@@ -168,7 +168,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                <i class="fa fa-file-o"></i> 21
+                <i class="fa fa-file-o"></i> 22
                 <span>文章</span>
             </div>
             <div id="github-followers" class="article-info-block">
@@ -257,6 +257,154 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-20170410_NOTE_Next.js走馬看花" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/10/20170410_NOTE_Next.js走馬看花/">Next.js 2 走馬看花</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/10/20170410_NOTE_Next.js走馬看花/">
+            <time datetime="2017-04-10T12:52:00.000Z" itemprop="datePublished">2017-04-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/心得分享/">心得分享</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/重點筆記/">重點筆記</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>這幾天 Next.js 2 在台灣的技術圈洗了一輪版，讓我們花一點點時間快速看看 Next.js 到底在做什麼。</p>
+<p><img src="/images/notes/nextJs.jpg" alt="Next.js"></p>
+<p><a href="https://github.com/zeit/next.js/">Next.js Github</a></p>
+<p>Next 算是對一般網站使用 React 高成本問題提出了解決方案，明確地簡化了環境建置和最基本的 routing。如果使用 Next 內建的 routing 機制，吃 <code>./pages</code> 資料夾中的檔案決定 router 時， 開發者能對  router 動得手腳就相對有限，（在 demo 中看到的，大部分需求應該都沒問題 的），但 Next 中仍然有相當的彈性能導入其他 routing 的框架，所以對於延展性的需求是無庸置疑的，而且官方有佛心的提供大量與其他框架結合的範例。</p>
+<h1 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h1><ol>
+<li>打包了大部分 React server rendering 基本會用到的 package</li>
+<li><code>npm run xxx</code> 就建置完成了，webpack 什麼的都省了</li>
+<li>Next 包 babel, webpack進去, 包了很多東西就對了</li>
+<li>Next 直接實作了 server rendering, 這點大概就是 Next 最大的價值, 包括有針對 <head> 做一套對應的機制</li>
+<li>因為實作了 server rendering, Next 中有自己的撰寫風格, 有一個 getInitialProps 的 func，且 getInitialProps 是 async function</li>
+<li>Next 裡面寫的 code 基本上就是 react code，他並不是一個全新的框架，因此學習成本是有限的。</li>
+<li>通常這種好棒棒的工具都有很肥的問題, Next 官方表示沒有, client 只會有 65kb 負擔 ( 因為是 server rendering, 肥的是 server 端 )</li>
+<li>Next 彈性還是相當大的, graphQL, express, koa, typescript, reduxt 想跟誰結婚就跟誰結婚</li>
+</ol></p>
+            <p class="article-more-link">
+                <a href="/2017/04/10/20170410_NOTE_Next.js走馬看花/#more">
+                  繼續閱讀
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.andrewchen.tw/2017/04/10/20170410_NOTE_Next.js走馬看花/" data-id="cj1c4ahd0000000wahwt5l6t3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-20170410_NOTE_DesignPatternCreational" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -2964,147 +3112,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-20150802_JS_JSDevilDay" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/08/02/20150802_JS_JSDevilDay/">JS Devil Day 參與心得</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/08/02/20150802_JS_JSDevilDay/">
-            <time datetime="2015-08-02T01:05:42.000Z" itemprop="datePublished">2015-08-02</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categoriesl/社群活動/">社群活動</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ES6/">ES6</a>, <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/社群活動/">社群活動</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><blockquote>
-<p>本篇文上是我為<a href="http://jsdc.tw">JSDC 2015</a>撰寫<br>感謝<a href="https://www.facebook.com/clonncd?fref=ts">Caeser Chi</a>給予指導</p>
-</blockquote>
-<p><img src="https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg" alt="JS Devil Day"></p>
-<p>JS Devil Day 是本次 JSDC 2015 所舉辦第一場對外 Meetup，也是首次透過北中南三方連線方式進行，本次以參與者角色，記錄此次活動。</p>
-<p>JS Devil Day 當天主要有三個主題：Angular.js、ECMAScript6、講者對談與交流。</p>
-<h2 id="專家分享"><a href="#專家分享" class="headerlink" title="專家分享"></a>專家分享</h2></p>
-            <p class="article-more-link">
-                <a href="/2015/08/02/20150802_JS_JSDevilDay/#more">
-                  繼續閱讀
-                  <i class="fa fa-play" aria-hidden="true"></i>
-                </a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/" data-id="ciz926kbg00075wu0p5mf1pqd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一頁 &raquo;</a>
     </nav>
@@ -3117,6 +3124,28 @@ ga('send', 'pageview');
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/10/20170410_NOTE_Next.js走馬看花/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/notes/nextJs_thumbnail.jpg)" alt="Next.js 2 走馬看花" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category" style="color:#38b7ea">
+                              做個筆記怕忘記
+                              <!-- <a class="article-category-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a> -->
+                            </p>
+                            <p class="item-title"><a href="/2017/04/10/20170410_NOTE_Next.js走馬看花/" class="title">Next.js 2 走馬看花</a></p>
+                            <p class="item-date"><time datetime="2017-04-10T12:52:00.000Z" itemprop="datePublished">2017-04-10</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -3206,28 +3235,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/03/20170303_BOOKS_領導的品格/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/books/領導的品格_thumbnail.jpg)" alt="領導的品格" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category" style="color:#38b7ea">
-                              好書筆記
-                              <!-- <a class="article-category-link" href="/categoriesl/好書筆記/">好書筆記</a> -->
-                            </p>
-                            <p class="item-title"><a href="/2017/03/03/20170303_BOOKS_領導的品格/" class="title">領導的品格</a></p>
-                            <p class="item-date"><time datetime="2017-03-03T15:12:00.000Z" itemprop="datePublished">2017-03-03</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -3238,7 +3245,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/好書筆記/">好書筆記</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/學生時期/">學生時期</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categoriesl/Code要好好寫/">Code要好好寫</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/做個筆記怕忘記/">做個筆記怕忘記</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/吃吃喝喝/">吃吃喝喝</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/好書筆記/">好書筆記</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/學生時期/">學生時期</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categoriesl/社群活動/">社群活動</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -3248,7 +3255,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">歸檔</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -3257,7 +3264,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatBot/">ChatBot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Telegram/">Telegram</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TelegramBot/">TelegramBot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom2vscode/">atom2vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegraf-js/">telegraf.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visual-studio-code/">visual studio code</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吃吃喝喝/">吃吃喝喝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜市/">夜市</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/學生時期作品/">學生時期作品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/學習筆記/">學習筆記</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心得分享/">心得分享</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理學/">心理學</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教學/">教學</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/溝通技巧/">溝通技巧</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/炸物/">炸物</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程式設計/">程式設計</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美食介紹/">美食介紹</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自我成長/">自我成長</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/讀書心得/">讀書心得</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重點筆記/">重點筆記</a><span class="tag-list-count">15</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-js/">Angular.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatBot/">ChatBot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-js/">React.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Telegram/">Telegram</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TelegramBot/">TelegramBot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom2vscode/">atom2vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegraf-js/">telegraf.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visual-studio-code/">visual studio code</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吃吃喝喝/">吃吃喝喝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜市/">夜市</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/學生時期作品/">學生時期作品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/學習筆記/">學習筆記</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心得分享/">心得分享</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理學/">心理學</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教學/">教學</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/溝通技巧/">溝通技巧</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/炸物/">炸物</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社群活動/">社群活動</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程式設計/">程式設計</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美食介紹/">美食介紹</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自我成長/">自我成長</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/讀書心得/">讀書心得</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重點筆記/">重點筆記</a><span class="tag-list-count">16</span></li></ul>
         </div>
     </div>
 
