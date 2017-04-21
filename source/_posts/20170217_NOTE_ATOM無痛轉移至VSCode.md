@@ -8,7 +8,6 @@ tags:
 - atom2vscode
 - atom 
 - vscode
-- visual studio code
 ---
 
 * 如何將快捷鍵全部調整成與 Atom 相同？
