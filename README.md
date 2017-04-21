@@ -10,6 +10,12 @@ Author's Facebook：[AndrewChen](https://www.facebook.com)
 v4.7.2
 ```
 
+### Dependecies
+
+```
+brew install libtool automake autoconf nasm
+```
+
 # Hexo Notes
 
 * [Hexo](http://hexo.io/)
