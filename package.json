@@ -5,7 +5,8 @@
   "scripts": {
     "deploy": "node deploy2ftp.js",
     "server": "sh server.sh",
-    "build": "sh build.sh"
+    "build": "sh build.sh",
+    "rebuild": "sudo hexo clean; sh build.sh"
   },
   "hexo": {
     "version": "3.2.2"
