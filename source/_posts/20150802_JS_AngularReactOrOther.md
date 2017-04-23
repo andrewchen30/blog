@@ -1,7 +1,7 @@
 title: 淺談前端框架未來，Angular, React, 還是...？
 date: 2015-08-02 09:13:44
 categories: 社群活動
-thumbnail: http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png
+thumbnail: /images/notes/javascript_thumbnail.jpg
 tags:
 - 社群活動
 - JavaScript

@@ -117,11 +117,13 @@ html_minifier:
   enable: true
   ignore_error: false
   exclude:
+    - '*.ejs'
 
 css_minifier:
   enable: true
   exclude: 
     - '*.min.css'
+    - '*.styl'
 
 js_minifier:
   enable: true
