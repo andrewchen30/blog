@@ -91,11 +91,11 @@
         
         <tag>讀書心得</tag>
          
-        <tag>重點筆記</tag>
-         
         <tag>心理學</tag>
          
         <tag>自我成長</tag>
+         
+        <tag>重點筆記</tag>
          
          
            
@@ -117,11 +117,11 @@
         
         <tag>讀書心得</tag>
          
-        <tag>重點筆記</tag>
-         
         <tag>心理學</tag>
          
         <tag>自我成長</tag>
+         
+        <tag>重點筆記</tag>
          
          
            
@@ -141,9 +141,9 @@
         <title>ATOM無痛轉移至VSCode</title>
         <pubTime>2017-02-17T00:13:20.000Z</pubTime>
         
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>atom2vscode</tag>
          
@@ -169,9 +169,9 @@
         <title>Next.js 2 走馬看花</title>
         <pubTime>2017-04-10T12:52:00.000Z</pubTime>
         
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -193,9 +193,9 @@
         <title>設計模式創建型模式 Creational Pattern</title>
         <pubTime>2017-04-10T05:10:00.000Z</pubTime>
         
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -217,9 +217,9 @@
         <title>設計模式五大基本原則 SOLID</title>
         <pubTime>2017-04-09T09:49:00.000Z</pubTime>
         
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -243,9 +243,9 @@
         
         <tag>讀書心得</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -267,9 +267,9 @@
         <title>分享：給年輕程式設計的忠告</title>
         <pubTime>2017-03-12T01:11:20.000Z</pubTime>
         
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -292,9 +292,9 @@
         
         <tag>讀書心得</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -318,9 +318,9 @@
         
         <tag>讀書心得</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -344,9 +344,9 @@
         
         <tag>讀書心得</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>心得分享</tag>
          
@@ -368,11 +368,11 @@
         <title>兼具情與理的傳達力 (上篇) 團隊的向心力</title>
         <pubTime>2017-02-11T10:25:55.000Z</pubTime>
         
+        <tag>自我成長</tag>
+         
         <tag>重點筆記</tag>
          
         <tag>心得分享</tag>
-         
-        <tag>自我成長</tag>
          
         <tag>溝通技巧</tag>
          
@@ -394,11 +394,11 @@
         <title>兼具情與理的傳達力(下篇) 管理的表達與工作外的事</title>
         <pubTime>2017-02-11T12:00:00.000Z</pubTime>
         
+        <tag>自我成長</tag>
+         
         <tag>重點筆記</tag>
          
         <tag>心得分享</tag>
-         
-        <tag>自我成長</tag>
          
         <tag>溝通技巧</tag>
          
@@ -420,11 +420,11 @@
         <title>領導的品格</title>
         <pubTime>2017-03-03T15:12:00.000Z</pubTime>
         
+        <tag>自我成長</tag>
+         
         <tag>重點筆記</tag>
          
         <tag>心得分享</tag>
-         
-        <tag>自我成長</tag>
          
         <tag>溝通技巧</tag>
          
@@ -448,9 +448,9 @@
         
         <tag>Node.js</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>TelegramBot</tag>
          
@@ -480,9 +480,9 @@
         <title>Git 還原單一檔案</title>
         <pubTime>2017-02-11T00:45:15.000Z</pubTime>
         
-        <tag>程式設計</tag>
-         
         <tag>重點筆記</tag>
+         
+        <tag>程式設計</tag>
          
         <tag>Git</tag>
          
@@ -547,31 +547,6 @@
 
     
   <url>
-    <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/</loc>
-    <lastmod>2017-02-04T06:59:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>JS Devil Day 參與心得</title>
-        <pubTime>2015-08-02T01:05:42.000Z</pubTime>
-        
-        <tag>社群活動</tag>
-         
-        <tag>JavaScript</tag>
-         
-        <tag>ES6</tag>
-         
-         
-           
-             
-              <breadCrumb title="社群活動" url="http://www.andrewchen.tw/categoriesl/%E7%A4%BE%E7%BE%A4%E6%B4%BB%E5%8B%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
     <loc>http://www.andrewchen.tw/2015/08/16/20150816_JS_redis/</loc>
     <lastmod>2017-02-04T06:59:56.000Z</lastmod>
     <data>
@@ -591,6 +566,31 @@
            
              
               <breadCrumb title="Node.js" url="http://www.andrewchen.tw/categoriesl/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.andrewchen.tw/2015/08/02/20150802_JS_JSDevilDay/</loc>
+    <lastmod>2017-02-04T06:59:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS Devil Day 參與心得</title>
+        <pubTime>2015-08-02T01:05:42.000Z</pubTime>
+        
+        <tag>社群活動</tag>
+         
+        <tag>JavaScript</tag>
+         
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="社群活動" url="http://www.andrewchen.tw/categoriesl/%E7%A4%BE%E7%BE%A4%E6%B4%BB%E5%8B%95/"/>
           
         </display>
     </data>
