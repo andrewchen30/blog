@@ -2,6 +2,7 @@
 # # clean old builds
 # sudo hexo clean
 
+nvm use 4.7.2
 # to build a new blog to public folder
 sudo hexo generate
 
