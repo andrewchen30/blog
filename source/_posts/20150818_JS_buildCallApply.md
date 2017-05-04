@@ -12,7 +12,7 @@ tags:
 
 ![javascript](/images/javascript.jpg)
 
-學習筆記，JavaScript 在綁定 Function 時有三種方式，分別為 `.bind()`,`.call()`, `.apply()`, 而這三種又有些許的差異：
+JavaScript 在呼叫 Function 時，有三種方式可以改變其範疇，分別為 `.bind()`,`.call()`, `.apply()`, 而這三種又有些許的差異：
 
 <!--more-->
 
@@ -21,7 +21,7 @@ tags:
 .bind() 不會立即執行 function，並設定 `this` 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 `this` 的範疇。
 
 ``` js
-func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
+func.bind( this, 1 ,2 ,3 ) ;   // 不會立即執行
 ```
 
 #### function .call()
@@ -29,7 +29,7 @@ func.bind( null, 1 ,2 ,3 ) ;   // 不會立即執行
 .call() 呼叫 function，並設定 `this` 範疇與傳入參數。傳入第一個參數是 scope，指定 function 內 `this` 的範疇。
 
 ``` js
-func.call( null, 1 ,2 ,3 ) ;   // 逐一傳入參數 (立即執行)
+func.call( this, 1 ,2 ,3 ) ;   // 逐一傳入參數 (立即執行)
 ```
 
 #### function .apply()
@@ -38,5 +38,5 @@ func.call( null, 1 ,2 ,3 ) ;   // 逐一傳入參數 (立即執行)
 
 
 ``` js
-func.apply( null, [ 1, 2, 3 ] );  // 參數統一用 array 傳入 (立即執行)
+func.apply( this, [ 1, 2, 3 ] );  // 參數統一用 array 傳入 (立即執行)
 ```

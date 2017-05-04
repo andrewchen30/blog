@@ -10,8 +10,8 @@ tags:
 
 ---
 
-> 本篇文上是本人Andrew Chen為[JSDC 2015](http://jsdc.tw)撰寫
-> 感謝[Caeser Chi](https://www.facebook.com/clonncd?fref=ts)給予指導
+> 本篇文上是為 [JSDC 2015](http://jsdc.tw) 撰寫
+> 感謝 [Caeser Chi](https://www.facebook.com/clonncd?fref=ts) 給予指導
 
 ![前端框架未來？React, Angular or ..?](http://cdn.xenyomedia.com/sites/default/files/blog/rwd.png)
 

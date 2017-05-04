@@ -8,8 +8,8 @@ tags:
 - ES6
 ---
 
-> 本篇文上是我為[JSDC 2015](http://jsdc.tw)撰寫
-> 感謝[Caeser Chi](https://www.facebook.com/clonncd?fref=ts)給予指導
+> 本篇文上是為 [JSDC 2015](http://jsdc.tw) 撰寫
+> 感謝 [Caeser Chi](https://www.facebook.com/clonncd?fref=ts) 給予指導
 
 ![JS Devil Day](https://lh3.googleusercontent.com/-mm7RHTIWOAw/VXT1RxK7xrI/AAAAAAAAQK0/LQGMSNo2aNE/s0/post-0-0-83751300-1350904929_large.jpg)
 
