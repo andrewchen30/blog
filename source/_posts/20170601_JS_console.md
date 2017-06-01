@@ -5,13 +5,22 @@ thumbnail: /images/notes/javascript_thumbnail.jpg
 tags:
 - 學習筆記
 - javascript
-- frontend
+- nodejs
 
 ---
 
 在一陣忙碌之後終於又有時間能靜下來寫篇 Blog 的文章，這次筆記的重點是 Front-end 開發時能時常使用的 console.log() 這個 API。
 
+本文筆記重點
+
+* `console.log()`
+* `console.dir()`
+* `console.table()`
+* `console.time() & console.timeEnd()`
+
 # 最基本的 `console.log()` 使用
+
+<!-- more -->
 
 基本的兩種輸出方式, 第一種的使用重點是 `console.log` 本身可以傳入複數個參數，之後會自動一併顯示。第二種寫法是更好更清楚的寫法，而 console.log 的 string formatter 基本上是跟 C++ 中的 printf 相同的用法。而需要注意的是 `%s` 這個欄位並沒有辦法直接印出 array 或是 json 資料格式對應的字串，會印出該資料的結構是哪種而已，如果想要印出 json 字串仍然需要自己進行 `JSON.stringify` 的操作。
 
