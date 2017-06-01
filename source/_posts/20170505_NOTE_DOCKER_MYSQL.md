@@ -1,5 +1,5 @@
 title: Docker 安裝 mysql + phpmyadmin
-date: 2017-05-05 12:500:00
+date: 2017-05-05 12:50:00
 categories: 做個筆記怕忘記
 thumbnail: /images/notes/docker_thumbnail.jpg
 tags:
