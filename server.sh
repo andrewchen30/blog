@@ -2,6 +2,9 @@
 # notify
 # osascript -e 'display notification "Data Build Success, Starting server..." with title "AndrewChenBlog"'
 
+# sync node version
+nvm use 4
+
 # run dev server on local
 sudo hexo server --watch
 
